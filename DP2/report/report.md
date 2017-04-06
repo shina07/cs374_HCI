@@ -12,7 +12,7 @@
 </div>
 
 <div style="text-align:center" markdown="1">
-![Image for Lack of Communication](resources/title.png)
+![Title Image](resources/title.png)
 </div>
 
 #### ***[Point of View (POV)]***
@@ -27,7 +27,7 @@ Hyeongcheol's friend really cares about her skin. However, the cost for visiting
 <br></br>
 #### ***[Personas]***
 
-<img align="right" src="resources/persona.png" width="40%">
+<img align="right" src="resources/persona.PNG" width="40%">
 
 Gender: Female
 
@@ -122,29 +122,47 @@ From the solutions listed above, it was possible to select 3 solutions that got 
 This solution is suggested from question “HMW Utilize patients’ time when they are not in hospital?”. It is possible to notice that patients often come to hospital just to report current status and get some counselling. It might presumably lower the number of visiting hospital by providing counselling via online message apps.
 
 	2. Provide an online platform for community among patients
-This solution is also proposed from the question “HMW Utilize patients’ time when they are not in hospital?”. It seems ideal solution if doctor and patients make interaction directly. It is, however, not easy to manage time during the office hour, and there are too many patients for doctor to take care of. Other patients who already have experiences of after care for certain medical treatment would be able to give some help for patients. 
+This solution is also proposed from the question “HMW Utilize patients’ time when they are not in hospital?”. It seems ideal solution if doctor and patients make interaction directly. It is, however, not easy to manage time during the office hour, and there are too many patients for doctor to take care of. Other patients who already have experiences of after care for certain medical treatment would be able to give some help for patients.
 
 	3. Establish a business partnerships to provide more customer service for patients
 This solution is originated from the question “HMW Change a hospital into a place where people would love to go?”. It is obvious to point out that it is not easy to reduce the price of medical treatment. If patients are available to get price discount or prizes from other stores that is allied with the hospital, patients may be encouraged to go to the hospital more.
 
+<br></br>
+
 #### ***[Storyboard]***
 
+The storyboards below illustrates the scenarios for each solutions.
+
 <div style="text-align:center" markdown="1">
-![Image for Lack of Communication](resources/storyboard_1.png)
+![First Storyboard](resources/storyboard_1.PNG)
 <em>Provide online counselling through kakaotalk or other message apps</em>
 </div>
 
+Marge Simpson found some trouble on her skin. She immediately report her status to doctor via mobile messenger app, and she got the reply. She may found the ideal way of treating the problem without going to the hospital. That solution could possibly be visiting the hospital, though.
+
 <div style="text-align:center" markdown="1">
-![Image for Lack of Communication](resources/storyboard_2.png)
+![Second Storyboard](resources/storyboard_2.PNG)
 <em>Provide an online platform for community among patients</em>
 </div>
 
+Marge Simpson got medical treatment recently. She might come up with some question about after care. She asked her question on the online community with the people who have the same experience with her. She would get some answers.
+
 <div style="text-align:center" markdown="1">
-![Image for Lack of Communication](resources/storyboard_3.png)
+![Third Storyboard](resources/storyboard_3.PNG)
 <em>Establish a business partnerships to provide more customer service for patients</em>
 </div>
 
+Marge Simpson went to hospital several times. Her hospital alliance points piled up so that she was possible to get some benefit from that. 
+
 #### ***[Studio Reflection]***
+In the Studio Session held on Monday Apr 4th, it was possible to get some feedbacks from studio mates. The feedbacks are followed below.
+
+    1. I like the topic and the solution derived from the topic, but solution of “community platform” seems vague. I wish to elaborate the particular solution to be clearer.
+
+    2. Based on the experience, going to the hospital, including dermatological hospital, infers that we already know the problem. It is almost not possible to do anything without actually visiting the hospital. What if we include more realistic situation that we need to go to hospital not for taking medical treatment?
+
+    3. Dermatological hospital costs expensive so that establishing business partnership (제휴 in Korean) seems a great solution to me. I wish to clarify the way of providing service by establishing the alliance among the stores near the hospital.
+
 
 
 #### ***[Updates in DP1]***
