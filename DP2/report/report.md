@@ -12,7 +12,7 @@
 </div>
 
 <div style="text-align:center" markdown="1">
-![Title Image](resources/title.png)
+<img src="resources/title.png">
 </div>
 
 #### ***[Point of View (POV)]***
@@ -134,34 +134,35 @@ This solution is originated from the question “HMW Change a hospital into a pl
 The storyboards below illustrates the scenarios for each solutions.
 
 <div style="text-align:center" markdown="1">
-![First Storyboard](resources/storyboard_1.PNG)
+<img src="resources/storyboard_1.PNG">
 <em>Provide online counselling through kakaotalk or other message apps</em>
 </div>
 
 Marge Simpson found some trouble on her skin. She immediately report her status to doctor via mobile messenger app, and she got the reply. She may found the ideal way of treating the problem without going to the hospital. That solution could possibly be visiting the hospital, though.
 
 <div style="text-align:center" markdown="1">
-![Second Storyboard](resources/storyboard_2.PNG)
+<img src="resources/storyboard_2.PNG">
 <em>Provide an online platform for community among patients</em>
 </div>
 
 Marge Simpson got medical treatment recently. She might come up with some question about after care. She asked her question on the online community with the people who have the same experience with her. She would get some answers.
 
 <div style="text-align:center" markdown="1">
-![Third Storyboard](resources/storyboard_3.PNG)
+<img src="resources/storyboard_3.PNG">
 <em>Establish a business partnerships to provide more customer service for patients</em>
 </div>
 
 Marge Simpson went to hospital several times. Her hospital alliance points piled up so that she was possible to get some benefit from that. 
 
 #### ***[Studio Reflection]***
-In the Studio Session held on Monday Apr 4th, it was possible to get some feedbacks from studio mates. The feedbacks are followed below.
+In the Studio Session held on Monday Apr 3rd, it was possible to get some feedbacks from studio mates. The feedbacks are followed below.
 
     1. I like the topic and the solution derived from the topic, but solution of “community platform” seems vague. I wish to elaborate the particular solution to be clearer.
 
     2. Based on the experience, going to the hospital, including dermatological hospital, infers that we already know the problem. It is almost not possible to do anything without actually visiting the hospital. What if we include more realistic situation that we need to go to hospital not for taking medical treatment?
 
     3. Dermatological hospital costs expensive so that establishing business partnership (제휴 in Korean) seems a great solution to me. I wish to clarify the way of providing service by establishing the alliance among the stores near the hospital.
+
 
 
 
