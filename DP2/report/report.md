@@ -2,11 +2,11 @@
 
 ### DP 2: Ideation
 
-<div markdown="0" style="text-align: right">
+<div markdown="0" style="text-align:right">
 	<h4>TEAM: Oh-Hack-Nyun
-    	<h6>Hyeongcheol Moon
-        	Minyeong Yang
-        	Seunghee Yoon
+    	<h6>Hyeongcheol Moon\n
+        	Minyeong Yang\n
+        	Seunghee Yoon\n
         	Taesoo Lim</h6>
     </h4>
 </div>
@@ -37,7 +37,7 @@ Preference: She has a tendency to go to one certain dermatological hospital wher
 
 Motivation: Patients have to wait significant amount of time and pay a tidy sum for a simple treatment or just a counselling
 
-Goal: Have better skin with lower costs
+***Goal: Have better skin, with lower costs***
 
 Scenario: Patient who go to a particular hospital frequently might have arisen with simple questions but actual visiting would be annoying. Instead, she uses an online system in order to ask question directly to doctor.
 
@@ -164,9 +164,10 @@ In the Studio Session held on Monday Apr 3rd, it was possible to get some feedba
     3. Dermatological hospital costs expensive so that establishing business partnership (제휴 in Korean) seems a great solution to me. I wish to clarify the way of providing service by establishing the alliance among the stores near the hospital.
 
 
+However, we got comments on our DP topic and approaches from our TA today (Apr 6th). We were suggested to have office hour with professor for discussing about our current status and clarify our topic. Furthermore, our previous work on DP1 turned out that it is enough to show we put plenty of effort on the task but it seems going toward wrong direction. Our approaches shown in DP1 suggested that our team members are not directly included in the user pool we set, however, the interview and survey results are apparently affected by us. The ideated topic is quite solution driven, and the survey results seems induced to the direction that we already planned before the survey. It is obvious to point out the needs of refactoring in this stage, so that our group decided to change our ideation topic from today.
+Therefore, we couldn’t include the reflection of feedbacks from our classmates in this report. It is expected to present more appropriate approach on our redesign topic from the next DP report. 
 
 
-#### ***[Updates in DP1]***
 
 
 
