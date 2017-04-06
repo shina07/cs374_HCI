@@ -157,17 +157,22 @@ Marge Simpson went to hospital several times. Her hospital alliance points piled
 #### ***[Studio Reflection]***
 In the Studio Session held on Monday Apr 3rd, it was possible to get some feedbacks from studio mates. The feedbacks are followed below.
 
-    1. I like the topic and the solution derived from the topic, but solution of “community platform” seems vague.\n I wish to elaborate the particular solution to be clearer.
+1. I like the topic and the solution derived from the topic, but solution of “community platform” seems vague. I wish to elaborate the particular solution to be clearer.
 
-    2. Based on the experience, going to the hospital, including dermatological hospital, infers that we already \nknow the problem. It is almost not possible to do anything without actually visiting the hospital. \nWhat if we include more realistic situation that we need to go to hospital not for taking medical treatment?
+2. Based on the experience, going to the hospital, including dermatological hospital, infers that we already know the problem. It is almost not possible to do anything without actually visiting the hospital. What if we include more realistic situation that we need to go to hospital not for taking medical treatment?
 
-    3. Dermatological hospital costs expensive so that establishing business partnership (제휴 in Korean) seems\n a great solution to me. I wish to clarify the way of providing service by establishing the alliance\n among the stores near the hospital.
+3. Dermatological hospital costs expensive so that establishing business partnership (제휴 in Korean) seems a great solution to me. I wish to clarify the way of providing service by establishing the alliance among the stores near the hospital.
+
 
 TA’s comment
+
 ```However, we got comments on our DP topic and approaches from our TA today (Apr 6th). We were suggested to have office hour with professor for discussing about our current status and clarify our topic. Furthermore, our previous work on DP1 turned out that it is enough to show we put plenty of effort on the task but it seems going toward wrong direction. Our approaches shown in DP1 suggested that our team members are not directly included in the user pool we set, however, the interview and survey results are apparently affected by us. The ideated topic is quite solution driven, and the survey results seems induced to the direction that we already planned before the survey. It is obvious to point out the needs of refactoring in this stage, so that our group decided to change our ideation topic from today.```
 
 The picture below shows our current changes in our new Ideation process. We are planning to develop our new Ideation from here.
 
-
+<div style="text-align:center" markdown="1">
+<img src="resources/new_ideation.jpg">
+<em>New Ideation</em>
+</div>
 
 
