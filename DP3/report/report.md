@@ -7,9 +7,6 @@
 <img src="resources/title.png">
 </div>
 
-#### ***[Prototype]***
-
-
 
 <br></br>
 #### ***[Participants]***
@@ -63,6 +60,8 @@ Now, test begins
 <br></br>
 #### ***[Tasks]***
 
+In English:
+
 1. Select and add exercises.
 	a. Select exercises for today and add to exercise schedule.
     b. Schedules for today: body part focusing on: chest muscle, exercise: Barbell Bench Press
@@ -78,6 +77,9 @@ Now, test begins
 	b. Reload exercise schedule: abdominal muscle exercise routine 1
 	c. Try completing all the tasks in the reloaded schedule.
 
+
+In Korean:
+
 1. 운동 선택해서 추가
 	A. 운동 목록 중 오늘 할 운동을 골라 운동 계획에 추가해보세요
 	B. 오늘 할 운동 부위: 가슴, 오늘 할 운동 이름: Barbell Bench Press
@@ -92,6 +94,9 @@ Now, test begins
 	A. 기존에 저장했던 운동들에 대한 저장 항목들을 불러와보세요
 	B. 불러올 운동: 복근운동 routine 1
 	C. 운동 진행을 마무리 해보세요
+
+
+#### ***[Prototype]***
 
 <div style="text-align:center" markdown="1">
 <img src="resources/prototype 1.jpg" width="40%">
@@ -142,6 +147,8 @@ After that, those pre defined exercise lists are now inserted in plan page so th
 
 <br></br>
 #### ***[Observations]***
+
+Since our tasks are not designed respectively, it was not easy to separate all the observation by tasks, so we wrote down our observations in the order of task sequences.
 
 1. There is no way to count the time when a user has exercised or has taken a break with the intervals. (P2)
 	a. [Criticality] Major
@@ -262,7 +269,148 @@ Another weakness of paper prototyping is that the result depends on the facilita
 <br></br>
 #### ***[Studio Reflections]***
 
+Since we changed the topic of our project after studio session, we don’t have to reflect studio feedbacks here.
+
+We accepted TA’s opinion that our previous project idea is hard to be further prototyped, tested and implemented because our target user, doctor, is somewhat unreachable. The result for the reflection is revisiting DP1 and DP2 in order to find someone’s feasible but earnest, real needs and insights.
+
 <br></br>
 
+Our team had begun with redesigning a communicating situation where patient who often visit Dermatological Clinic wants to ask questions or gets report about treatment progress. Thus our team submitted DP1 and DP2 focusing on patient’s POV.
+
+However, we failed to keep track on real user’s “genuine needs” and our outcome seemed uninteresting as well as transparent. Therefore, we decided to transit our viewpoint from ‘patient’ to ‘doctor’ after we carefully read through the comments from previously conducted interview with doctor.
+
+We successfully discovered needs from doctor’s point of view. Specifically, we tried to focus on doctor who is considering to adopt service system to communicate but running out of time. We aimed to make conducive service which allows doctor to respond within 30 seconds for any question arisen from patients.
+
+We had gone through DP1 and DP2 again and then built paper prototype considering doctor’s point of view. Unfortunately, our effort had not been viewed good enough since we cannot actually meet our target user at any time we want. The user we had chosen (a doctor who really wants to communicate with patients through online web) exists but is somewhat unreachable.
+
+That’s why we had to visit ‘Health Care Center’ in KAIST and asked one of the nursing staff for testing our paper prototype. And acknowledging that it’d be hard to continuously meet and ask for further ui testings if we set our target user as a special group among doctors, we thought we could get help from the center for the upcoming design projects although we needed to change our project’s point of view again a bit.
+
+Sadly however, not all nursing staff from the center were willing to help us. Unlike the one who joyfully tested our paper prototype before, the head nurse we encountered at the day after we did our DP3 presentation, treated us like a bothering peddler. We were thrown out of the center as if we were a stray dog and we were completely lost at that moment.
+
+Therefore, it became inevitable for us to change the goal of our design project, entirely. After the tough exile, we could interview with Professor SUKHEE KIM by chance who manages all the works and programs in sports complex fitness center and opens courses regarding physical training. What we had talked will be followed in Observations & Interview parts in DP1 revisited.
+
+
+
+
+
+
+Detailed circumstances explaining the reason why we had to alter the aim of our project is attached as appendix. You can check the whole story if we click …
+We’ll start our DP3 writeup with introducing our new topic as well as revisiting DP1 & DP2.
+
+
+## DP1 REVISITED
+Observations & Interviews
+
+Professor SukHee Kim - could be one of our extreme users
+	Luckily, we met Professor Kim who helped us a lot by giving his own experience and earnest needs he now has. At first he scolded us a bit for being unprepared but right after, what he told us was really valuable for us to target users with crucial needs. Every semester, he opens course regarding healthcare or one’s conditioning. The thing is, he orders every enrolled students to write daily workout logs for their self-regulation or self-management. He argued that this activity - record one’s exercise by their own - is crucial for someone who newly starts exercising or who wants to keep their physical condition in more intensive way. The problem is, the recording itself is really annoying during exercise and hence, tend to be forgotten easily when someone tries to write them down afterwards. Moreover, the professor orders his students to calculate all the burned calories for each workout because he thinks it is also necessary for the students. He actually know the work he is giving out is bothering his students and thereby he told us that he needs rather convenient recording system for one’s workout contents. He also claimed that this is current issue for not only for his class students but people who want to enhance their body by utilizing systematic manage.
+
+
+Needs (우리의 타겟 유저는 이런게 필요해보여!)
+
+자신이 한 운동을 쉽고 빠르게 기록하길 원한다.
+운동 일정을 계획하고 관리해줄 필요가 있다.
+할 수 있는 운동을 한눈에 확인할 수 있어야 한다.
+무슨 운동을 해야 하는지 잘 모르는 경우가 있다.
+행한 운동에 대한 칼로리 계산을 쉽게 하길 원한다.
+운동 기록이 오래 보존되길 원한다.
+본인이 한 운동을 항상 기록하겠다는 굳은 다짐이(의지가) 필요하다
+운동 능력이 얼마나 발전했는지 확인하길 원한다.
+
+Needs
+Our target users would have a need of
+Tracking the workout easily and fast
+Planning and managing exercise schedule
+Checking all the options of exercise at a look (glance)
+Instructing which exercise to do
+Expediting calculation of calories for workout done
+Preserving the records of past workout
+Strong will of recording the exercise done for that day consistently
+Witnessing the improvement of personal workout
+
+
+Insights (해결 방법을 찾는 과정에서 신기한 걸 발견했어!)
+
+헬스장에서 입는 트레이닝복에 주머니가 없어 기록 도구를 휴대하기 힘들다.
+운동을 하면서 땀이 나면 기록이 불편해진다.
+운동을 하는 사람들은 정해진 양의 운동을 계획적으로 하는 편이다.
+운동 방법에 따라 정도를 세는 단위가 다르다.
+단순히 운동 이름과 시행한 정도 외에도 다른 기록할 내용들이 많다.
+정확한 운동 시간, 쉬는 시간을 지켜야 하는 경우가 있다.
+같은 운동기구를 사용하더라도 운동을 하는 방법이 매우 다양하다.
+본인의 체형 등에 따라 해야 하는 운동이 많이 다르다.
+헬스장 또는 운동 동아리에서는 여러 사람의 운동 기록을 한번에 관리할 일이 많다.
+대부분의 사람들은 운동 내역을 기록하는 행위 자체를 귀찮아한다.
+
+Insights
+It was possible to discover that
+There is no pocket on the training shorts provided in regular gymnasium
+It is irritating to write down in a sweat
+People who workout usually schedule certain amount of exercise regularly
+Different exercises would have different optimized format to record
+Different exercises have different sets and reps for each workout session
+People are asked to be punctual for interval time between sets precisely
+There are a number of ways to do exercise for a single equipment
+People should find out appropriate workout sequences fit to themselves referring to their body type, stamina, muscle strength, etc
+Gymnasiums or health club have to manage plenty of workout records for plenty of people.
+Most people feel bothered for recording breakdown of working out.
+
+
+## DP2 REVISITED
+
+POV
+(USER) 운동 중간에 본인의 운동 내용을 정리해서 기록하고자 하는 사람
+(NEED) 쉽고 빠르게 기록하기를 원한다
+(insight) 그렇지만 운동 내역을 기록하는 행위 자체가 상당히 번거롭고 귀찮다.
+
+POV
+(USER) People who want to report their present exercises while they are working out
+(NEED) Need to record in easier and faster way
+(INSIGHT) Because behavior of recording is too annoying and troublesome.
+
+Persona
+현재 문제점
+운동 내용을 기록하고자 하는 사람 -> functionality에 초점이 맞춰져 있음
+운동을 체계적, 계획적으로 하는 사람 -> 구분이 모호함
+헬스장에 다니는 사람 -> 범위가 너무 넓음
+운동하는 학생들을 관리하는 교수님 -> 사실 UI를 사용하는 유저는 학생임
+
+HMWs (문제 해결을 위해 이렇게 해보는건 어떨까?)
+
+종이와 펜 대신에 다른 기록 도구를 사용해 보는건 어떨까?
+운동을 기록하고 싶게 동기 부여를 하는건 어떨까?
+기록지 양식을 직접 만들어야 하는 부담을 줄여주는건 어떨까?
+누군가 대신 운동을 기록해주는건 어떨까?
+
+Solution Ideas (우리는 이런 서비스를 만들자!)
+
+HMW 3 : 기록지 양식을 직접 만들어야 하는 부담을 줄이자.
+운동 별로 간단하고 직관적인 양식을 제공하자.
+기록 항목을 사용자가 쉽게 수정할 수 있도록 하자.
+기록한 내용을 토대로 사용자에게 맞춤 양식을 제공하자.
+다른 사람들이 사용하고 있는 양식을 받아서 활용할 수 있도록 하자.
+처음 사용자를 위한 커스터마이징 튜토리얼을 진행하자.
+운동 DB를 구축하여 이름 자동완성과 그에 맞는 단위를 제공하자.
+시간을 지켜야 하는 경우 초시계를 보여주자.
+여러 명이 같은 양식을 지켜야 할 상황에서 사용자끼리 그룹을 구성할 수 있도록 하자.
+운동 종목을 나타내는 아이콘들을 활용할 수 있도록 하자.
+
+
+	HMW 2 : 운동을 기록하고 싶게 동기 부여를 해보자.
+다른 사람들의 운동 기록을 볼 수 있게 하자.
+기록한 내용을 시각화해서 보여주자.
+장기간 운동한 내역을 토대로 통계를 제공하자.
+나의 기록 변화 또는 상태를 한눈에 알려주는 이미지를 사용하자. (예: 시들시들한 풀)
+운동으로 소모한 칼로리를 계산해서 보여주자.
+최소한의 움직임으로 운동 진행 상황을 업데이트할 수 있도록 하자.
+나의 운동 기록을 토대로 다른 운동 방법과 해야할 정도를 추천해주자.
+처음 하는 운동인 경우 하는 방법과 정확한 자세 등을 알려주자.
+게임 같은 시스템을 도입하여 사용자가 운동을 열심히 하면 캐릭터가 강해지도록 하자.
+자신의 운동 기록을 메신저나 SNS로 쉽게 공유할 수 있도록 하자.
+
+
+Three chosen solution ideas
+운동별로 간단하고 직관적인 기록 양식 제공 V
+기록 내용 토대로 사용자에게 맞춤 양식을 제공하자 V
+칼로리 계산, 나의 상태 변화 (발전 과정) 알려주기
 
 
