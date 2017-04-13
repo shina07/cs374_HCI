@@ -97,26 +97,92 @@ Now, test begins
 <img src="resources/prototype 1.jpg" width="40%">
 </div>
 
+In the beginning, our UI simply shows two tab like selectors and one button each of which indicates list for all kinds of exercises, personal plan for one’s exercise and reloading option for previously saved workout patterns.
+
 <div style="text-align:center" markdown="1">
-<img src="resources/prototype 2.jpg" width="40%"><img src="resources/prototype 3.jpg" width="40%">
+<img src="resources/prototype 2.png" width="40%"><img src="resources/prototype 3.png" width="40%">
 </div>
+
+For the first task, user starts with pressing ‘목록’ in the very first view. Each grids indicate which part to choose for. Let’s say we pressed ‘가슴’.
+After choosing which part of the body to be stimulated, we can choose an item from grids indicating exercises that are classified under that part of the body. Let’s say we chose ‘Barbell bench press’.
+
 
 <div style="text-align:center" markdown="1">
 <img src="resources/prototype 4.jpg" width="40%"><img src="resources/prototype 5.jpg" width="40%">
 </div>
 
+A pop-up for adding the exercise to personal plan shows up and user can select weight as well as reps on that popped up page. Note that we separated tenth digit and ones place that user can select weight and reps within little clicks or touches. Note that Reps stands for repetitions.
+
+When ADD button is pressed, a set is added to one’s workout plan. Note that the number of button clicks indicate the number of sets the workout has been planned. This ‘each-click-for-setting-sets’ feature was designed because it is common that each workout set can be consists of different combinations of weight and reptitions.
+
+
 <div style="text-align:center" markdown="1">
 <img src="resources/prototype 6.jpg" width="40%">
 </div>
 
+After additions, those attempts are reflected in plan section. The user now can check or modify the number of repetitions. If the number of repetitions has been diminished and then checked, the bar would be colored differently, indicating that user could not finish the workout plan.
+
+
 <div style="text-align:center" markdown="1">
-<img src="resources/prototype 7.jpg" width="40%"><img src="resources/prototype 8.jpg" width="40%">
+<img src="resources/prototype 1_load.png" width="40%">
 </div>
+
+If the room for plan is empty, we provide a special feature, namely ‘불러오기’ so that user can retrieve past record settings(or patterns). Let’s say the button is being pressed.
+
+
+<div style="text-align:center" markdown="1">
+<img src="resources/prototype 7.png" width="40%"><img src="resources/prototype 8.jpg" width="40%">
+</div>
+
+List shows up which holds the records the user had been recorded before with date or the workout pattern which is manually subscribed. Let’s say the first element is being pressed.
+
+After that, those pre defined exercise lists are now inserted in plan page so that user can again check or modify the number of repetitions.
 
 
 
 <br></br>
 #### ***[Observations]***
+
+1. There is no way to count the time when a user has exercised or has taken a break with the intervals. (P2)
+	a. [Criticality] Major
+	b. [Solution] Add some functions to check the time the user exercise or take a break.
+
+2. Hard to show the way to delete the one set in the list. (P2)
+	a. [Criticality] Minor
+	b. [Solution] Make the list button to seem movable. Then, users will try to swipe when they want to delete one set.
+
+3. Users can’t know the number of sets already done in the list. (P2)
+	a. [Criticality] Minor
+	b. [Solution] Show remaining set number and completed set number at the last set.
+
+4. Participant clicked “Load” button when he should click “Show list” button. It’s confusing to seem to do similar function. (P3)
+	a. [Criticality] Minor
+	b. [Solution] Change the label of “Show list” button into “New”.
+
+5. There are no other variations except kg and reps. (P1)
+	a. [Criticality] Major
+	b. [Solution] Add more variations like time, velocity, pose status, etc.
+
+6. Users can’t know how many he added the sets to the list. (P1)
+	a. [Criticality] Major
+	b. [Solution] Give the user feedback when the user add a set to list by showing how many the user add next to ADD buttons.
+
+7. Users have to change all of remaining set details, kg or reps, when they completed the exercise partially. (P1)
+	a. [Criticality] Major
+	b. [Solution] Remaining set need to be adjusted according to the number which the user does complete indeed.
+
+8. Participant  thought that the process of “Add” was not a process of planning but a process of completion. (P3)
+	a. [Criticality] Minor
+	b. [Solution] Actually, it doesn't seem to matter if users add a plan and then complete it immediately. It depends on which way the user prefers. But it would be better if we change the label of “Add” button into “Add plans”.
+
+9. Users can’t change the kg detail when they think it is too hard or too easy to exercise with that kg. (P3)
+	a. [Criticality] Minor
+	b. [Solution] To add editable section also at kg detail.
+
+10.	Participant clicked “plans” button while it was already “plans” screen. Maybe the indication of the current state is weak. (P3)
+	a. [Criticality] Minor
+	b. [Solution] Make the tab more visible to recognize where the tab is now. 
+
 
 <br></br>
 #### ***[Individual Reflections]***
@@ -159,6 +225,10 @@ Also, simple functions such as confirm, close and select buttons were easy to ma
 1st role and 3rd role – difficulty as a facilitator: Because I was the one who prepared briefing and index cards indicating each tasks, I wanted to do facilitator at the beginning and I was rather confident. Since we also conducted pilot-test right before our first tester had come, I thought I was 100% ready for the user testing. But still, I had few difficulties withstanding the pressure I had to put up with, in front of our awkward and grateful participant. Whenever he does something I have never anticipated before, I was confused. The most frequent question arisen in my mind was, ‘Should I tell him this or not?’ and ‘Until which point should I have to say?’ or ‘If I tell him something, would that be okay or helpful for this test?’. Since this was usability testing, I could not pinpoint every directions but at the same time, I had to lead him to the right walkthroughs. Therefore I always had to be extra careful for every single words what I had to say. In third user test, the words I needed to say were far more clearer than before and few of things that user misbehave were laid in my prediction range. However, our third user was kind of our extreme user who has been doing workout 6 days per week for more than four years. Besides testing, he told us a lot of things that we could not consider before. While testing, he dragged out inconvenience of our service a lot so I had to help him focus on and finish the tasks we had prepared.
 
 2nd role – difficulty as an observer: In the second user test, we switched our role and I became an observer who definitely had to be silent enough and just focused on what user actually did. However, in my case, it was really hard for me to suppress the desire to speak. I was really surprised that it turned out that this was THAT hard. I’m not blaming, no offense, but I thought our facilitator was a bit shy as well as our second participant that it was not sufficient enough for the user to be encouraged and to be spoke up aloud. Rather than observing user’s subtle behavior (Later after the test had done, I realized that I even had to check his small facial changes and voice tones, as a good observer. Sadly I couldn’t observe that well.), I just stared at, thinking some more explanations had to be indicated for user in order to perform well and say his opinion more. To be honest, I could not keep myself shut my mouth down and started speaking right after he finished our tasks.
+
+Pros: The experience of showing up our paper prototype granted me a lot. I felt thrilled after the first participant suggested to make commit-like feature for managing “workout sets” which was the most difficult to extract good solution idea when four of us talked and discussed for days together. At first glance, our target user who does not actually know what we were doing, had came up with a great idea that we couldn’t think of. In fact, I was skeptical doing paper prototype and embarrassingly present it to other people but I realized that this actually helps.
+
+Cons: It would be better if we had enough time for revising our paper prototype after we had gone through a user testing. The same issue had come again in the later testing that we already know. It’s more like our fault, but considering our time limitation for finishing each project, we didn’t have time to revise our prototype frequently.
 
 **HC Moon**
 
