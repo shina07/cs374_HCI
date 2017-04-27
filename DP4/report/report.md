@@ -59,11 +59,52 @@ Users can load workout routines which are previously built by themselves. It is 
 Prototyping Tool: proto.io
 
 We chose “proto.io” as our prototyping tool for lo-fi prototyping. We had looked over all three prototyping tools suggested by the DP4 instructions: Marvel, InVision, and proto.io. Marvel seemed satisfactory considering this is the first time using it. Concepts such as screen and hotspots are quite straight forward and it was easy to make choices for “Action” and “Screen Transition”, since all these features are in graphical icons with good information scent. In case of working with InVision, it also looked acceptable to use because of its simple features and seemingly efficient UI.
+
 However, we thought proto.io fit the best for our design aim and needs. Even though this is our first digital prototype, we still wanted to show what our service tries to achieve as much as possible. In order to fulfill our desire, proto.io seemed to be the best option for its built-in function to utilize tester’s input in rather dynamic fashion, nevertheless it requires more effort to make things work. In addition, proto.io supports “full-featured” trial for 15 days, which is enough time to finish our lo-fi prototyping, while others only support limited-feature with no time limitation. There was a limitation in the number of co-workers for most “limited-feature” tools, only proto.io let us to work all together on the same prototype page with different accounts concurrently. Moreover, other tools often required us to make all basic figures like buttons or menus into image files and import in the tool. All of basic figures, even both android and ios native, are provided in proto.io.
-However, there are some limitations in proto.io as well. Even if it supports more than one user for each prototype project, they do not allow all users to edit simultaneously from different users. Unless the change is made from up-to-date version, the new commit of saving is aborted by the previous commit and all the changes is lost. Therefore, despite all members are working on the same project, they should work on different prototype and merge together later on.
+
+Yet, there are some limitations in proto.io as well. Even if it supports more than one user for each prototype project, they do not allow all users to edit simultaneously from different users. Unless the change is made from up-to-date version, the new commit of saving is aborted by the previous commit and all the changes is lost. Therefore, despite all members are working on the same project, they should work on different prototype and merge together later on.
+
+<br></br>
+
+Design choices
+
+We made some noteworthy choices on which features to include and not to, and those choices are described below. We recommend looking over our digital prototype first and then check how we resolved. Our prototype can be accessed in the link below:
+Link: [https://pr.to/FIE74B/] [Prototype in proto.io].
 
 
 <br></br>
+
+Representative screenshots:
+(screenshots after finishing prototype)
+
+<div style="text-align:center" markdown="1">
+<img src="resources/screenshot 1.png">
+<el>Screenshots for Task 1</el>
+</div>
+
+Screenshots for Task 1
+
+If you tap + button in the main screen, you can add  workout plans. Choosing a part of body first, and then you should select one workout in the list, which is shown in the first screenshot. The second screenshot is the screen that you can set weight and reps. If you tap “Add” button after setting number, one set will be added in below list. “Confirm” button moves the list of sets to the main screen, and it is shown as the third screenshot.
+
+
+<div style="text-align:center" markdown="1">
+<img src="resources/screenshot 2.png">
+</div>
+
+Screenshots for Task 2
+
+If you swipe a plan, “Edit” and “Delete” buttons will appear. “Edit” button shows changing number interface so that you can change weight and reps. “Delete” button just delete the plan.
+
+<div style="text-align:center" markdown="1">
+<img src="resources/screenshot 3.png">
+</div>
+
+Screenshots for Task 3
+
+If you tap right upper menu button, there will be “Load Routine” button. Then if you tap this, list of saved routines will appear. Right magnifying glass button is to show preview of its workout components, and left routine name is the button to load it. The last screenshot is after loading “Daily Abs” routine.
+
+<br></br>
+
 #### ***[Observations]***
 
 <br></br>
