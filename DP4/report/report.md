@@ -69,7 +69,8 @@ Yet, there are some limitations in proto.io as well. Even if it supports more th
 Design choices
 
 We made some noteworthy choices on which features to include and not to, and those choices are described below. We recommend looking over our digital prototype first and then check how we resolved. Our prototype can be accessed in the link below:
-Link: [https://pr.to/FIE74B/] [Prototype in proto.io].
+
+	[https://pr.to/FIE74B/] [Prototype in proto.io].
 
 
 <br></br>
@@ -107,13 +108,34 @@ If you tap right upper menu button, there will be “Load Routine” button. The
 #### ***[Observations]***
 
 <br></br>
+
 #### ***[Paper vs Digital]***
+
+| Summary of Changes  | Criticality  |
+|---|---|
+| There’s no way to count the time interval between exercises  |  Major |
+| → Feature is added into the interval between two sets. Note that we examined that a number of users agreed that all they need is to track how long they rest from the end of a set until beginning of their next set. In our prototype, we assumed that a ‘counter’ starts incrementing right after user checked a set of exercise into ‘done’ but there exists remaining sets. The user can be notified how long they rest when they simply see it. Although this was not a critical aspect for progressing the tasks we had prepared, testers of our digital prototype gave a favorable comments that we have a timer in between sets.  |   |
+| It seems there’s no other variations in attributes except weight and reps |  Major |
+| → This is not yet fully considered since we did not feature every single exercise. In task 3 where user can load saved workout routine, weight attribute is omitted because we believed that the one is not necessary for its nature. In other words, we reflected this point in our digital prototype in passive manner. When we build a full-featured version of our service, we may need deeper analysis for each exercises, in order to determine which attributes should be deployed for each exercise.  |   |
+| Users cannot know how many sets are added to the exercise plan list  | Major  |
+| → This issue was carefully designed when we make our digital prototype since we thought it would be the one we have to concern a lot. In paper prototype we didn’t add any visual aid for user when one tries to add several different sets. In digital prototype, we provide a preview of added sets of exercise before they are placed in workout list. Also, we put confirm button which imparts all sets to the list we’re maintaining.  |   |
+| Users have to change all of remaining sets’ attributes when they realized that they have to modify the amounts  | Major  |
+| → A solution idea for this issue was suggested as if we can automatically change the attributes for the remaining sets in case when the user could not successfully finish the amount of work written in a set. If the remaining sets are planned to be tougher than the preceding set, we think it is reasonable to ask the user to change the amount for the rest to be milder. However, we agreed that we need more careful analysis for implementing this functionality to satisfy user. We thus kept this in mind, as a thing we would concern in our next design project iteration.  |   |
+| It’s hard to recognize the way to delete one set among multiple sets  | Minor  |
+| → Deleting a set of exercise is made in our digital prototype. To be more specific, we made it possible by adopting ‘swipe’ and press the delete button.  |   |
+| User clicked load button when one should click “Show list” button (i.e. functions for each buttons are a bit confusing)  |  Minor |
+| → This problem is induced because of the awkward use of taps positioned in the top side of the screen. We removed taps and only maintained add button which transit its screen to the one user can add exercise.  |   |
+| Users cannot know the number of sets already done in the list  | Minor  |
+| → We examined this issue which was raised from paper prototyping tests, and we will hold value for the already done sets when we build next prototype with high fidelity.   |   |
+| Participants of paper prototype-testing thought that the process of “Add”, our main feature, as a process of workout completion, not a process of workout planning.  |  Minor |
+| → The method we’ve dealt with was explained in the Design Choice. We did reflect the solution for this issue but we have to acknowledge that this issue has risen because our interface somewhat lacks good information scent in the process of adding exercise. Because adding exercise would be our core function as well as our core user interface, we’ll put more efforts on this problem throughout upcoming projects.  |   |
+| It’s hard for user to change the weight detail when one thinks the level of difficulty is too high or low.  |  Minor |
+| → We added the feature of changing the weight after the set is added to the list. We have made this work by swiping and then editing but after conducting prototype testing with digital prototype, we realized that we still need to analyze more about usability issue for this problem.  |   |
+| The indication of the current state is rather weak.  | Minor  |
+| → Current state comes with the tab selection but we deleted the unnecessary tab menus. We suppose this problem no longer exists.  |   |
 
 <br></br>
 #### ***[Studio Reflections]***
-
-<br></br>
-#### ***[Studio Presentation]***
 
 - I don’t know some exercise terminology like biceps, what about adding some picture?
 	- Now we are considering to add some photos of human body parts for each exercise to indicate what the exercise is for
@@ -145,6 +167,4 @@ If you tap right upper menu button, there will be “Load Routine” button. The
 	- It might be critical to notice users the current state with process bar, but it was not easy to design good navigation process bar. We may include it for our revised UI in next version.
 
 
-<br></br>
-#### ***[POV & Tasks]***
 
