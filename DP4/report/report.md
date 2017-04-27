@@ -79,13 +79,12 @@ Representative screenshots:
 
 <div style="text-align:center" markdown="1">
 <img src="resources/screenshot 1.png">
-<el>Screenshots for Task 1</el>
+<el style="text-align:right">Screenshots for Task 1</el>
 </div>
 
 Screenshots for Task 1
 
 If you tap + button in the main screen, you can add  workout plans. Choosing a part of body first, and then you should select one workout in the list, which is shown in the first screenshot. The second screenshot is the screen that you can set weight and reps. If you tap “Add” button after setting number, one set will be added in below list. “Confirm” button moves the list of sets to the main screen, and it is shown as the third screenshot.
-
 
 <div style="text-align:center" markdown="1">
 <img src="resources/screenshot 2.png">
@@ -115,6 +114,36 @@ If you tap right upper menu button, there will be “Load Routine” button. The
 
 <br></br>
 #### ***[Studio Presentation]***
+
+- I don’t know some exercise terminology like biceps, what about adding some picture?
+	- Now we are considering to add some photos of human body parts for each exercise to indicate what the exercise is for
+- I wish there are some photos or videos for each exercise
+	- We added some explanations for exercise by including youtube link in our revised Lo-fi prototyping.
+- I wish I can “type” the numbers in reps, not only scrolling up and down.
+	- Feedbacks from user-testing suggests us to consider the changes in UI, and this issue is one of them. We are planning to allow both scrolling and typing in reps section, similar with android alarm clock.
+- How can I go back while planning the workout? (task 1, 2, 3)
+	- Actually, going back to previous page is already implemented in the current version of prototype. Our understanding of this question is to move the page back and forth with preserving the state that user changed. This would be the implementation issues.
+- It is difficult to navigate through the interfaces
+	- As it is mentioned above, we are considering to change our entire UI in the way of becoming more intuitive and easier to navigate, because of this kind of issues. 
+- Maybe too much sub-menus. You could use a diagram of human body and make each muscle area clickable?
+	- Combining this with the first feedback, we may need to add a human body image in order for user to easily choose what parts of body they want to train.
+- Cursors are uncomfortable to use
+	- It was quite obscure for the meaning of “cursor” in this feedback. We concluded that the cursor means what is supported from the prototyping tool we adopted, proto.io. it is, in fact, uncomfortable to use the cursor, but it would not appear in actual implementation.
+- I need a DELETE button in the workout plan setting page for clicking ADD button by mistake
+	- It is good point that we included the DELETE button in the page for already planned not in the planning page. We are going to add this button.
+- Abs도 무게 넣고 할 수 있어요
+	- Since it is low fidelity prototype, we didn’t implement all the parameter for each exercise. In fact, we are planning to support customizing for each exercise task, so users may choose whether they include the weight or not
+- Guidance for each task are very helpful
+	- Thanks!
+- It seems the design is for training experts
+	- This is perhaps because the UI is not intuitive enough. Maybe we should include more explanations, which is already suggested above. Our new design should cover this issue as well.
+- 서로 다른 태스크들이 너무 균일한 인터페이스 하에서 진행됩니다. 태스크의 차이를 구분할 수 있는 id같은 것들이 존재하면 좋을 것 같아요 (eg. 색상)
+	- We should think about the easily-detectable difference between each page, but this issue is also about lo-fi prototyping and testing. We should avoid this issue in revised design.
+- It is not clear what the difference between done and plan is
+	- We deleted “DONE BUTTON”, and added “check all” function in plans list so that the user can check the all workouts to success, instead. This action supports what we previously intended in “DONE BUTTON”, but now it is more intuitive. 
+- It was hard to recognize which state, and what should I do with these contents. For these problem, I suggest you to do navigation process bar.
+	- It might be critical to notice users the current state with process bar, but it was not easy to design good navigation process bar. We may include it for our revised UI in next version.
+
 
 <br></br>
 #### ***[POV & Tasks]***
