@@ -73,6 +73,56 @@ We made some noteworthy choices on which features to include and not to, and tho
 	[https://pr.to/FIE74B/] [Prototype in proto.io].
 
 
+***Justification for Design Choices***
+
+1> Build prototype  as if our digital prototype were a series of ‘tutorial’
+→ We’ve made our digital prototype by emulating the previous paper prototype, with the feedbacks we have earned from several users. But one noticeable thing in our prototype is the fact that we included sky-blue boxes which indicate testers to be informed about what they should do with our prototype. Those are not what design project description required us to make but we thought they are nice as they can function as ‘index cards’ used in paper prototype. Since they don’t directly describe how to walkthrough, we don’t think those boxes are lowering our prototype quality. It turned out they are actually helpful for us to carry out testing with users although they make our prototype slightly different from what the real webpage actually would be.
+
+2> Grid-type selection
+→ Rather than showing lists of exercise names, we featured layers of grids. Since there are a lot of different exercises, it would be annoying if we don’t manage the list of exercises seriously. We therefore adopted index structure on body parts and exercise types so that user can select one of exercise by clicking two or three times.
+
+3> Scrollable oneth & tenth digits
+→ This is the one we agonized a lot in order to improve usability. The value of attributes can vary but if this has to be chosen manually, using method such as pressing up/down buttons or scrolling a single scrollable range, user has to put much effort on each value. By dissecting the oneth and tenth digit, we allowed user to select wide range of integer value for each attribute of exercises. We believe that our decision has improved in terms of efficiency and provide a big reason for user to facilitate.
+
+4> ADD and Confirm discrimination
+→ This feature is made in order to support our feasible user to keep “set” variable for each exercise. Note that one can do his/her many sets of exercise but each set can be composed of different weight and reps. Thus if we only provide the user to put how many sets he/she will do, that does not make sense.
+ 
+5> Reason for ‘Check All’ button for exercise sets
+→ Our team contemplated the issue that some users could not a lot because this could be the most important observation among those from paper prototyping tests. As we tested multiple users, some testers were frustrated and raised question about the purpose of recording. They wondered WHEN exactly the user select up one’s exercise record, either before starting up the exercise as ‘plan’ or after exercise has been done. Genuinely, it was a controversy that some people want those to be set before the exercise thus the user can simply click them as ‘Done’ during workout. Others want those attributes to be set after exercise because those weight, reps and set attributes can often be changed. In order to satisfy different users with different perspectives, we stick to our method as to keep attributes of exercises as ‘plan’ so that we can also keep consistency in way analogous to the function of loading pre-defined workout routines, but added ‘select all’ button on each exercise on the list. Therefore, the user who adds exercise to the list after they actually finishes few sets of exercise can also use our service without any awkwardness.
+
+6> Swipe edit/delete & Focus after check
+→ We agreed that if user use our service with mobile browser, swiping is rather reasonable way to change a set’s status. Thus we put edit/delete function in swiped set.
+
+
+
+
+***Things not selected by the team***
+
+1> Limited Selectable items
+→ After one decides to add a new workout, grid elements indicating each body part are featured. At this moment, we did not make all of them possible to be selected in our prototype. We believed that if we can build one body part among many different body parts, we can easily make others similarly. In other words, we reckoned that making those rather similar buttons are redundant but time consuming so we avoided featuring them all. We announce tester to select one of ‘chest’ exercises 
+
+2> Omit supporting user-defined exercises 
+→ After selecting ‘chest’, eight different exercises are shown and ninth grid is a button with plus(+) object positioned on its center. This smells like the user might can add user’s own. Yes, the button shows a popup if user clicks it but currently the prototype does not allow user to add or utilize user’s own exercise. Yet feature is needed if it were a real service, we thought it’s not really worthy at this point. We tried to focus on adding one of exercise, but it’s not necessarily be the user-driven one.
+
+3> Changing default attributes for each exercise not supported
+→ After selecting one chest exercise, amount for weight and reps are shown as default. We excluded the method that let user possible to edit which attribute to be kept. We thought that the feature is needed but we believe there’s not much usability issue for that, so we excluded it.
+
+4> Timer
+→ We examined that every target user we tested stressed that they do care about the time interval they’re resting in between sets of exercises. Thus we put the timer which appears right after the user clicks and changes a state of a set of exercise to ‘Done’. Timer should be counted until user starts next set. However we did not make our timer functional yet, due to technical issue. 
+
+5> Hard-coded data
+→ When user records multiple sets of exercise in Task1, every attributes for each set have different proto.io variables in order to hold values to be used in the other screens. Since we did not care any about internal design, variables are hard coded and each set retains more than 4 variables. In addition, user cannot add more than 5 sets since we blocked the action of adding set after set 5.
+
+6> Loading - user cannot store
+→ Until now, user can retrieve workout routines from predefined plan but there’s no feature allowing user to set exercises and their attributes manually. We assumed that user already had made up routines before when loading workouts in our Task 3. Not yet been implemented but this is one of the important user-driven issue (One told us he really need a function of loading routines into list because he always do almost same routines), we’ll manage this issue in upcoming project.
+
+<br></br>
+Additional instructions for digital prototype:
+
+When you access to the above link, distributed version of proto.io will be loaded and blank page containing a “blue plus circle” button. This is the very first page where user keeps track on his/her workout ‘plan’.
+In digital prototype, we featured as if one plans his/her workouts and can change conditions of each set to either done or delete with simple one-click.
+Tasks are serialized and description for each tasks are embedded in our prototype. Tester can follow the instructions written.
+Feature not covered in our three tasks are timer and ‘select all’ button. Those are described above about the reason why they are needed and why they are not yet fully implemented.
 <br></br>
 
 Representative screenshots:
@@ -107,9 +157,62 @@ If you tap right upper menu button, there will be “Load Routine” button. The
 
 #### ***[Observations]***
 
+- They tapped the arrow icons instead of dragging numbers to change the number of weight and reps. (P1, P2, P3) - criticality : high
+
+We will change the interface of changing number. The possible ways can be like typing directly and tapping + or – number, similar with android alarm clock.
+
+- He (one of testers for user-testing) tapped for a while the plan that should be edited instead of swiping it. (P1) - criticality : high
+
+Swiping to delete might be acceptable, but swiping to edit is not easy to detect. We will change this interface in the way that users can edit a plan by tapping it.
+
+- He tapped + button to load a workout routine. (P1) - criticality : high
+
+“Load routine” is one of the key features in our service, but it is hidden in the menu bar. We will move this button to the main screen.
+
+- User kept tapping the preview button and then tapped following popup to load a workout routine. (P2) - criticality : high
+
+If user can add title or tag to routines, the preview button is unnecessary. Then we can remove preview button.
+
+- Sometimes the user just want to do the exercise as much as he can, so he wanted to add exercise task without reps (P1) - criticality : medium
+
+We may need to add “free” option before number 0 and set it as default, so that users can add the exercise without any number.
+
+- They didn’t know there was timer function. (P1, P2, P3) - criticality : medium
+
+Timer is too small and its color is similar with background color so that it is not easy to notice. We will make timer more visible and then test its usability again. All of our participants said that they always use timer while break time between each workout.
+
+- He felt difficult to know each exercise when he added a workout plan. He suggested to show pictures and descriptions for each workout.
+
+We better to include some symbolic picture for each exercise. However, we still need to test this again after we add the pictures, since even the picture is possible to be not effective.
+
+- Setting weight and reps every time is a waste of time. He suggested flexible default values which system recommends to user. (P3) - criticality : low
+- It takes a lot of time to drag number. (P1, P2, P3) - criticality : medium
+- He saw “Calendar” button and asked why this button doesn’t work. We didn’t make this function in lo-fi prototype, but he really wanted calendar. (P3) - criticality : low
+
+We have planned showing calendar and will add it later.
+
+
 <br></br>
 
 #### ***[Paper vs Digital]***
+
+
+- Types of usability issues
+
+Learnability of paper prototyping is lower than one of digital prototyping. Because digital prototyping uses the real devices, it can show the components like UI button, input field and text box more easily while paper prototyping has limit to do that.
+
+Efficiency of paper prototyping is also very low because the user must wait until the facilitator completes some actions. During waiting time, the user tends to lose focus to our UI and as a result not to recognize what he or she should do at next step.
+
+In paper prototyping, there is no possibility that errors can occur because only some actions is allowed for user to use, so safety of paper prototyping is much higher than digital prototyping where the user can act not intentionally and crash the prototyping so we have to refresh entire digital prototyping.
+
+- Participant’s reaction and expectation
+
+User can easily acts like using real service since he/she uses real device like pc or smartphone. For example, our participants didn’t “swipe” a plan to delete it in paper prototype test, but two of three participants naturally swipe in digital prototype test. Also, they were burdened to press any region (even though it looks clickable) in paper, but in digital prototyping they feel more comfortable to click anything that seems to be able to be clicked. They just do trial and error in easy mind for digital prototyping.
+
+- Summarize what changes we made in the digital prototype based on the feedback from paper prototype testing
+
+Below table shows the previous observations when we’d faced with paper prototyping tests and the ways we had manipulated with those problems. Most of the issues pointed out in the paper prototype were dealt in our digital prototype. Descriptions for those reflections follows:
+
 
 | Summary of Changes  | Criticality  |
 |---|---|
