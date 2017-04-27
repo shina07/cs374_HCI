@@ -4,9 +4,9 @@
 
 <div markdown="6" style="text-align:right">
 	<h4>TEAM: Oh-Hack-Nyun
-    	<h6>Hyeongcheol Moon\n
-        	Minyeong Yang\n
-        	Seunghee Yoon\n
+    	<h6>Hyeongcheol Moon
+        	Minyeong Yang
+        	Seunghee Yoon
         	Taesoo Lim</h6>
     </h4>
 </div>
@@ -14,11 +14,13 @@
 <br></br>
 #### ***[POV & Tasks]***
 
-As it is stated in DP3, we will focus on the people who want to record their exercises while they are working out. Throughout several interviews, it was possible to notice that writing down of exercise record is annoying and inconvenient regardless of writing devices such as papers or smartphones. These people would have the need of doing so easier and faster.
+As it is stated in DP3, we will focus on the **people who want to record their exercises while they are working out**. Throughout several interviews, it was possible to notice that **recording of exercise record is annoying and inconvenient** regardless of writing devices such as papers or smartphones. These people would have the need of doing so easier and faster.
 At this point, we want to clarify the terminology we mixed up in their usage. The first combination of terms which caused our ambiguous understanding in their difference is “workout” and “exercise”. We thought the two words are synonym, but those words actually have slightly different context. Working out and exercise both indicate the physical activities to enhance one’s body strength, but exercise usually indicates one specific activity or sports, while workout is inferring whole activity, consisting of several different exercises.
 Each exercise needs different attributes to record, and these values depend on the nature of exercise. Most of muscle exercises would contain weight, reps(=repetitions), sets and interval(=resting period between each set, unit=seconds), but cardio exercise or abs routine(=abdominal muscle exercise) would need different attributes to record. These issues would be probably dealt in the process of redesigning thoroughly under our POV
 
-TASKS for prototype
+<br></br>
+
+**TASKS for prototype**
 
 First task: Select and Add new workout plan
 
@@ -53,6 +55,13 @@ Users can load workout routines which are previously built by themselves. It is 
 
 <br></br>
 #### ***[Prototype]***
+
+Prototyping Tool: proto.io
+
+We chose “proto.io” as our prototyping tool for lo-fi prototyping. We had looked over all three prototyping tools suggested by the DP4 instructions: Marvel, InVision, and proto.io. Marvel seemed satisfactory considering this is the first time using it. Concepts such as screen and hotspots are quite straight forward and it was easy to make choices for “Action” and “Screen Transition”, since all these features are in graphical icons with good information scent. In case of working with InVision, it also looked acceptable to use because of its simple features and seemingly efficient UI.
+However, we thought proto.io fit the best for our design aim and needs. Even though this is our first digital prototype, we still wanted to show what our service tries to achieve as much as possible. In order to fulfill our desire, proto.io seemed to be the best option for its built-in function to utilize tester’s input in rather dynamic fashion, nevertheless it requires more effort to make things work. In addition, proto.io supports “full-featured” trial for 15 days, which is enough time to finish our lo-fi prototyping, while others only support limited-feature with no time limitation. There was a limitation in the number of co-workers for most “limited-feature” tools, only proto.io let us to work all together on the same prototype page with different accounts concurrently. Moreover, other tools often required us to make all basic figures like buttons or menus into image files and import in the tool. All of basic figures, even both android and ios native, are provided in proto.io.
+However, there are some limitations in proto.io as well. Even if it supports more than one user for each prototype project, they do not allow all users to edit simultaneously from different users. Unless the change is made from up-to-date version, the new commit of saving is aborted by the previous commit and all the changes is lost. Therefore, despite all members are working on the same project, they should work on different prototype and merge together later on.
+
 
 <br></br>
 #### ***[Observations]***
