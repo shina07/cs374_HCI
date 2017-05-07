@@ -1,0 +1,11 @@
+.workout_one {
+	width: 100%;
+}
+
+.workout_done {
+	margin: 10px 0 10px 0;
+}
+
+.workout_done a {
+	width: 80%;
+}

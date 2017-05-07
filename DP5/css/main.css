@@ -68,11 +68,9 @@
 }
 
 #body_wrap {
-<<<<<<< HEAD
 	width: 100%;
 	height: auto;
 	background-color: #FFFFFF;
-=======
 	margin-top: 48px;
 }
 
@@ -82,5 +80,9 @@
 	width: 300px;
 	border-radius: 50%;
 	border: 1px solid black;
->>>>>>> refs/remotes/shina07/master
+}
+
+.btn-primary {
+	background-color: #0275d8;
+	border-color: #0275d8
 }
