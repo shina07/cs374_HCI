@@ -6,12 +6,6 @@
 	<!-- Import CSS -->
 	<link rel="stylesheet" type="text/css" href="lib\bootstrap-3.3.7\css\bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css\main.css">
-
-	<!-- Import JavaScript -->
-	<script type="text/javascript" src="lib\jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="lib\bootstrap-3.3.7\js\bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib\angular.min.js"></script>
-	<script type="text/javascript" src="js\main.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -19,17 +13,32 @@
 			<a id="back_btn" href="#">
 				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 			</a>
-			<a id="home_btn" href="#">
+			<a id="home_btn" href="main.html">
 				<span>Workout Plans</span>
 			</a>
 			<a id="menu_btn" href="#">
 				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
 			</a>
+
+			<div id="header_menu">
+				<table>
+					<tr>
+						<td><a class="load_btn" href="#">Load Routine</a></td>
+					</tr>
+				</table>
+			</div>
 		</div>
 
 		<div id="body_wrap">
 			<!-- BODY -->
+
 		</div>
 	</div>
+
+	<!-- Import JavaScript -->
+	<script type="text/javascript" src="lib\jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="lib\bootstrap-3.3.7\js\bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib\angular.min.js"></script>
+	<script type="text/javascript" src="js\main.js"></script>
 </body>
 </html>
