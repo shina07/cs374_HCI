@@ -44,16 +44,40 @@
 
 	<div class="workout_one" align="center">
 		<div class="workout_progress">
-
+			<h5> Total progress 45%</h5>
+			<div id="progress-bar"></div>
 		</div>
+		<hr />
 		<div class="workout_name">
-
+			<h1> NAME </h1>
+		</div>
+		<div class="workout_video">
+			<iframe src="https://www.youtube.com/embed/L5U5l3eFfnQ" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="workout_info">
-
+			<h3 class="workout_set"> SET ( 1 / 6 ) </h3>
+			<div class="workout_content">
+				<div class="workout_detail">REPS 1</div>
+				<div class="workout_detail">WEIGHT 1</div>
+				<div class="workout_detail">ETC 1</div>
+			</div>
 		</div>
-		<div class="workout_done" align="center">
-			<a class="btn btn-primary done" href="#" role="button">D O N E</a>
+		<div class="workout_done">
+			<button type="button" class="btn btn-primary done" data-toggle="modal" data-target="#modal-timer">D O N E</button>
+		</div>
+
+		<!-- Modal -->
+		<div id="modal-timer" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-full">
+				<div class="modal-content modal-full">
+					<div class="modal-body" align="center">
+						<span class="timer">01 : 00</span>
+						<button type="button" class="btn btn-warning btn-block">P A U S E</button>
+						<button type="button" class="btn btn-danger btn-block" data-dismiss="modal">S T O P</button>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 

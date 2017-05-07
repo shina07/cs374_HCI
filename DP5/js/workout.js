@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".workout_progress").progressbar({
+	$("#progress-bar").progressbar({
 		value: 45
 	});
 });
