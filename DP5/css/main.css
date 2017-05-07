@@ -42,3 +42,11 @@
 #body_wrap {
 	margin-top: 48px;
 }
+
+.add_button {
+	display:block;
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
