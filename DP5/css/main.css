@@ -1,7 +1,6 @@
 #wrap {}
 
 #header {
-	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -71,6 +70,5 @@
 #body_wrap {
 	width: 100%;
 	height: auto;
-	margin-top: 48px;
 	background-color: #FFFFFF;
 }
