@@ -1,5 +1,7 @@
-$("#workout_progress").progressbar({
-  value: 37
+$(document).ready(function() {
+	$("#progressbar").progressbar({
+		value: 37 
+	});
 });
 
 console.log("asdf")
