@@ -2,6 +2,18 @@
 	width: 100%;
 }
 
+.workout_progress {
+	width: 80%;
+	height: 10px;
+	margin: 10px 0 10px 0;
+}
+
+.ui-progressbar .ui-progressbar-value {
+	background: #0275d8;
+	margin: 0 0 0 0;
+	border: none;
+}
+
 .workout_done {
 	margin: 10px 0 10px 0;
 }
