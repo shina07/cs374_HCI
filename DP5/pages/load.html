@@ -19,33 +19,67 @@
 			</a>
 		</div>
 		<div id="body">
-			<div id="body_list">
-				<table id="load_table">
-					<col width="400">
-					<col width "50">
-					<tr>
-						<th>Workout Plans</th>
-						<th>Preview</th>
-					</tr>
-					<tr>
-						<td>Cardio Routine</td>
-						<td align="center" valign="middle"><span class="glyphicon glyphicon-search"></span></td>
-					</tr>
-					<tr>
-						<td >Abs Routine</td>
-						<td align="center" valign="middle"><span class="glyphicon glyphicon-search"></span></td>
-					</tr>
-				</table>
+			<div class="panel-group" id="load_preview">
+			  	<div class="panel">
+			    	<div class="panel-heading">
+			      		<h4 class="panel-title">
+			        		<a data-toggle="collapse" data-parent="#load_preview" href="#collapse1">
+			        			Cardio Routine<span class="pull-right glyphicon glyphicon-triangle-bottom" style="color:blue"></span></a>
+			      		</h4>
+		    		</div>
+			    	<div id="collapse1" class="panel-collapse collapse in">
+			      		<div class="panel-body">
+			      			<h4>Treadmill</h4>
+			      			<h4>10 km/h 50 min</h4>
+			      			<button type="button" class="btn btn-info" style="float:right">Load</button>
+			      		</div>
+			    	</div>
+			  	</div>
+			  	<div class="panel">
+			    	<div class="panel-heading">
+			      		<h4 class="panel-title">
+			        		<a data-toggle="collapse" data-parent="#load_preview" href="#collapse2">
+			        			Daily Chest<span class="pull-right glyphicon glyphicon-triangle-bottom" style="color:blue"></span></span></a>
+			      		</h4>
+			    	</div>
+			    	<div id="collapse2" class="panel-collapse collapse">
+			      		<div class="panel-body">
+			      			<h4>Barbell Incline Bench Press Medium-Grip</h4>
+			      			<h4>30 kg 6 reps</h4>
+			      			<h4>30 kg 6 reps</h4>
+			      			<h4>30 kg 6 reps</h4>
+			      			<br></br>
+			      			<h4>Incline Dumbell Press</h4>
+			      			<h4>10 kg each, 8 reps</h4>
+			      			<h4>10 kg each, 8 reps</h4>
+			      			<h4>10 kg each, 8 reps</h4>
+			      			<button type="button" class="btn btn-info" style="float:right">Load</button>
+			  			</div>
+			    	</div>
+			  	</div>
+			  	<div class="panel">
+			    	<div class="panel-heading">
+			      		<h4 class="panel-title">
+			        		<a data-toggle="collapse" data-parent="#load_preview" href="#collapse3">
+			        			Triceps<span class="pull-right glyphicon glyphicon-triangle-bottom" style="color:blue"></span></span></a>
+			      		</h4>
+			    	</div>
+			    	<div id="collapse3" class="panel-collapse collapse">
+			      		<div class="panel-body">
+			      			<h4>Bench Press</h4>
+			      			<h4>30 kg 15 reps</h4>
+			      			<h4>30 kg 15 reps</h4>
+			      			<h4>30 kg 15 reps</h4>
+			      			<br></br>
+			      			<h4>Body Tricep Press</h4>
+			      			<h4>20 reps</h4>
+			      			<h4>20 reps</h4>
+			      			<h4>20 reps</h4>
+			      			<button type="button" class="btn btn-info" style="float:right">Load</button>
+			      		</div>
+			    	</div>
+			  	</div>
 			</div>
-			<div id="preview" class="overlay">
-				<a href="javascript:void(0)" class="closebtn" onclick="close_preview()">&times;</a>
-				<div class="overlay-content">
-					<a href="#">PREV 1</a>
-					<a href="#">PREV 2</a>
-					<a href="#">PREV 3</a>
-					<a href="#">PREV 4</a>
-				</div>
-			</div>		
 		</div>
 	</div>
 
