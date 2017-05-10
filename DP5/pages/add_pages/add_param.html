@@ -25,12 +25,18 @@
     var userId = (document.URL).split("=")[2];
     var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
     var d = new Date();
-    var exercise_date = d.getFullYear() + "-0" + d.getMonth() + "-" + d.getDate();
+    var exercise_date = d.getFullYear() + "-0" + (d.getMonth()+1) + "-" + d.getDate();
     var exercise_weight = 10;
     var exercise_reps = 10;
     var exercise_sets = 0;
     //plan Id retrieval
-    var planId = 1;
+    var planId = 0;
+    var planRef = database.ref("PLANS/"+userId+"/"+exercise_date)
+    planRef.once("value", function(snapshot){
+        if(planId !=0){
+            planId = snapshot.val().length;
+        }
+    })
     var set_accumulator = {};
 
     function weight_dec(){
@@ -72,10 +78,10 @@
         console.log(userId);
         console.log(exercise_name);
         var planref = database.ref("PLANS/" + userId +"/" + exercise_date);
-        planref.child(planId+1).set({
+        planref.child(planId).set({
             workout_name: exercise_name,
             sets: set_accumulator
-        })
+        });
         planref.once("value", function(snapshot){
             planId += 1;
         })
