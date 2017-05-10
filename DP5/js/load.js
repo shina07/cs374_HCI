@@ -56,10 +56,6 @@ function add_panel (index, routine_name, args) {
 	group.appendChild(panel);
 }
 
-function close_preview() {
-	document.getElementById("preview").style.width = "0%";
-}
-
 function add_exercise (args) {
 	var bodypart = args["bodypart"];
 	var name = args["name"];

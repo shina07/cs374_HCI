@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
 </head>
+<style>
+
+</style>
+<script type="text/javascript" src="../../database/firebase.js"></script>
 
 <body>
 <div id="wrap">
@@ -31,35 +35,35 @@
     <div id="body_wrap">
         <!-- BODY -->
         <div class="container-fluid">
-            <div class="row" style="color:#2297F1">
+            <div class="row1" style="color:#2297F1">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="body_selected('chest')">
+                    <div class="panel panel-default" id="barbell" onclick="location.href='add_param.html?exercise=barbell_press';">
                         <!--div class="panel-heading" style="background-color: #2297F1">CHEST</div-->
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer">CHEST</div>
+                        <div class="panel-footer"> BarBell Press </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" id="shoulder" style=>
+                    <div class="panel panel-default" style=>
                         <!--div class="panel-heading" style="background-color: #2297F1">Triceps</div-->
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"><text style="font-size:17px">SHOULDER</text></div>
+                        <div class="panel-footer">Dumbell Press</div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" id="backs">
                         <!--div class="panel-heading" style="background-color: #2297F1">Biceps</div-->
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer">BACKS</div>
+                        <div class="panel-footer">Cable Crossover</div>
                     </div>
                 </div>
             </div>
-            <div class="row" style="color:#2297F1">
+            <div class="row2" style="color:#2297F1">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" id="triceps" >
                         <!--div class="panel-heading" style="background-color: #2297F1">Triceps</div-->
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer">TRICEPS</div>
+                        <div class="panel-footer">INCLINE</div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
