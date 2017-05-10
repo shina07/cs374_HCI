@@ -1,7 +1,5 @@
 function ready_func() {
-	setup_progress();
-	setup_workout();
-	set_click_event();
+	get_from_firebase(user_id, date, plan_id, set_num);
 }
 
 function setup_progress() {
@@ -13,11 +11,11 @@ function setup_progress() {
 
 function setup_workout() {
 	// name, video, set count, property
-	$('.workout_name').prepend('<span>Barbell Bench Press</span>');
+	$('.workout_name').prepend('<span>'+workout_name+'</span>');
 	$('.workout_video iframe').attr("src", "https://www.youtube.com/embed/L5U5l3eFfnQ")
-	$('.workout_set span').text(1+" / "+6)
-	var length = 2;
-	for (var i=0; i < length; i++) {
+	$('.workout_set span').text(set_num+" / "+plans.setNum)
+	
+	for (var i=0; i < set_info.length; i++) {
 		$('.workout_edit').append(
 			`<div class="workout_edit_wrap">
 				<div class="workout_property">`
@@ -25,7 +23,7 @@ function setup_workout() {
 				`</div>
 				<div class="btn-group" rold="group">
 					<button type="button" class="btn btn-info count_down"><span class="glyphicon glyphicon-minus"></span></button>
-					<button type="button" class="btn btn-default" disabled><b>10</b></button>
+					<button type="button" class="btn btn-default" disabled><b>`+set_info[i]+`</b></button>
 					<button type="button" class="btn btn-info count_up"><span class="glyphicon glyphicon-plus"></span></button>
 				</div>
 				<div class="workout_unit">`
@@ -33,6 +31,36 @@ function setup_workout() {
 				`</div>
 			</div>`)
 	}
+
+	if (set.done) {
+		$('.workout_done').css('display', "none");
+		$('.workout_dummy').css('display', "none");
+	}
+}
+
+function done() {
+	var changed_list = []
+	var changed = false
+	var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id+"/sets/set"+set_num)
+	var elemList = $('.btn-default')
+
+	$('.btn-default').each(function(index) {
+		changed_list[index] = $(this).text()
+	})
+
+	for (var i=0; i<elemList.length; i++) {
+		if (changed_list[i] != set_info[i]){
+			changed = true
+			break
+		}
+	}
+
+	ref.update({
+		done: true,
+		changed: changed,
+		value: "[" + changed_list[0] + "," + changed_list[1] + "]"
+	})
+
 }
 
 function timer() {
@@ -78,6 +106,7 @@ function set_click_event() {
 		clearInterval(timerID)
 		current_time = 0
 		setTimeout(function() {$('#timer').text("00 : 00")}, 300)
+		done()
 		location.reload()
 	})
 
@@ -90,11 +119,33 @@ function set_click_event() {
 	})
 }
 
-function get_from_firebase(user_id, depth, data_form) {
+function get_from_firebase(user_id, date, plan_id, set_num) {
 	// get data that have some depth from firebase
+	var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id)
+	ref.once("value", function(data) {
+		plans = data.val()
+		workout_name = plans.workout_name
+		set = plans["sets"]["set"+set_num]
+		set_info = JSON.parse(set.value)
+
+		setup_progress();
+		setup_workout();
+		set_click_event();
+	})
 }
 
 var timerID = -1
 var current_time = 0
+
+var user_id = 1
+var date = "2017-05-11"
+var plan_id = 2
+var set_num = 2
+
+var plans = {}
+var set = {}
+var set_info = []
+var workout_name = ""
+
 
 $(document).ready(ready_func)

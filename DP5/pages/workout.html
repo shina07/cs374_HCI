@@ -14,7 +14,8 @@
     <link rel="stylesheet" type="text/css" href="..\css\main.css">
     <link rel="stylesheet" type="text/css" href="..\css\workout.css">
 </head>
-
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script type="text/javascript" src="../database/firebase.js"></script>
 <body>
 	<div id="header">
 		<a id="back_btn" href="#">
@@ -80,7 +81,7 @@
 						<br />
 						<span id="timer">00 : 00</span>
 						<button type="button" id="back" class="btn btn-warning btn-block" data-dismiss="modal">B A C K</button>
-						<button type="button" id="next" class="btn btn-primary btn-block" data-dismiss="modal">N E X T</button>
+						<button type="button" id="next" class="btn btn-primary btn-block">N E X T</button>
 					</div>
 				</div>
 			</div>
@@ -93,7 +94,6 @@
     <script type="text/javascript" src="..\lib\angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="..\js\workout.js"></script>
-	<script type="text/javascript" src="..\js\main.js"></script>
 </body>
 
 </html>
