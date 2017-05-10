@@ -71,6 +71,7 @@
 	width: 100%;
 	height: auto;
 	background-color: #FFFFFF;
+	text-align: center;
 }
 
 .add_button {
@@ -84,4 +85,9 @@
 .btn-primary {
 	background-color: #0275d8;
 	border-color: #0275d8;
+}
+
+.add-plan-btn {
+	margin-top: 25px;
+	display: inline-block;
 }

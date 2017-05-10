@@ -1,0 +1,24 @@
+data = {
+	"cardio" : {
+		"treadmill" : ["speed", "time"],
+		"bicycle" : ["speed", "time"],
+	},
+	"abs" : {
+		"crunch" : {},
+	},
+	"chest" : {
+		"Barbell Incline Bench Press Medium-Grip" : ["weight", "reps"],
+		"Incline Dumbell Press" : ["weight", "reps"],
+
+	},
+	"tricep" : {
+		"Bench Press" : ["weight", "reps"],
+		"Body Tricep Press" : ["reps"],
+	},
+	"bicep" : {
+
+	},
+	"leg" : {
+
+	},
+}
