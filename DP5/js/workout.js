@@ -6,9 +6,9 @@ function ready_func() {
 
 function setup_progress() {
 	// set the progress ratio which is in firebase
-	$(".progress-bar").css('width', 12/total * 100 + '%')
+	$(".progress-bar").css('width', progress_cnt/total * 100 + '%')
 	$(".progress_text").html(
-		"TOTAL PROGRESS : <span>"+12+" / "+total+"</span>")
+		"TOTAL PROGRESS : <span>"+progress_cnt+" / "+total+"</span>")
 }
 
 function setup_workout() {
@@ -63,6 +63,21 @@ function done() {
 		value: "[" + changed_list[0] + "," + changed_list[1] + "]"
 	})
 
+	ref = database.ref("PLANS/"+user_id+"/"+date)
+	ref.update({
+		Progress_cnt: progress_cnt+1
+	})
+
+	var location = document.location.href.split("?")[0]
+	if (plans.setNum == set_num){
+		plan_id += 1
+		set_num = 0
+	}
+	if (total-1 != progress_cnt) {
+		location += "?userId="+user_id+"&date="+date+"&planId="+plan_id+"&setId="+set_num+"&total="+total
+		document.location.href = location	
+	}
+	
 }
 
 function timer() {
@@ -109,7 +124,6 @@ function set_click_event() {
 		current_time = 0
 		setTimeout(function() {$('#timer').text("00 : 00")}, 300)
 		done()
-		location.reload()
 	})
 
 	$('.count_up').click(function(e) {
@@ -131,9 +145,10 @@ function parsing_url(url) {
 
 function get_from_firebase(user_id, date, plan_id, set_num) {
 	// get data that have some depth from firebase
-	var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id)
+	var ref = database.ref("PLANS/"+user_id+"/"+date)
 	ref.once("value", function(data) {
-		plans = data.val()
+		progress_cnt = data.val().Progress_cnt
+		plans = data.val()[plan_id]
 		workout_name = plans.workout_name
 		set = plans["sets"]["set"+set_num]
 		set_info = JSON.parse(set.value)
@@ -153,6 +168,7 @@ var date = ""
 var plan_id = -1
 var set_num = -1
 var totla = -1
+var progress_cnt = -1
 
 var plans = {}
 var set = {}
