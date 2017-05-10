@@ -41,8 +41,17 @@ hr {
 .video_button{
 	position: absolute;
 	top: initial;
-	bottom: 8px;
+	bottom: 6px;
 	right: 0;
+	color: gray;
+}
+
+.glyphicon-play-circle {
+	position: absolute;
+	top: initial;
+	bottom: 4px;
+	right: 18px;
+	font-size: 20px;
 	color: gray;
 }
 
@@ -107,8 +116,24 @@ hr {
 }
 
 .workout_edit_wrap {
-	width: 100%;
+	margin: 10px 0;
+	width: 80%;
 	height: auto;
+}
+
+.workout_property {
+	float: left;
+	font-size: 18px;
+	line-height: 39px;
+	width: 30%;
+	text-align: left;
+}
+
+.workout_unit {
+	float: right;
+	font-size: 18px;
+	line-height: 39px;
+	text-align: right;
 }
 
 .btn[disabled] {
