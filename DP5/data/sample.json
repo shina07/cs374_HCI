@@ -1,0 +1,19 @@
+{"bodypart" : "chest", 
+"name" : "Barbell Bench Press", 
+"sets" : {"set_1" : 
+					{"value" : ["10", "50"], 
+					"original_value" : ["10", "50"], 
+					"done" : "True"}, 
+		"set_2" : { "value" : ["10", "50"], 
+					"original_value" : ["10", "50"], 
+					"done" : "False"},}}
+
+{"bodypart" : "chest", 
+"name" : "Dumbell Bench Press", 
+"sets" : {"set_1" : 
+					{"value" : ["10", "50"], 
+					"original_value" : ["10", "40"], 
+					"done" : "True"}, 
+		  "set_2" : {"value" : ["10", "50"], 
+		  			 "original_value" : ["10", "50"], 
+		  			 "done" : "False"},}};

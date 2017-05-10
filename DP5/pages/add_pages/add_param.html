@@ -12,13 +12,53 @@
     <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
+    <link rel="stylesheet" href="../../css/workout.css">
 </head>
 <script type="text/javascript" src="../../database/firebase.js"></script>
 <script>
+    //var urldict = get_url_params();
+    //console.log(urldict);
     var x = document.URL;
-    var exercise_name = x.split("=")[1];
-    console.log(exercise_name);
+    var exercise_name = (x.split("=")[1]).split("_").join(" ");
+    //document.getElementById("exercise_name").innerHTML = exercise_name;
+    var exercise_weight = 10;
+    var exercise_reps = 10;
+    var exercise_sets = 0;
+
+    function weight_dec(){
+        exercise_weight -= 1;
+        document.getElementById("weight").innerHTML = exercise_weight;
+    }
+    function weight_inc(){
+        exercise_weight += 1;
+        document.getElementById("weight").innerHTML = exercise_weight;
+    }
+    function reps_dec(){
+        exercise_reps -= 1;
+        document.getElementById("reps").innerHTML = exercise_reps;
+    }
+    function reps_inc(){
+        exercise_reps += 1;
+        document.getElementById("reps").innerHTML = exercise_reps;
+    }
+    function set_addition(){
+        exercise_sets += 1;
+        var inner_current = document.getElementById("sets").innerHTML;
+        var inner_added = "<div class='panel-body'>Set"+ parseInt(exercise_sets) + ": ";
+        inner_added += "weight: " + parseInt(exercise_weight) + " ";
+        inner_added += "reps: " + parseInt(exercise_reps) + " ";
+        inner_added += "</div>";
+        document.getElementById("sets").innerHTML = inner_current + inner_added;
+    }
+    function send_plans(){
+        var planref = database.ref("plans");
+        planref.child().set({
+            username: userId,
+            workout_name: exercise_name
+        })
+    }
 </script>
+
 <body>
 <div id="wrap">
     <div id="header">
@@ -35,7 +75,58 @@
 
     <div id="body_wrap">
         <!-- BODY -->
-        
+        <div class="panel panel-info" >
+            <div class="panel-heading" id="exercise_name">
+                <script>document.write(exercise_name);</script></div>
+            <div class="panel-body">
+                <div id="body_contents">
+                    <div class="weight_wrap workout_edit_wrap">
+                        <div class="workout_property">
+                            Weight
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info" onclick="weight_dec()">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                            <button id="weight" type="button" class="btn btn-default" disabled><b>
+                                <script>document.write(exercise_weight);</script></b></button>
+                            <button type="button" class="btn btn-info" onclick="weight_inc()">
+                                <span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                        <div class="workout_unit">
+                            kg
+                        </div>
+                    </div>
+                    <div class="reps_wrap workout_edit_wrap">
+                        <div class="workout_property">
+                            Reps
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-info" onclick="reps_dec()">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                            <button id="reps" type="button" class="btn btn-default" disabled><b>
+                                <script>document.write(exercise_reps);</script></b></button>
+                            <button type="button" class="btn btn-info" onclick="reps_inc()">
+                                <span class="glyphicon glyphicon-plus"></span></button>
+                        </div>
+                        <div class="workout_unit">
+                            times
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-info add_btn" onclick="set_addition()">ADD</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info" id="sets"></div>
+        <div>
+            <div class="workout_list_one"></div>
+            <div class="workout_list_one"></div>
+            <button type="button" class="btn btn-info confirm_btn" onclick="send_plans()">Confirm</button>
+        </div>
+        </div>
 
     </div>
 </div>
