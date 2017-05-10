@@ -61,10 +61,11 @@
 }
 
 .workout_done_wrap {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: auto;
+	background-color: white;
 }
 
 .workout_stopwatch {

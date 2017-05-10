@@ -36,28 +36,40 @@
 	</div>
 
 	<div class="workout_one" align="center">
-		<div class="workout_progress">
-			<h5><b>You did 3 exercises in 11!</b></h5>
-			<div id="progress-bar"></div>
-		</div>
+		<a class="progress_wrap" href="workout_list.html">
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+				</div>
+			</div>
+			<span class="progress_text">TOTAL PROGRESS : <span>12 / 25</span></span>
+		</a>
 		<hr />
 
 		<div class="workout_name">
-			<span> NAME </span>
+			<span> Barbell Bench Press </span>
 			<span id="show_video" class="glyphicon glyphicon-chevron-down video_button"></span>
 			<span id="hide_video" class="glyphicon glyphicon-chevron-up video_button"></span>
 		</div>
+		<br />
 
 		<div class="workout_video">
 			<iframe src="https://www.youtube.com/embed/L5U5l3eFfnQ" frameborder="0" allowfullscreen></iframe>
 		</div>
 
-		<div class="workout_info">
-			<h3 class="workout_set"> SET ( 2 / 6 ) </h3>
-			<div class="workout_content">
-				<div class="workout_detail">REPS 1</div>
-				<div class="workout_detail">WEIGHT 1</div>
-				<div class="workout_detail">ETC 1</div>
+		<div class="workout_wrap">
+			<button type="button" class="btn btn-info workout_guide_btn"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>How can I do this?<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></button>
+			<br />
+			<span class="workout_set"> SET <span> 1 / 6 </span></span>
+		</div>
+		<br />
+
+		<div class="workout_edit_wrap">
+			<div class="btn-group" rold="group">
+				<button type="button" class="btn btn-info">5 -</button>
+				<button type="button" class="btn btn-info">1 -</button>
+				<button type="button" class="btn btn-default" disabled>10</button>
+				<button type="button" class="btn btn-info">1 +</button>
+				<button type="button" class="btn btn-info">5 +</button>
 			</div>
 		</div>
 

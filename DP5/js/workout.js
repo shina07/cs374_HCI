@@ -5,9 +5,7 @@ function ready_func() {
 
 function setup_progress() {
 	// set the progress ratio which is in firebase
-	$("#progress-bar").progressbar({
-		value: 3/11 * 100
-	})
+	$(".progress-bar").css('width', 12/25 * 100 + '%')
 }
 
 function setup_workout_info() {
