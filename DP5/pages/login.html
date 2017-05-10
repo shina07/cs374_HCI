@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <style>
+        .modal-header, h4, .close {
+            background-color: #2297F1;
+            color:white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+        #flip {
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            //background-color: #e5eecc;
+            //border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            position: relative;
+            text-align: center;
+            padding: 50px;
+            display: none;
+            z-index: 0;
+            background-color: #f9f9f9;
+            border: solid 1px #e0e0e0;
+        }
+
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;            text-align: center;
+            margin-top: 30px;
+        }
+
+    </style>
+    <script type="text/javascript" src="../database/firebase.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myBtn").click(function(){
+                $("#myModal").modal();
+            });
+            $("#flip").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+            $("#signup_cancel").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+        });
+
+        function openOverlay(){
+            document.getElementById("overlay").style.height = "100%";
+        }
+        function closeOverlay(){
+            document.getElementById("overlay").style.height = "0%";
+        }
+        function signup(){
+            var count = 0;
+            UsersRef = database.ref("USERS");
+            UsersRef.on("value", function(snapshot){
+                var count = snapshot.val();
+                console.log(count);
+            });
+            console.log(count);
+            var newid = document.getElementById("create_usrname").value;
+            var newpwd = document.getElementById("create_pwd").value;
+            var newpwd_rep = document.getElementById("create_pwd_repeat").value;
+
+            UsersRef.child(parseInt(count+1)).set({
+                username: newid,
+                password: newpwd
+            });
+            UsersRef.on("value", function(snapshot){
+                var tuples = snapshot.val();
+                console.log(tuples);
+            });
+            //openOverlay();
+            document.location.href = "../main.html";
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <a id="back_btn" href="#">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            </a>
+            <a id="home_btn" href="../main.html">
+                <span>Workout Plans</span>
+            </a>
+            <a id="menu_btn" href="#">
+                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+            </a>
+
+            <div id="header_menu">
+                <table>
+                    <tr>
+                        <td><a class="load_btn" href="..\pages\load.html">Load Routine</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="login_body">
+            <h2>Welcome to OOO !</h2>
+            <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding:25px 50px;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                        </div>
+                        <div class="modal-body" style="padding:40px 50px;">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                    <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="" checked>Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block" style="background-color:#2297F1;border-color:#2297F1;padding:13px"><span class="glyphicon glyphicon-off"></span> Login</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <!--button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button-->
+                            <p>Not a member? <a id="flip">Sign Up</a></p>
+                            <p>Forgot <a href="#">Password?</a></p>
+                        </div>
+                        <div id="panel" style="text-align:left;" >
+                            <div class="overlay">
+                                <div class="overlay-content">
+                                    YES!
+                                    Login with this account?
+                                </div>
+                            </div>
+                            <label for="create_usrname"> Enter your email</label><br>
+                            <input type="text" class="form-control" id="create_usrname" placeholder="Enter email"><br>
+                            <label for="create_pwd"> Password</label><br>
+                            <input type="password" class="form-control" id="create_pwd" placeholder="Enter password"><br>
+                            <label for="create_pwd_repeat"> Repeat Password</label><br>
+                            <input type="password" class="form-control" id="create_pwd_repeat" placeholder="Repeat password"><br>
+                            <button id="signup" type="submit" class="btn btn-success btn" style="background-color:#2297F1;border-color:#2297F1" onclick="signup()"> Sign up & Sign in !</button>
+                            <button id="signup_cancel" type="submit" class="btn btn-success btn" style="background-color:#d43f3a;border-color:#d43f3a"> Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Import JavaScript -->
+    <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
