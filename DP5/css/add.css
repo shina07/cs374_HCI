@@ -1,13 +1,45 @@
+.container-fluid .ui-selected {
+    background: #2297F1; color: white;
+}
 
-#feedback { font-size: 1.4em; }
-#selectable .ui-selecting { background: #8cdcfe; }
-#selectable .ui-selected { background: #2297F1; color: white; }
-#selectable {
+.container-fluid .ui-selecting{
+    background: #8cdcfe;
+}
+.container-fluid {
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 350px;
 }
+
+.row {
+    font-size: 1.5em;
+    //line-height: 3.0;
+    text-align: center;
+}
+
+.add_div {
+    transition: all linear 0.5s;
+    background-color: lightblue;
+    height: 100px;
+}
+
+.ng-hide {
+    height: 0px;
+}
+
+.grid {
+    border: 1px solid #9d9d9d;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.thumb {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100px;
+}
+
 #selectable li {
     margin: 3px;
     padding: 1px;
@@ -17,4 +49,32 @@
     font-size: 2em;
     line-height: 2.7;
     text-align: center;
+}
+
+#selectable li:hover .overlay {
+    opacity: 1;
+}
+
+.container {
+    list-style-type: none;
+    //margin: 0;
+    //padding: 0;
+    //width: 350px;
+}
+
+.container li {
+    margin: 3px;
+    padding: 1px;
+    float: left;
+    width: 100px;
+    height: 80px;
+    font-size: 2em;
+    line-height: 2.7;
+    text-align: center;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
 }
