@@ -83,3 +83,32 @@
     width: 100%;
     height: auto;
 }
+
+.workout_edit_wrap {
+    display: inline-block;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.confirm_btn {
+    font-size: 18px;
+}
+
+.add_btn {
+    margin: 10px 0;
+}
+
+#exercise_name {
+    text-align: left;
+    font-size: 18px;
+}
+
+.workout_list_one {
+    margin: 8px auto;
+    width: 92%;
+    height: 36px;
+    background-color: #FFFFFF;
+    border: 1px solid #DEDEDE;
+}

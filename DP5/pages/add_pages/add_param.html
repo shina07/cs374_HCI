@@ -80,8 +80,10 @@
                 <script>document.write(exercise_name);</script></div>
             <div class="panel-body">
                 <div id="body_contents">
-                    <div class="weight_wrap">
-                        Weight
+                    <div class="weight_wrap workout_edit_wrap">
+                        <div class="workout_property">
+                            Weight
+                        </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-info" onclick="weight_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
@@ -91,10 +93,14 @@
                             <button type="button" class="btn btn-info" onclick="weight_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
-                        kg
+                        <div class="workout_unit">
+                            kg
+                        </div>
                     </div>
-                    <div class="reps_wrap">
-                        Reps
+                    <div class="reps_wrap workout_edit_wrap">
+                        <div class="workout_property">
+                            Reps
+                        </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-info" onclick="reps_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
@@ -104,17 +110,21 @@
                             <button type="button" class="btn btn-info" onclick="reps_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
-                        times
+                        <div class="workout_unit">
+                            times
+                        </div>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-info" onclick="set_addition()">ADD</button>
+                        <button type="button" class="btn btn-info add_btn" onclick="set_addition()">ADD</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="panel panel-info" id="sets"></div>
         <div>
-            <button type="button" class="btn btn-info" onclick="send_plans()">Confirm!</button>
+            <div class="workout_list_one"></div>
+            <div class="workout_list_one"></div>
+            <button type="button" class="btn btn-info confirm_btn" onclick="send_plans()">Confirm</button>
         </div>
         </div>
 

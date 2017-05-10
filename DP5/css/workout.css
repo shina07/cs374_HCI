@@ -131,6 +131,7 @@ hr {
 
 .workout_unit {
 	float: right;
+	width: 10%;
 	font-size: 18px;
 	line-height: 39px;
 	text-align: right;
