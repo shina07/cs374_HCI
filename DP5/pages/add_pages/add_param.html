@@ -33,10 +33,11 @@
     var planId = 0;
     var planRef = database.ref("PLANS/"+userId+"/"+exercise_date)
     planRef.once("value", function(snapshot){
-        if(planId !=0){
-            planId = snapshot.val().length;
+        planId = snapshot.val().length;
+        if(planId==NaN){
+            planId = 0;
         }
-    })
+    });
     var set_accumulator = {};
 
     function weight_dec(){
@@ -58,8 +59,8 @@
     function set_addition(){
         var innerSet = {};
         exercise_sets += 1;
-        innerSet['value'] = "['" + exercise_weight +"','" + exercise_reps + "']";
-        innerSet['original_value'] = "['" + exercise_weight + "','" + exercise_reps + "']";
+        innerSet['value'] = "[" + exercise_weight +"," + exercise_reps + "]";
+        innerSet['original_value'] = "[" + exercise_weight + "," + exercise_reps + "]";
         innerSet['done'] = false;
         innerSet['changed'] = false;
         //set_accumulator += "set"+exercise_sets+":{ 'value':['" + exercise_weight +"','" + exercise_reps + "'], 'original_value:['" + exercise_weight + "','" + exercise_reps + "'], 'done': false}";
@@ -80,7 +81,8 @@
         var planref = database.ref("PLANS/" + userId +"/" + exercise_date);
         planref.child(planId).set({
             workout_name: exercise_name,
-            sets: set_accumulator
+            sets: set_accumulator,
+            setNum: exercise_sets
         });
         planref.once("value", function(snapshot){
             planId += 1;
