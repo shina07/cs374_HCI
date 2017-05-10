@@ -26,7 +26,8 @@ read_plans();
 //add_button();
 
 function read_plans() {
-	var userid = 1;
+	var param = get_url_params ();
+	var userid = param["userId"][0];
 	var d = new Date();
 	var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
 
@@ -152,7 +153,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	$('#' + id).append('<span>' + span + '</span>');
 	$('#' + id).on('click',function() {
-		var link = document.location.toString().replace("main.html", "") + 'pages/workout.html'
+		var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
 		link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
 		document.location.href = link
 	});
