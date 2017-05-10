@@ -53,10 +53,9 @@
     function send_plans(){
         var planref = database.ref("plans");
         planref.child().set({
-            username:
+            username: userId,
             workout_name: exercise_name
         })
-
     }
 </script>
 
