@@ -33,8 +33,10 @@ function read_plans() {
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
 		var plans = data.val()
-		for (var i = 0; i < plans.length; i++) {
-			read_plans2(userid, today, i)
+		for (var key in plans) {
+			if (key == "Progress_cnt")
+				continue;
+			read_plans2(userid, today, key)
 		}
 	})
 }

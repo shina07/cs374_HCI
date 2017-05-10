@@ -1,12 +1,14 @@
 function ready_func() {
+	url = get_url_params()
+	parsing_url(url)
 	get_from_firebase(user_id, date, plan_id, set_num);
 }
 
 function setup_progress() {
 	// set the progress ratio which is in firebase
-	$(".progress-bar").css('width', 12/25 * 100 + '%')
+	$(".progress-bar").css('width', 12/total * 100 + '%')
 	$(".progress_text").html(
-		"TOTAL PROGRESS : <span>"+12+" / "+25+"</span>")
+		"TOTAL PROGRESS : <span>"+12+" / "+total+"</span>")
 }
 
 function setup_workout() {
@@ -119,6 +121,14 @@ function set_click_event() {
 	})
 }
 
+function parsing_url(url) {
+	user_id = parseInt(url.userId)
+	date = url.date
+	plan_id = parseInt(url.planId)
+	set_num = parseInt(url.setId)+1
+	total = parseInt(url.total)
+}
+
 function get_from_firebase(user_id, date, plan_id, set_num) {
 	// get data that have some depth from firebase
 	var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id)
@@ -137,10 +147,12 @@ function get_from_firebase(user_id, date, plan_id, set_num) {
 var timerID = -1
 var current_time = 0
 
-var user_id = 1
-var date = "2017-05-11"
-var plan_id = 2
-var set_num = 2
+var url = {}
+var user_id = -1
+var date = ""
+var plan_id = -1
+var set_num = -1
+var totla = -1
 
 var plans = {}
 var set = {}
