@@ -44,3 +44,40 @@
 	font-size: 20px;
 	float: right;
 }
+
+.workout_done_wrap {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+}
+
+.workout_stopwatch {
+	width: 80%;
+	height: 65px;
+	display: inline-block;
+	border: 2px solid #347AB8;
+}
+
+.workout_stopwatch_name {
+	margin: 0 6px;
+	float: left;
+	font-size: 18px;
+	color: #347AB8;
+}
+
+.workout_stopwatch_time {
+	margin: 0 10px;
+	float: right;
+	font-size: 40px;
+	color: #347AB8;
+}
+
+.workout_done_btn {
+	width: 80%;
+	height: 40px;
+	margin: 15px;
+	margin-bottom: 30px;
+	padding: 0 6px;
+	font-size: 18px;
+}
