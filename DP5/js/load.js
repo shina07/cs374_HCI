@@ -23,4 +23,3 @@ function open_preview(plan) {
 function close_preview() {
 	document.getElementById("preview").style.width = "0%";
 }
-
