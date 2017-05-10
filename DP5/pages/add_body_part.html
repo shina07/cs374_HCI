@@ -16,10 +16,10 @@
 </head>
 <script>
     $(document).ready(function(){
-        $("#chest").click(function(){
-            document.location.href = "add_pages/add_chest.html";
-        })
-    })
+    });
+    function body_selected(part){
+        document.location.href = "add_pages/add_" + part + ".html";
+    }
 </script>
 <body >
     <div id="wrap">
@@ -40,7 +40,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="panel panel-primary" id="chest" >
+                        <div class="panel panel-primary" onclick="body_selected('chest')">
                             <div class="panel-heading" style="background-color: #2297F1">CHEST</div>
                             <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                             <div class="panel-footer">가슴</div>
@@ -89,10 +89,5 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 
-    <script>
-        $(function(){
-            $(".container-fluid").selectable();
-        });
-    </script>
 </body>
 </html>
