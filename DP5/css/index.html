@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Mid-fi prototype</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Import CSS -->
+	<link rel="stylesheet" type="text/css" href="lib\bootstrap-3.3.7\css\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css\main.css">
+	<link rel="stylesheet" type="text/css" href="css\workout_list.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<a id="back_btn" href="#" style="visibility: hidden;">
+				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+			</a>
+			<a id="home_btn" href="main.html">
+				<span>Workout Plans</span>
+			</a>
+			<a id="menu_btn" href="#">
+				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			</a>
+
+			<div id="header_menu">
+				<table>
+					<tr>
+						<td><a class="load_btn" href="pages\load.html">Load Routine</a></td>
+					</tr>
+				</table>
+			</div>			
+		</div>
+
+		<div id="body_wrap">
+			<!-- BODY -->
+			<div class="workout_list_wrap" id="main_plan">
+				<!-- In "workout_list_one" class,											-->
+				<!-- "workout_list_default" is for a workout not reached yet,				-->
+				<!-- "workout_list_success" is for a workout done,							-->
+				<!-- "workout_list_edited" is for a workout edited to lower weight or reps,	-->
+				<!-- "workout_list_failed" is for a workout not completed.					-->
+<!-- 				<div class="workout_list_name">
+					<span>Barbell Bench Press</span>
+				</div>
+				<div class="workout_list_one workout_list_default"></div>
+				<div class="workout_list_one workout_list_success"></div> -->
+				<div class="workout_list_name">
+					<span>Dumbbell Bench Press</span>
+				</div>
+				<div class="workout_list_one workout_list_edited"></div>
+				<div class="workout_list_one workout_list_failed"></div>
+			</div>
+			<a href="pages\add_body_part.html" class="btn btn-info btn-lg add_plan_btn">
+				<span class="glyphicon glyphicon-plus"></span> Add
+			</a>
+		</div>
+	</div>
+
+	<!-- Import JavaScript -->
+	<script type="text/javascript" src="lib\jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="lib\bootstrap-3.3.7\js\bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib\angular.min.js"></script>
+	<script type="text/javascript" src="data\data.json"></script>
+	<script type="text/javascript" src="js\main.js"></script>
+</body>
+</html>
