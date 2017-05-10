@@ -2,10 +2,6 @@
 	width: 100%;
 }
 
-.workout_progress {
-
-}
-
 #progress-bar {
 	width: 80%;
 	height: 10px;
@@ -20,11 +16,39 @@ hr {
 	border: none;
 }
 
+.workout_name {
+	position: relative;
+	width :90%;
+}
+
+.workout_name span:first-child{
+	font-size: 30px;
+	display: inline-block;
+	width: 80%;
+	word-wrap: break-word;
+}
+
+.video_button{
+	position: absolute;
+	top: initial;
+	bottom: 8px;
+	right: 0;
+	font-size: 20px;
+	color: gray;
+}
+
+#hide_video {
+	display: none;
+}
+
 .workout_video {
+	display: none;
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
+	-webkit-transition: display 1s ease;
+	transition: display 1s ease;
 }
 .workout_video iframe {
 	position: absolute;
@@ -32,6 +56,8 @@ hr {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	-webkit-transition: display 1s ease;
+	transition: display 1s ease;
 }
 
 .workout_content {
@@ -39,15 +65,21 @@ hr {
 	border: 1px solid black;
 }
 
+.workout_dummy {
+	height: 72px;
+}
+
 .workout_done {
-	margin: 10px 0 10px 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
 }
 
 .workout_done button {
-	position: absolute;
-	bottom: 2%;
-	right: 10%;
-	width: 80%;
+	margin: 10px 0 10px 0;
+	width: 90%;
+	height: 50px;
 }
 
 .modal-dialog.modal-full {
@@ -72,8 +104,19 @@ hr {
 	top: 30%;
 }
 
-.timer {
+.time-on {
 	font-weight: bold;
 	font-size: 80px;
 	color: white;
 }
+
+span.time-over {
+	font-weight: bold;
+	font-size: 60px;
+	color: white;
+}
+
+.time-over {
+	display: none;
+}
+
