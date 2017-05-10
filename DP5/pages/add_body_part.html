@@ -15,8 +15,6 @@
 
 </head>
 <script>
-    $(document).ready(function(){
-    });
     function body_selected(part){
         document.location.href = "add_pages/add_" + part + ".html";
     }
@@ -38,40 +36,72 @@
         <div id="body_wrap">
             <!-- BODY -->
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="panel panel-primary" onclick="body_selected('chest')">
-                            <div class="panel-heading" style="background-color: #2297F1">CHEST</div>
+                <div class="row" style="color:#2297F1">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" onclick="body_selected('chest')">
+                            <!--div class="panel-heading" style="background-color: #2297F1">CHEST</div-->
                             <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">가슴</div>
+                            <div class="panel-footer">CHEST</div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="panel panel-primary" id="triceps">
-                            <div class="panel-heading" style="background-color: #2297F1">Triceps</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="shoulder" style=>
+                            <!--div class="panel-heading" style="background-color: #2297F1">Triceps</div-->
                             <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">삼두</div>
+                            <div class="panel-footer"><text style="font-size:17px">SHOULDER</text></div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="panel panel-primary" id="biceps">
-                            <div class="panel-heading" style="background-color: #2297F1">Biceps</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="backs">
+                            <!--div class="panel-heading" style="background-color: #2297F1">Biceps</div-->
                             <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">이두</div>
+                            <div class="panel-footer">BACKS</div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <div class="panel panel-primary" id="shoulder">
-                            <div class="panel-heading" style="background-color: #2297F1">Abs</div>
+                </div>
+                <div class="row" style="color:#2297F1">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="triceps" >
+                            <!--div class="panel-heading" style="background-color: #2297F1">Triceps</div-->
                             <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">복근</div>
+                            <div class="panel-footer">TRICEPS</div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="biceps">
+                            <!--div class="panel-heading" style="background-color: #2297F1">Biceps</div-->
+                            <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
+                            <div class="panel-footer">BICEPS</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="abs">
+                            <!--div class="panel-heading" style="background-color: #2297F1">Abs</div-->
+                            <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
+                            <div class="panel-footer">ABS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="color:#2297F1">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="legs">
+                            <!--div class="panel-heading" style="background-color: #2297F1">Biceps</div-->
+                            <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
+                            <div class="panel-footer">LEGS</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                        <div class="panel panel-default" id="cardio">
+                            <!--div class="panel-heading" style="background-color: #2297F1">Abs</div-->
+                            <div class="panel-body"><img class="thumb" src="../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
+                            <div class="panel-footer">CARDIO</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                         <div class="panel panel-primary" id="body-part-add">
-                            <div class="panel-heading" style="background-color: #FFFFFF;border-bottom-color:#FFFFFF">ADD</div>
-                            <div class="panel-body" style="color: #2297F1;font-size:1.7em">+</div>
-                            <div class="panel-footer" style="background-color: #FFFFFF;border-top-color: #FFFFFF"> <text style="color:#FFFFFF"> 츄가 </text> </div>
+                            <!--div class="panel-heading" style="background-color: #FFFFFF;border-bottom-color:#FFFFFF">ADD</div-->
+                            <div class="panel-body" style="color: #2297F1;font-size:4.2em">+</div>
+                            <!--div class="panel-footer" style="background-color: #FFFFFF;border-top-color: #FFFFFF"> <text style="color:#FFFFFF"> 츄가 </text> </div-->
                         </div>
                     </div>
                 </div>
