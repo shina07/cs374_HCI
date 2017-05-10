@@ -60,13 +60,8 @@
         }
 
     </style>
+    <script type="text/javascript" src="../database/firebase.js"></script>
     <script>
-        var config = {
-            "apiKey": "AIzaSyB1H8jWROny2A98DsiFjAHdDs8m6tfZigo",
-            "databaseURL": "https://project-oh-hack-nyun-4a19e.firebaseio.com/"
-        };
-        firebase.initializeApp(config);
-        var database = firebase.database();
         $(document).ready(function(){
             $("#myBtn").click(function(){
                 $("#myModal").modal();
@@ -87,7 +82,7 @@
         }
         function signup(){
             var count = 0;
-            var UsersRef = database.ref("USERS");
+            UsersRef = database.ref("USERS");
             UsersRef.on("value", function(snapshot){
                 var count = snapshot.val();
                 console.log(count);
