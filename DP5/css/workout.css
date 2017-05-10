@@ -134,6 +134,7 @@ hr {
 	font-size: 18px;
 	line-height: 39px;
 	text-align: right;
+	width: 10%;
 }
 
 .btn[disabled] {

@@ -1,20 +1,38 @@
 function ready_func() {
 	setup_progress();
+	setup_workout();
 	set_click_event();
 }
 
 function setup_progress() {
 	// set the progress ratio which is in firebase
 	$(".progress-bar").css('width', 12/25 * 100 + '%')
+	$(".progress_text").html(
+		"TOTAL PROGRESS : <span>"+12+" / "+25+"</span>")
 }
 
-function setup_workout_info() {
-	// set value in workout-info
-}
-
-function done() {
-	// success one set of exercise and
-	// invoke timer function
+function setup_workout() {
+	// name, video, set count, property
+	$('.workout_name').prepend('<span>Barbell Bench Press</span>');
+	$('.workout_video iframe').attr("src", "https://www.youtube.com/embed/L5U5l3eFfnQ")
+	$('.workout_set span').text(1+" / "+6)
+	var length = 2;
+	for (var i=0; i < length; i++) {
+		$('.workout_edit').append(
+			`<div class="workout_edit_wrap">
+				<div class="workout_property">`
+					+`Weight`+
+				`</div>
+				<div class="btn-group" rold="group">
+					<button type="button" class="btn btn-info count_down"><span class="glyphicon glyphicon-minus"></span></button>
+					<button type="button" class="btn btn-default" disabled><b>10</b></button>
+					<button type="button" class="btn btn-info count_up"><span class="glyphicon glyphicon-plus"></span></button>
+				</div>
+				<div class="workout_unit">`
+					+`kg`+
+				`</div>
+			</div>`)
+	}
 }
 
 function timer() {
@@ -47,7 +65,6 @@ function set_click_event() {
 	$('#show_video, #hide_video, .glyphicon-play-circle').on('click', toggle_video)
 
 	$('.done').click(function() {
-		done()
 		timerID = setInterval("timer()", 1000)
 	})
 
@@ -73,11 +90,11 @@ function set_click_event() {
 	})
 }
 
-function get_from_firebase(user_info, depth, data_form) {
+function get_from_firebase(user_id, depth, data_form) {
 	// get data that have some depth from firebase
 }
 
 var timerID = -1
 var current_time = 0
+
 $(document).ready(ready_func)
-console.log("asdf")
