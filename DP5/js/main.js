@@ -11,11 +11,7 @@ $(document).ready(function() {
 		parent.history.back()
 		return false
 	});
-});
-
-function add_plan (args) {
-
-}
+});	
 
 var test = {"bodypart" : "chest", "name" : "Barbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
 var test2 = {"bodypart" : "chest", "name" : "Dumbbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "40"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
@@ -74,9 +70,10 @@ function read_plans2(userid, today, i) {
 						"name" : plans2.workout_name,
 						"sets" : sets
 					}
-					console.log(input)
-					add_exercise(indexCnt++, input)
+					console.log(plans3)
+					add_exercise(indexCnt++, input, userid, today, i)
 				}
+
 			})
 		}
 	})
@@ -84,7 +81,7 @@ function read_plans2(userid, today, i) {
 
 var index = 0
 
-function add_exercise (index, args) {
+function add_exercise (index, args, userid, today, ix) {
 	var main_wrap_id = "#main_plan";
 
 	var name = args["name"];
@@ -101,7 +98,7 @@ function add_exercise (index, args) {
 
 	var keys = Object.keys(sets);
 	for (var i = 0; i < keys.length; i++) {
-		add_set (main_wrap_id, name, sets[keys[i]]);
+		add_set (main_wrap_id, name, sets[keys[i]], userid, today, ix, i);
 	}
 }
 
@@ -110,14 +107,11 @@ function add_button () {
 	$(html).appendTo($("#main_plan"));
 }
 
-function add_set (main_id, exercise_name, args) {
+function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	var tags = data[exercise_name];
 	var values = args["value"];
 	var original = args["original_value"];
 	var done = args["done"];
-
-	if (args.length != tags.length)
-		console.log("SOMETHING WRONG");
 
 	var id = "set_" + (index++).toString();
 
@@ -155,4 +149,9 @@ function add_set (main_id, exercise_name, args) {
 	}
 
 	$('#' + id).append('<span>' + span + '</span>');
+	$('#' + id).on('click',function() {
+		var link = document.location.toString().replace("main.html", "") + 'pages/workout.html'
+		link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
+		document.location.href = link
+	});
 }
