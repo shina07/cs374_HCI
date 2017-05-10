@@ -16,8 +16,9 @@
 
 </head>
 <script>
+    var userId = (document.URL).split("=")[1];
     function body_selected(part){
-        document.location.href = "add_pages/add_" + part + ".html";
+        document.location.href = "add_pages/add_" + part + ".html/userId=" + userId;
     }
 </script>
 <body >

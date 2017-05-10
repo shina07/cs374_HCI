@@ -8,22 +8,30 @@
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/js/bootstrap.min.js">
     <link rel="stylesheet" type="text/css" href="../../lib/jquery-3.2.1.min.js">
-    <link rel="stylesheet" type="text/css" href="../../lib/angular.min.js">
     <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
     <link rel="stylesheet" href="../../css/workout.css">
 </head>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script type="text/javascript" src="../../database/firebase.js"></script>
+<script type="text/javascript" src="../../public/url.js"></script>
 <script>
     //var urldict = get_url_params();
     //console.log(urldict);
+    //var exercise_name = get_url_params();
+    //console.log(exercise_name);
     var x = document.URL;
-    var exercise_name = (x.split("=")[1]).split("_").join(" ");
-    //document.getElementById("exercise_name").innerHTML = exercise_name;
+    var userId = (document.URL).split("=")[2];
+    var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
+    var d = new Date();
+    var exercise_date = d.getFullYear() + "-0" + d.getMonth() + "-" + d.getDate();
     var exercise_weight = 10;
     var exercise_reps = 10;
     var exercise_sets = 0;
+    //plan Id retrieval
+    var planId = 1;
+    var set_accumulator = {};
 
     function weight_dec(){
         exercise_weight -= 1;
@@ -42,7 +50,16 @@
         document.getElementById("reps").innerHTML = exercise_reps;
     }
     function set_addition(){
+        var innerSet = {};
         exercise_sets += 1;
+        innerSet['value'] = "['" + exercise_weight +"','" + exercise_reps + "']";
+        innerSet['original_value'] = "['" + exercise_weight + "','" + exercise_reps + "']";
+        innerSet['done'] = false;
+        innerSet['changed'] = false;
+        //set_accumulator += "set"+exercise_sets+":{ 'value':['" + exercise_weight +"','" + exercise_reps + "'], 'original_value:['" + exercise_weight + "','" + exercise_reps + "'], 'done': false}";
+        //console.log(set_accumulator);
+        set_accumulator['set'+parseInt(exercise_sets)] = innerSet;
+
         var inner_current = document.getElementById("sets").innerHTML;
         var inner_added = "<div class='panel-body'>Set"+ parseInt(exercise_sets) + ": ";
         inner_added += "weight: " + parseInt(exercise_weight) + " ";
@@ -51,10 +68,16 @@
         document.getElementById("sets").innerHTML = inner_current + inner_added;
     }
     function send_plans(){
-        var planref = database.ref("plans");
-        planref.child().set({
-            username: userId,
-            workout_name: exercise_name
+        console.log("####");
+        console.log(userId);
+        console.log(exercise_name);
+        var planref = database.ref("PLANS/" + userId +"/" + exercise_date);
+        planref.child(planId+1).set({
+            workout_name: exercise_name,
+            sets: set_accumulator
+        })
+        planref.once("value", function(snapshot){
+            planId += 1;
         })
     }
 </script>
