@@ -1,0 +1,35 @@
+.workout_list_wrap {
+}
+
+.workout_list_name {
+	margin: 8px auto;
+	width: 92%;
+	height: 20px;
+}
+
+.workout_list_name span {
+	float: left;
+	font-size: 18px;
+	color: #2E2E2E;
+}
+
+.workout_list_one {
+	margin: 8px auto;
+	width: 92%;
+	height: 36px;
+	background-color: #FFFFFF;
+	border: 1px solid #DEDEDE;
+}
+
+.workout_list_default {
+	border-right: 10px solid #CCCCCC;
+}
+.workout_list_success {
+	border-right: 10px solid #337AB7;
+}
+.workout_list_edited {
+	border-right: 10px solid #F0AD4E;
+}
+.workout_list_failed {
+	border-right: 10px solid #D9534F;
+}

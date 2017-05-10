@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <style>
         .modal-header, h4, .close {
             background-color: #2297F1;
@@ -80,29 +81,28 @@
         function closeOverlay(){
             document.getElementById("overlay").style.height = "0%";
         }
+        var UsersRef = database.ref("USERS");
+        var count = 0;
+        UsersRef.on("value", function(snapshot){
+            count = snapshot.val().length;
+        });
         function signup(){
-            var count = 0;
-            UsersRef = database.ref("USERS");
-            UsersRef.on("value", function(snapshot){
-                var count = snapshot.val();
-                console.log(count);
-            });
-            console.log(count);
+            var UsersRef = database.ref("USERS");
             var newid = document.getElementById("create_usrname").value;
             var newpwd = document.getElementById("create_pwd").value;
             var newpwd_rep = document.getElementById("create_pwd_repeat").value;
-
-            UsersRef.child(parseInt(count+1)).set({
+            console.log(count);
+            UsersRef.child(count+1).set({
                 username: newid,
                 password: newpwd
             });
             UsersRef.on("value", function(snapshot){
                 var tuples = snapshot.val();
-                console.log(tuples);
+                //console.log(tuples);
             });
-            //openOverlay();
             document.location.href = "../main.html";
         }
+
     </script>
 </head>
 <body>
