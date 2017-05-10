@@ -65,12 +65,16 @@
 		<br />
 
 		<div class="workout_edit_wrap">
-			<div class="btn-group" rold="group">
-				<button type="button" class="btn btn-info">5 -</button>
-				<button type="button" class="btn btn-info">1 -</button>
-				<button type="button" class="btn btn-default" disabled>10</button>
-				<button type="button" class="btn btn-info">1 +</button>
-				<button type="button" class="btn btn-info">5 +</button>
+			<div class="col-md-6 workout_property">
+				weight
+			</div>
+			<div class="btn-group col-md-5" rold="group">
+				<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-minus"></span></button>
+				<button type="button" class="btn btn-default" disabled><b>10</b></button>
+				<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
+			</div>
+			<div class="col-md-1 workout_unit">
+				kg
 			</div>
 		</div>
 
@@ -85,11 +89,11 @@
 			<div class="modal-dialog modal-full">
 				<div class="modal-content modal-full">
 					<div class="modal-body" align="center">
-						<span class="time-on">01 : 00</span>
-						<span class="time-over">Time Over!</span>
-						<button type="button" class="btn btn-warning btn-block">P A U S E</button>
-						<button type="button" class="btn btn-danger btn-block" data-dismiss="modal">GO BACK</button>
-						<button type="button" class="btn btn-success btn-block time-over"  data-dismiss="modal">Go to Next</button>
+						<span id="resttime">Rest Time</span>
+						<br />
+						<span id="timer">00 : 00</span>
+						<button type="button" id="back" class="btn btn-warning btn-block" data-dismiss="modal">B A C K</button>
+						<button type="button" id="next" class="btn btn-primary btn-block" data-dismiss="modal">N E X T</button>
 					</div>
 				</div>
 			</div>

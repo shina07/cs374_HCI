@@ -113,7 +113,7 @@ hr {
 
 .btn[disabled] {
 	opacity: 1;
-	width: 100px;
+	width: 60px;
 }
 
 .workout_dummy {
@@ -131,6 +131,7 @@ hr {
 	margin: 10px 0 10px 0;
 	width: 90%;
 	height: 50px;
+	font-size: 20px;
 }
 
 .modal-dialog.modal-full {
@@ -155,19 +156,17 @@ hr {
 	top: 30%;
 }
 
-.time-on {
+#resttime {
+	font-size: 30px;
+	color: white;
+}
+
+#timer {
 	font-weight: bold;
 	font-size: 80px;
 	color: white;
 }
 
-span.time-over {
-	font-weight: bold;
-	font-size: 60px;
-	color: white;
+.modal-body button {
+	font-size: 18px;
 }
-
-.time-over {
-	display: none;
-}
-
