@@ -55,6 +55,11 @@
 	float: right;
 }
 
+.workout_edit_wrap {
+	width: 100%;
+	height: auto;
+}
+
 .workout_done_wrap {
 	position: absolute;
 	bottom: 0;
