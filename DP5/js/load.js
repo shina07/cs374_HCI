@@ -1,13 +1,5 @@
 
-var treadMill = {"set_1" : ["10", "50"], };
-
-var routine1 = {"exercise_1" : {"bodypart" : "cardio", "name" : "treadmill", "sets" : {"set_1" : ["10", "50"], }}};
-var routine2 = {"exercise_1" : {"bodypart" : "chest", "name" : "Barbell Incline Bench Press Medium-Grip", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}, "exercise_2" : {"bodypart" : "chest", "name" : "Incline Dumbell Press", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}};
-var routine3 = {"exercise_1" : {"bodypart" : "tricep", "name" : "Bench Press", "sets" : {"set_1" : ["30", "15"], "set_2" : ["30", "15"], "set_3" : ["30", "15"], }}, "exercise_2" : {"bodypart" : "tricep", "name" : "Body Tricep Press", "sets" : {"set_1" : ["20"], "set_2" : ["20"], "set_3" : ["20"], }}};
-
-add_panel (1, "Cardio Routine", routine1);
-add_panel (2, "Daily Chest", routine2);
-add_panel (3, "Triceps", routine3);
+load_exercise ();
 
 function add_panel (index, routine_name, args) {
 	var group = document.getElementById("load_preview");
@@ -109,4 +101,48 @@ function add_set (bodypart, exercise_name, args) {
 	}
 
 	return innerHTML;
+}
+
+function load_exercise () {
+
+	var LoadRef = database.ref("LOAD");
+
+	LoadRef.once("value", function(data) {
+
+		var routines = data.val();
+		var keys = Object.keys(data.val());
+		var count = 0;
+
+		for (var i = 0; i < keys.length; i++)
+		{
+			var obj = routines[keys[i]];
+			if (obj["userId"] == 1)
+			{
+				count += 1;
+				add_panel(count, obj["name"], obj["routine"]);
+			}
+		}
+	});
+}
+
+function add_test_data () {
+	var LoadRef = database.ref("LOAD");
+
+	LoadRef.push({
+		"name" : "Cardio Routine",
+		"userId" : 1,
+		"routine" : {"exercise_1" : {"bodypart" : "cardio", "name" : "treadmill", "sets" : {"set_1" : ["10", "50"], }}},
+	});
+
+	LoadRef.push({
+		"name" : "Daily Chest",
+		"userId" : 1,
+		"routine" : {"exercise_1" : {"bodypart" : "chest", "name" : "Barbell Incline Bench Press Medium-Grip", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}, "exercise_2" : {"bodypart" : "chest", "name" : "Incline Dumbell Press", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}},
+	});
+
+	LoadRef.push({
+		"name" : "Triceps",
+		"userId" : 1,
+		"routine" : {"exercise_1" : {"bodypart" : "tricep", "name" : "Bench Press", "sets" : {"set_1" : ["30", "15"], "set_2" : ["30", "15"], "set_3" : ["30", "15"], }}, "exercise_2" : {"bodypart" : "tricep", "name" : "Body Tricep Press", "sets" : {"set_1" : ["20"], "set_2" : ["20"], "set_3" : ["20"], }}},
+	});
 }
