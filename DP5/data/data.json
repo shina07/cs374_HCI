@@ -1,6 +1,6 @@
 data = {
-	"treadmill" : ["speed", "time"],
-	"bicycle" : ["speed", "time"],
+	"Treadmill" : ["speed", "time"],
+	"Bicycle" : ["speed", "time"],
 	"Barbell Incline Bench Press Medium-Grip" : ["weight", "reps"],
 	"Incline Dumbell Press" : ["weight", "reps"],
 	"Barbell Bench Press" : ["weight", "reps"],

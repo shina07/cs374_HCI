@@ -76,7 +76,7 @@ function add_exercise (args) {
 
 function add_set (bodypart, exercise_name, args) {
 
-	var tags = data[bodypart][exercise_name];
+	var tags = data[exercise_name];
 
 	if (args.length != tags.length)
 		console.log ("SOMETHING WRONG");
