@@ -17,11 +17,17 @@ var link_userId = -1;
 
 $(document).ready(function() {
 	var link_userId = getUrlParameter('userId');
+	var link_date = getUrlParameter('date');
+	var link_planId = getUrlParameter('planId');
+	var link_setId = getUrlParameter('setId');
+	var link_total = getUrlParameter('total');
+
 	read_plans();
 
 	$('a').each(function() {
 		var link = $(this).attr('href')
-		link += ('?userId=' + link_userId)
+		
+		link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId' + link_setId + '&total=' + link_total)
 		$(this).attr('href', link)
 	});
 });
