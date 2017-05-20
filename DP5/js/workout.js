@@ -209,6 +209,9 @@ function get_from_firebase(user_id, date, plan_id, set_num) {
 		setup_progress();
 		setup_workout();
 		set_click_event();
+
+		$('.loading').css("display", "none")
+		$('.workout_one').css("display", "block")
 	})
 }
 

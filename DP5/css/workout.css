@@ -1,5 +1,13 @@
+.loading {
+	margin-top: 50%;
+	font-size: 20px;
+	color: #aaaaaa;
+}
+
 .workout_one {
 	width: 100%;
+	margin-top: 56px;
+	display: none;
 }
 
 hr {
