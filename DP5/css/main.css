@@ -6,6 +6,20 @@ body {
 	width: 100%;
 }
 
+#not_small {
+	display: none;
+}
+
+@media (min-width: 800px) {
+	#wrap {
+		display: none;
+	}
+
+	#not_small {
+		display: block;
+	}
+}
+
 #header {
 	position: fixed;
 	top: 0;

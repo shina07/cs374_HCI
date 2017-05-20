@@ -67,10 +67,8 @@ function go_next() {
 		plan_id += 1
 		set_num = 0
 	}
-	if (total-1 != progress_cnt) {
-		location += "?userId="+user_id+"&date="+date+"&planId="+plan_id+"&setId="+set_num+"&total="+total
-		document.location.href = location	
-	}
+	location += "?userId="+user_id+"&date="+date+"&planId="+plan_id+"&setId="+set_num+"&total="+total
+	document.location.href = location
 }
 
 function timer() {
@@ -146,6 +144,11 @@ function set_click_event() {
 		var location = document.location.href
 		var index = location.lastIndexOf("pages")
 		done()
+		if (total-1 == progress_cnt)
+		{
+			var ref = database.ref("PLANS/"+user_id+"/"+date)
+			ref.update({completed : true})
+		}
 		location = location.substr(0,index) + "main.html?userId=" + user_id
 		document.location.href = location
 	})
