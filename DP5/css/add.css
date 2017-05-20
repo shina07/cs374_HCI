@@ -3,15 +3,7 @@
     font-size: 2em
 }
 
-.container-fluid .ui-selected {
-    background: #2297F1; color: white;
-}
-
-.container-fluid .ui-selecting{
-    background: #8cdcfe;
-}
 .container-fluid {
-    list-style-type: none;
     margin-left: 15px;
     padding: 0;
     width: 100%;
@@ -27,6 +19,13 @@
     border-radius: 4px;
     width: 100px;
     height:100px
+}
+
+.list {
+    list-style-type: circle;
+    border: 1px solid #ddd;
+    width:100%;
+    height: 100px;
 }
 
 #selectable li {
@@ -45,10 +44,7 @@
 }
 
 .container {
-    list-style-type: none;
-    //margin: 0;
-    //padding: 0;
-    //width: 350px;
+    //list-style-type: none;
 }
 
 .container li {
@@ -101,4 +97,12 @@
     height: 36px;
     background-color: #FFFFFF;
     border: 1px solid #DEDEDE;
+}
+
+
+.image_off, .home:active .image_on{
+    display:none
+}
+.image_on, .home:active .image_off{
+    display:block
 }
