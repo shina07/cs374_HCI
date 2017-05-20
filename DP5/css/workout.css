@@ -180,12 +180,7 @@ hr {
 .modal-content.modal-full .modal-body {
 	width: 100%;
 	position: absolute;
-	top: 30%;
-}
-
-#resttime {
-	font-size: 30px;
-	color: white;
+	top: 25%;
 }
 
 #timer {
@@ -196,4 +191,29 @@ hr {
 
 .modal-body button {
 	font-size: 18px;
+}
+
+.modal_text {
+	font-size: 30px;
+	color: white;
+}
+
+#gotoList {
+	display: none;
+}
+
+#addSet {
+	display: none;
+}
+
+#description {
+	color: white;
+}
+
+#done_wrap {
+	display: none;
+}
+
+.modal_div {
+	min-height: 156px;
 }
