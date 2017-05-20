@@ -118,15 +118,8 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	var id = "set_" + (index++).toString();
 
 	var class_name = "";
-	var same = args["done"];//values.toString() === original.toString();
-	if (same && done === "False")
-		class_name = "workout_list_default";
-	else if (same && done === "True")
+	if (done == true)
 		class_name = "workout_list_success";
-	else if (!same && done === "True")
-		class_name = "workout_list_success";
-	else if (!same && done === "False")
-		class_name = "workout_list_failed";
 	else
 		class_name = "workout_list_default";
 
