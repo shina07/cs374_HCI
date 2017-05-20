@@ -37,29 +37,21 @@ function setup_workout() {
 	if (set.done) {
 		$('.workout_done').css('display', "none");
 		$('.workout_dummy').css('display', "none");
+		$('.count_down').remove();
+		$('.count_up').remove();
 	}
 }
 
 function done() {
 	var changed_list = []
-	var changed = false
 	var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id+"/sets/set"+set_num)
-	var elemList = $('.btn-default')
 
 	$('.btn-default').each(function(index) {
 		changed_list[index] = $(this).text()
 	})
 
-	for (var i=0; i<elemList.length; i++) {
-		if (changed_list[i] != set_info[i]){
-			changed = true
-			break
-		}
-	}
-
 	ref.update({
 		done: true,
-		changed: changed,
 		value: "[" + changed_list[0] + "," + changed_list[1] + "]"
 	})
 
@@ -67,7 +59,9 @@ function done() {
 	ref.update({
 		Progress_cnt: progress_cnt+1
 	})
+}
 
+function go_next() {
 	var location = document.location.href.split("?")[0]
 	if (plans.setNum == set_num){
 		plan_id += 1
@@ -77,7 +71,6 @@ function done() {
 		location += "?userId="+user_id+"&date="+date+"&planId="+plan_id+"&setId="+set_num+"&total="+total
 		document.location.href = location	
 	}
-	
 }
 
 function timer() {
@@ -110,7 +103,29 @@ function set_click_event() {
 	$('#show_video, #hide_video, .glyphicon-play-circle').on('click', toggle_video)
 
 	$('.done').click(function() {
-		timerID = setInterval("timer()", 1000)
+		if (set_num != plans.setNum)
+		{
+			timerID = setInterval("timer()", 1000)
+		}
+		else if (progress_cnt != total-1)
+		{
+			$('#done_wrap').css("display", "block")
+			$('#rest_wrap').css("display", "none")
+			$('#allDone').css("display", "none")
+			$('#next').css("display", "none")
+			$('#gotoList').css("display", "block")
+			$('#addSet').css("display", "block")
+		}
+		else
+		{
+			$('#done_wrap').css("display", "block")
+			$('#rest_wrap').css("display", "none")
+			$('#setDone').css("display", "none")
+			$('#next').css("display", "none")
+			$('#gotoList').css("display", "block")
+			$('#addSet').css("display", "block")			
+		}
+		
 	})
 
 	$('#back').click(function() {
@@ -124,6 +139,44 @@ function set_click_event() {
 		current_time = 0
 		setTimeout(function() {$('#timer').text("00 : 00")}, 300)
 		done()
+		go_next()
+	})
+
+	$('#gotoList').click(function() {
+		var location = document.location.href
+		var index = location.lastIndexOf("pages")
+		done()
+		location = location.substr(0,index) + "main.html?userId=" + user_id
+		document.location.href = location
+	})
+
+	$('#addSet').click(function() {
+		var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id+"/sets")
+		var param_list = []
+
+		$('.btn-default').each(function(index) {
+			param_list[index] = $(this).text()
+		})
+
+		ref.child("set"+(set_num+1).toString()).set({
+			done: false,
+			value: "["+param_list[0]+","+param_list[1]+"]",
+		})
+		plans.setNum += 1
+		ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id)
+		ref.update({
+			setNum : plans.setNum
+		})
+
+		$('#done_wrap').css("display", "none")
+		$('#rest_wrap').css("display", "block")
+		$('#addSet').css("display", "none")
+		$('#gotoList').css("display", "none")
+		$('#next').css("display", "block")
+
+		total += 1
+
+		timerID = setInterval("timer()", 1000)
 	})
 
 	$('.count_up').click(function(e) {
@@ -167,7 +220,7 @@ var user_id = -1
 var date = ""
 var plan_id = -1
 var set_num = -1
-var totla = -1
+var total = -1
 var progress_cnt = -1
 
 var plans = {}

@@ -1,5 +1,3 @@
-
-
 $('#menu_btn').click(function() {
 	$('#header_menu').toggle(100)
 });
@@ -8,13 +6,6 @@ $('.load_btn').click(function() {
 	$('#header_menu').toggle(100)
 });
 
-$(document).ready(function() {
-	$('#back_btn').click(function() {
-		parent.history.back()
-		return false
-	});
-});	
-
 var test = {"bodypart" : "chest", "name" : "Barbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
 var test2 = {"bodypart" : "chest", "name" : "Dumbbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "40"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
 
@@ -22,23 +13,35 @@ var plansWorkout = new Array()
 var plansSet = new Array()
 var indexCnt = 1;
 
-read_plans();
-//add_exercise (1, test);
-//add_exercise (2, test2);
-//add_button();
+var link_userId = -1;
+
+$(document).ready(function() {
+	var link_userId = getUrlParameter('userId');
+
+	read_plans();
+
+	$('a').each(function() {
+		var link = $(this).attr('href')
+		link += ('?userId=' + link_userId)
+		$(this).attr('href', link)
+	});
+});
 
 function read_plans() {
 	var param = get_url_params ();
-	var userid = param["userId"][0];
+	var userid = getUrlParameter('userId');
 	var d = new Date();
 	var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
 
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
 		var plans = data.val()
+		if (plans == null)
+			$('.no_plans').text('There is no plans today.')
 		for (var key in plans) {
-			if (key == "Progress_cnt")
+			if (key == "Progress_cnt") {
 				continue;
+			}
 			read_plans2(userid, today, key)
 		}
 	})
@@ -57,7 +60,7 @@ function read_plans2(userid, today, i) {
 				var plans3 = data.val()
 				var json = {
 					"value" : JSON.parse(plans3.value),
-					"original_value" : JSON.parse(plans3.original_value),
+					//"original_value" : JSON.parse(plans3.original_value),
 					"done" : plans3.done
 				}
 				sets["set_" + (++count)] = json
@@ -65,7 +68,7 @@ function read_plans2(userid, today, i) {
 					name: plans2.workout_name,
 					changed: plans3.changed,
 					done: plans3.done,
-					original_value: plans3.original_value,
+					//original_value: plans3.original_value,
 					value: plans3.value,
 					order: j
 				})
@@ -75,7 +78,6 @@ function read_plans2(userid, today, i) {
 						"name" : plans2.workout_name,
 						"sets" : sets
 					}
-					console.log(plans3)
 					add_exercise(indexCnt++, input, userid, today, i)
 				}
 
@@ -107,11 +109,6 @@ function add_exercise (index, args, userid, today, ix) {
 	}
 }
 
-function add_button () {
-	var html = '<a href="pages/add_body_part.html?userId=1" class="btn btn-info btn-lg add_plan_btn"><span class="glyphicon glyphicon-plus"></span> Add</a>'
-	$(html).appendTo($("#main_plan"));
-}
-
 function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	var tags = data[exercise_name];
 	var values = args["value"];
@@ -121,7 +118,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	var id = "set_" + (index++).toString();
 
 	var class_name = "";
-	var same = values.toString() === original.toString();
+	var same = args["done"];//values.toString() === original.toString();
 	if (same && done === "False")
 		class_name = "workout_list_default";
 	else if (same && done === "True")
@@ -154,11 +151,27 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	}
 
 	$('#' + id).append('<span>' + span + '</span>');
-	$('#' + id).on('click',function() {
-		var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
-		link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
-		document.location.href = link
-	});
+	//$('#' + id).on('click',function() {
+	//	var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
+	//	link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
+	//	document.location.href = link
+	//});
 
 	$('.no_plans').css('display', 'none');
 }
+
+// http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};

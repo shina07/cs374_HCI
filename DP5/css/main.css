@@ -110,6 +110,11 @@ body {
 	border-color: #0275d8;
 }
 
+.no_plans {
+	font-size: 20px;
+	color: #AAAAAA;
+}
+
 #add_load_btn_wrap {
 	position: fixed;
 	bottom: 0;

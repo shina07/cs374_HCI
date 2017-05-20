@@ -77,11 +77,22 @@
 			<div class="modal-dialog modal-full">
 				<div class="modal-content modal-full">
 					<div class="modal-body" align="center">
-						<span id="resttime">Rest Time</span>
-						<br />
-						<span id="timer">00 : 00</span>
-						<button type="button" id="back" class="btn btn-warning btn-block" data-dismiss="modal">B A C K</button>
+						<div id="done_wrap" class="modal_div">
+							<br />
+							<span id="setDone" class="modal_text">This Workout Done :)</span>
+							<span id="allDone" class="modal_text">WoW ! All Done :)</span>
+							<br /><br />
+							<span id="description">* If you click "Add more set" button,<br />
+							timer starts counting and you can go next set.</span>
+						</div>
+						<div id="rest_wrap" class="modal_div">
+							<span id="resttime" class="modal_text">Rest Time<br /></span>
+							<span id="timer">00 : 00</span>
+						</div>
 						<button type="button" id="next" class="btn btn-primary btn-block">N E X T</button>
+						<button type="button" id="addSet" class="btn btn-primary btn-block">Add more set</button>
+						<button type="button" id="gotoList" class="btn btn-primary btn-block">Go to Main List</button>
+						<button type="button" id="back" class="btn btn-warning btn-block" data-dismiss="modal">B A C K</button>
 					</div>
 				</div>
 			</div>
