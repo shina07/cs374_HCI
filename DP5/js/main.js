@@ -1,5 +1,3 @@
-
-
 $('#menu_btn').click(function() {
 	$('#header_menu').toggle(100)
 });
@@ -8,13 +6,6 @@ $('.load_btn').click(function() {
 	$('#header_menu').toggle(100)
 });
 
-$(document).ready(function() {
-	$('#back_btn').click(function() {
-		parent.history.back()
-		return false
-	});
-});	
-
 var test = {"bodypart" : "chest", "name" : "Barbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
 var test2 = {"bodypart" : "chest", "name" : "Dumbbell Bench Press", "sets" : {"set_1" : {"value" : ["10", "50"], "original_value" : ["10", "40"], "done" : "True"}, "set_2" : {"value" : ["10", "50"], "original_value" : ["10", "50"], "done" : "False"},}};
 
@@ -22,10 +13,19 @@ var plansWorkout = new Array()
 var plansSet = new Array()
 var indexCnt = 1;
 
+var link_userId = -1;
+
 read_plans();
-//add_exercise (1, test);
-//add_exercise (2, test2);
-//add_button();
+
+$(document).ready(function() {
+	var link_userId = getUrlParameter('userId');
+
+	$('a').each(function() {
+		var link = $(this).attr('href')
+		link += ('?userId=' + link_userId)
+		$(this).attr('href', link)
+	});
+});
 
 function read_plans() {
 	var param = get_url_params ();
@@ -107,11 +107,6 @@ function add_exercise (index, args, userid, today, ix) {
 	}
 }
 
-function add_button () {
-	var html = '<a href="pages/add_body_part.html?userId=1" class="btn btn-info btn-lg add_plan_btn"><span class="glyphicon glyphicon-plus"></span> Add</a>'
-	$(html).appendTo($("#main_plan"));
-}
-
 function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	var tags = data[exercise_name];
 	var values = args["value"];
@@ -162,3 +157,19 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	$('.no_plans').css('display', 'none');
 }
+
+// http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
