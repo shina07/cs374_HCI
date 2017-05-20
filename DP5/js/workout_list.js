@@ -148,7 +148,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy, len) {
 			link_planId = ix
 			link_setId = iy
 			link_total = len
-			$('#header a').each(function() {
+			$('.session').each(function() {
 				var link = $(this).attr('href')
 				link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
 				$(this).attr('href', link)

@@ -8,7 +8,7 @@ $(document).ready(function() {
 	link_total = getUrlParameter('total')
 
 	if (link_userId != undefined && link_date != undefined && link_planId != undefined && link_setId != undefined && link_total != undefined) {
-		$('#header a').each(function() {
+		$('.session').each(function() {
 			var link = $(this).attr('href')
 			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
 			$(this).attr('href', link)
