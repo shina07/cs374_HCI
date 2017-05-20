@@ -1,63 +1,68 @@
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>Load Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<meta charset="utf-8" />
+		<title>Load Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Import CSS -->
-	<link rel="stylesheet" type="text/css" href="..\lib\bootstrap-3.3.7\css\bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="..\css\main.css">
-	<link rel="stylesheet" type="text/css" href="..\css\load.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-</head>
-<body>
-	<div id="wrap">
-		<div id="header">
-			<a id="back_btn" href="#">
-				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-			</a>
-			<a id="home_btn" href="..\main.html">
-				<span>Workout Plans</span>
-			</a>
-		</div>
-		<div id="body_wrap">
-			<div class="container" align="center">
-		      <!-- Responsive calendar - START -->
-		    	<div class="responsive-calendar">
-			        <div class="controls" vertical-align="middle">
-			            <a class="pull-left" data-go="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-			            <h4><span data-head-year></span> <span data-head-month></span></h4>
-			            <a class="pull-right" data-go="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			        </div><br>
-				        <div class="day-headers">
-				        <div class="day header">Sun</div>
-				        <div class="day header">Mon</div>
-				        <div class="day header">Tue</div>
-				        <div class="day header">Wed</div>
-				        <div class="day header">Thu</div>
-				        <div class="day header">Fri</div>
-				        <div class="day header">Sat</div>  
-			        </div>
-			        <div class="days" data-group="days">
-			          
-			        </div>
+		<!-- Import CSS -->
+		<link rel="stylesheet" type="text/css" href="..\lib\bootstrap-3.3.7\css\bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="..\css\main.css">
+		<link rel="stylesheet" type="text/css" href="..\css\load.css">
+		<link rel="stylesheet" type="text/css" href="..\css\workout_list.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<a id="back_btn" href="#">
+					<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+				</a>
+				<a id="home_btn" href="..\main.html">
+					<span>Workout Plans</span>
+				</a>
+			</div>
+			<div id="body_wrap">
+				<div class="container" align="center">
+			      <!-- Responsive calendar - START -->
+			    	<div class="responsive-calendar">
+				        <div class="controls" vertical-align="center">
+				            <a class="pull-left" data-go="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				            <h4><span data-head-year></span> <span data-head-month></span></h4>
+				            <a class="pull-right" data-go="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				        </div><br>
+					        <div class="day-headers">
+					        <div class="day header">Sun</div>
+					        <div class="day header">Mon</div>
+					        <div class="day header">Tue</div>
+					        <div class="day header">Wed</div>
+					        <div class="day header">Thu</div>
+					        <div class="day header">Fri</div>
+					        <div class="day header">Sat</div>  
+				        </div>
+				        <div class="days" data-group="days">
+				          
+				        </div>
+				    </div>
+				      <!-- Responsive calendar - END -->
 			    </div>
-			      <!-- Responsive calendar - END -->
-		    </div>
-			<div class="panel-group" id="load_preview">
+				<!-- <div class="panel-group" id="load_preview">
+				</div> -->
+				<div id="no_plans">Loading...
+				</div>
+				<div id="main_plan">
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Import JavaScript -->
-	<script type="text/javascript" src="..\lib\jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="..\lib\bootstrap-3.3.7\js\bootstrap.min.js"></script>
-	<script type="text/javascript" src="..\lib\angular.min.js"></script>
-	<script type="text/javascript" src="..\lib\responsive-calendar.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
-	<script type="text/javascript" src="..\data\data.js"></script>
-	<script type="text/javascript" src="..\database\firebase.js"></script>
-	<script type="text/javascript" src="..\public\url.js"></script>
-	<script type="text/javascript" src="..\js\load.js"></script>
-</body>
+		<!-- Import JavaScript -->
+		<script type="text/javascript" src="..\lib\jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="..\lib\bootstrap-3.3.7\js\bootstrap.min.js"></script>
+		<script type="text/javascript" src="..\lib\angular.min.js"></script>
+		<script type="text/javascript" src="..\lib\responsive-calendar.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+		<script type="text/javascript" src="..\data\data.js"></script>
+		<script type="text/javascript" src="..\database\firebase.js"></script>
+		<script type="text/javascript" src="..\public\url.js"></script>
+		<script type="text/javascript" src="..\js\load.js"></script>
+	</body>
 </html>

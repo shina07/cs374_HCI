@@ -1,173 +1,26 @@
 
-// load_exercise ();
 exercise = {};
+userid = 0;
+index = 0;
 
-function add_panel (index, routine_name, args) {
-	var group = document.getElementById("load_preview");
-
-	var panel = document.createElement("div");
-	panel.classList.add("panel");
-
-	var panel_heading = document.createElement("div");
-	panel_heading.classList.add("panel-heading");
-
-	var panel_title = document.createElement("h4");
-	panel_title.classList.add("panel-title");
-
-	var routine = document.createElement("a");
-	routine.setAttribute("data-toggle", "collapse");
-	routine.setAttribute("data-parent", "#load_preview");
-	routine.setAttribute("href", "#routine_" + index.toString());
-	routine.innerHTML = routine_name + '<span class="pull-right glyphicon glyphicon-triangle-bottom" style="color:blue"></span>';
-
-	panel_title.appendChild(routine);
-	panel_heading.appendChild(panel_title);
-
-	var routine_index = document.createElement("div");
-	routine_index.setAttribute("id", "routine_" + index.toString())
-	routine_index.classList.add("panel-collapse");
-	routine_index.classList.add("collapse");
-
-	var panel_body = document.createElement("div");
-	panel_body.classList.add("panel-body");
-
-	var keys = Object.keys(args);
-	for (var i = 0; i < keys.length; i++) {
-		panel_body.appendChild(add_exercise(args[keys[i]]));
-
-		if (i != keys.length - 1) {
-			var newline = document.createElement("br");
-			panel_body.appendChild(newline);
-		}
-	}
-	
-	var loadbtn = document.createElement("button");
-	loadbtn.classList.add("btn");
-	loadbtn.classList.add("btn-info");
-	loadbtn.setAttribute("type", "button");
-	loadbtn.setAttribute("style", "float:right");
-	loadbtn.innerHTML = "Load";
-	panel_body.appendChild(loadbtn);
-	
-	routine_index.appendChild(panel_body);
-
-	panel.appendChild(panel_heading);
-	panel.appendChild(routine_index);
-
-	group.appendChild(panel);
-}
-
-function add_exercise (args) {
-	var bodypart = args["bodypart"];
-	var name = args["name"];
-	var sets = args["sets"];
-
-	var exercise = document.createElement("h4");
-	exercise.innerHTML = name;
-
-	var keys = Object.keys(sets);
-	for (var i = 0; i < keys.length; i++) {
-		var set = document.createElement("h4");
-		set.innerHTML = add_set(bodypart, name, sets[keys[i]]);
-		exercise.appendChild(set);
-	}
-
-	return exercise;
-}
-
-function add_set (bodypart, exercise_name, args) {
-
-	var tags = data[exercise_name];
-
-	if (args.length != tags.length)
-		console.log ("SOMETHING WRONG");
-
-	var innerHTML = "";
-	for (var i = 0; i < args.length; i++) {
-		if (tags[i] === "reps")
-			innerHTML += args[i] + " reps";
-		else if (tags[i] === "speed")
-			innerHTML += args[i] + " km/h";
-		else if (tags[i] === "time")
-			innerHTML += args[i] + " min";
-		else if (tags[i] === "weight")
-			innerHTML += args[i] + " kg";
-
-		if (i != args.length)
-			innerHTML += " "
-	}
-
-	return innerHTML;
-}
-
-// function load_exercise () {
-
-// 	var LoadRef = database.ref("LOAD");
-
-// 	LoadRef.once("value", function(data) {
-
-// 		var routines = data.val();
-// 		var keys = Object.keys(data.val());
-// 		var count = 0;
-
-// 		for (var i = 0; i < keys.length; i++)
-// 		{
-// 			var obj = routines[keys[i]];
-// 			if (obj["userId"] == 1)
-// 			{
-// 				count += 1;
-// 				add_panel(count, obj["name"], obj["routine"]);
-// 			}
-// 		}
-// 	});
-// }
-
-function add_test_data () {
-	var LoadRef = database.ref("LOAD");
-
-	LoadRef.push({
-		"name" : "Cardio Routine",
-		"userId" : 1,
-		"routine" : {"exercise_1" : {"bodypart" : "cardio", "name" : "treadmill", "sets" : {"set_1" : ["10", "50"], }}},
-	});
-
-	LoadRef.push({
-		"name" : "Daily Chest",
-		"userId" : 1,
-		"routine" : {"exercise_1" : {"bodypart" : "chest", "name" : "Barbell Incline Bench Press Medium-Grip", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}, "exercise_2" : {"bodypart" : "chest", "name" : "Incline Dumbell Press", "sets" : {"set_1" : ["10", "8"], "set_2" : ["10", "8"], "set_3" : ["10", "8"], }}},
-	});
-
-	LoadRef.push({
-		"name" : "Triceps",
-		"userId" : 1,
-		"routine" : {"exercise_1" : {"bodypart" : "tricep", "name" : "Bench Press", "sets" : {"set_1" : ["30", "15"], "set_2" : ["30", "15"], "set_3" : ["30", "15"], }}, "exercise_2" : {"bodypart" : "tricep", "name" : "Body Tricep Press", "sets" : {"set_1" : ["20"], "set_2" : ["20"], "set_3" : ["20"], }}},
-	});
-}
-
-
-
-
-
-
+$(document).ready(function () {
+	userid = get_url_params ()["userid"];
+	load_exercise ();
+});
 
 function load_exercise() {
-	var LoadRef = database.ref("PLANS");
+	var planRef = database.ref("PLANS");
 
-	LoadRef.once("value", function(data) {
+	planRef.once("value", function(data) {
 
-		var userid = get_url_params ()["userid"];
 		var routines = data.val()[userid];
-		//var keys = Object.keys(data.val());
 		var dates = Object.keys(routines);
-		var count = 0;
 
 		for (var i = 0; i < dates.length; i++)
 		{
-			//console.log(dates[i] + " "	+ routines[dates[i]])
 			var routine = routines[dates[i]]
-			exercise[dates[i].toString()] = JSON.stringify(routine);
+			exercise[dates[i].toString()] = routine;
 		}
-		console.log(exercise);
 
 		var today = new Date()
 		year = today.getFullYear();
@@ -177,27 +30,124 @@ function load_exercise() {
 
 		for (var i = 0; i < dates.length; i++)
 		{
-			console.log(dates[i] + ":     " + exercise[dates[i]]);
-			var numbers = {};
-			numbers["number"] = 1;
-			console.log(numbers);
-			events[dates[i]] = numbers;
+			events[dates[i]] = {"number" : exercise[dates[i]]["Progress_cnt"] };
 		}
-		//console.log("events: " + events);
 
 	    $(".responsive-calendar").responsiveCalendar({
-			time: year + '-' + month,
-			events: events,
+			time : year + '-' + month,
+			events : events,
 			startFromSunday : true,
 			allRows : false,
-			//onDayClick : load_date (event),
+			onDayClick : function (events) {
+				$("#main_plan").empty();
+				
+				date_cell = $(this);
+				year = date_cell.data('year');
+				month = date_cell.data('month');
+				day = date_cell.data('day');
+
+				if (month.toString().length < 2)
+					month = "0" + month;
+
+				var date = year + "-" + month + "-" + day;
+
+				load_plans(date);
+			}, 
+			// onDayHover : function (events) {
+			// 	console.log("hover!!" + JSON.stringify(events));
+			// },
+			onMonthChange : function (events) {
+
+			},
 	    });
 	});
 }
 
-function load_date (event) {
-	console.log(event);
+function load_plans (date) {
+	var plan = exercise[date];
+	index = 0;
+
+	if (plan == null)
+	{
+		document.getElementById('no_plans').style.display = 'block';
+		return;
+	}
+	else
+	{
+		document.getElementById('no_plans').style.display = 'none';
+
+		for (var i = 0; i < plan["Progress_cnt"]; i++)
+		{
+			add_exercise(i, plan[i]);
+		}
+	}
 }
+
+function delete_plans () {
+	$("#main_plan").empty();
+}
+
+function add_exercise (index, args) {
+	var main_wrap_id = "#main_plan";
+
+	var name = args["workout_name"];
+	var sets = args["sets"];
+
+	var id = "plan_" + index.toString();
+
+	jQuery('<div/>', {
+		class : "workout_list_name",
+		id : id,
+	}).appendTo($(main_wrap_id));
+
+	$('#' + id).append('<span>' + name + '</span>');
+
+	var keys = Object.keys(sets);
+	for (var i = 0; i < keys.length; i++) {
+		add_set (main_wrap_id, name, sets[keys[i]], userid);
+	}
+}
+
+function add_set (main_id, exercise_name, args) {
+	var tags = data[exercise_name];
+	var values = args["value"];
+	var original = args["original_value"];
+	var done = args["done"];
+
+	var id = "set_" + (index++).toString();
+
+	var class_name = "";
+	if (done == true)
+		class_name = "workout_list_success";
+	else
+		class_name = "workout_list_default";
+
+	jQuery('<div/>', {
+		class : "workout_list_one " + class_name,
+		id : id,
+	}).appendTo($(main_id));
+
+	var span = "";
+	for (var i = 0; i < values.length; i++) {
+		if (tags[i] === "reps")
+			span += values[i] + " reps";
+		else if (tags[i] === "speed")
+			span += values[i] + " km/h";
+		else if (tags[i] === "time")
+			span += values[i] + " min";
+		else if (tags[i] === "weight")
+			span += values[i] + " kg";
+
+		if (i != args.length)
+			span += " "
+	}
+
+	$('#' + id).append('<span>' + span + '</span>');
+}
+
+
+
+
 
 // Generated by CoffeeScript 1.6.1
 
@@ -209,30 +159,6 @@ function load_date (event) {
   #
   # Copyright © w3widgets 2013 All Rights Reserved
 */
-
-$(document).ready(function () {
-	// var today = new Date()
-	// year = today.getFullYear();
-	// month = today.getMonth() + 1;
-
-	load_exercise ();
-	// var events = {}
-	// for (var i = 0; i < exercise.length; i++)
-	// {
-	// 	events[exercise[i].toString()] = {
-	// 		"number" : 1,
-	// 	};
-	// }
-	// console.log("events: " + events);
-
- //    $(".responsive-calendar").responsiveCalendar({
-	// 	time: year + '-' + month,
-	// 	events: {
-
-	// 	},
- //    });
-});
-
 (function() {
 
   	(function($) {
