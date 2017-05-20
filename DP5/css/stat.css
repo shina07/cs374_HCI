@@ -1,0 +1,22 @@
+#navigator {
+	font-size: 30px;
+	width: 90%;
+	text-align: center;
+	display: inline-block;l
+}
+
+#st-left {
+	float: left;
+}
+
+#st-right {
+	float: right;
+}
+
+#body_wrap {
+	margin-top: 0;
+}
+
+.chart {
+	margin-top: 80px;
+}
