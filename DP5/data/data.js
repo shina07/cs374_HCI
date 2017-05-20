@@ -7,7 +7,7 @@ var data = {
     "Barbell Incline Bench Press Medium-Grip" : ["weight", "reps"],
     "Incline Dumbell Press" : ["weight", "reps"],
     "Barbell Bench Press" : ["weight", "reps"],
-    "barbell press" : ["weight", "reps"],
+    "Barbell Press" : ["weight", "reps"],
     "Dumbbell Bench Press" : ["weight", "reps"],
     "Bench Press" : ["weight", "reps"],
     "Body Tricep Press" : ["reps"]
