@@ -42,7 +42,10 @@
 
     function weight_dec(){
         exercise_weight -= 1;
-        document.getElementById("weight").innerHTML = exercise_weight;
+        if (exericse_weight > 0) {
+            document.getElementById("weight").innerHTML = exercise_weight;
+        }
+
     }
     function weight_inc(){
         exercise_weight += 1;
@@ -59,20 +62,36 @@
     function set_addition(){
         var innerSet = {};
         exercise_sets += 1;
+        var innerId = exercise_sets;
         innerSet['value'] = "[" + exercise_weight +"," + exercise_reps + "]";
-        innerSet['original_value'] = "[" + exercise_weight + "," + exercise_reps + "]";
         innerSet['done'] = false;
-        innerSet['changed'] = false;
-        //set_accumulator += "set"+exercise_sets+":{ 'value':['" + exercise_weight +"','" + exercise_reps + "'], 'original_value:['" + exercise_weight + "','" + exercise_reps + "'], 'done': false}";
-        //console.log(set_accumulator);
         set_accumulator['set'+parseInt(exercise_sets)] = innerSet;
 
         var inner_current = document.getElementById("sets").innerHTML;
-        var inner_added = "<div class='panel-body'>Set"+ parseInt(exercise_sets) + ": ";
+        var inner_added = "<div class='panel-body' id="+ parseInt(innerId) +">Set"+ parseInt(exercise_sets) + ":";
+
         inner_added += "weight: " + parseInt(exercise_weight) + " ";
         inner_added += "reps: " + parseInt(exercise_reps) + " ";
-        inner_added += "</div>";
+        inner_added += "<a onclick='remove_by_id("+innerId+")'>X</div>";
+        console.log("inner_added: ", inner_added);
         document.getElementById("sets").innerHTML = inner_current + inner_added;
+    }
+    function remove_by_id(target){
+        var flag = false;
+        for (var index in set_accumulator){
+            if (flag==true){
+                index = 'set'+ (parseInt(index.slice(3)) - 1);
+                console.log("index:", index);
+            }
+            if (index == 'set'+parseInt(index)){
+                flag = true;
+                continue
+            }
+        }
+        console.log("target:", target);
+        var elem = document.getElementById(target);
+        elem.parentNode.removeChild(elem);
+        exercise_sets -= 1;
     }
     function send_plans(){
         console.log("####");
@@ -154,8 +173,6 @@
         </div>
         <div class="panel panel-info" id="sets"></div>
         <div>
-            <div class="workout_list_one"></div>
-            <div class="workout_list_one"></div>
             <button type="button" class="btn btn-info confirm_btn" onclick="send_plans()">Confirm</button>
         </div>
         </div>
@@ -166,7 +183,7 @@
     <script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../lib/angular.min.js"></script>
-    <script type="application/json" src="../../data/data.json"></script>
+    <script type="application/json" src="../../data/data.js"></script>
     <script type="text/javascript" src="../../js/main.js"></script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
