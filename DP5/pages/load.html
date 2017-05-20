@@ -14,11 +14,17 @@
 	<body>
 		<div id="wrap">
 			<div id="header">
-				<a id="back_btn" href="#">
-					<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+				<a class="session state_tab tab_list" href="../main.html">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 				</a>
-				<a id="home_btn" href="..\main.html">
-					<span>Workout Plans</span>
+				<a class="session state_tab tab_plan" href="pages/workout.html">
+					<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+				</a>
+				<a class="session state_tab tab_calendar active_tab" href="#">
+					<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				</a>
+				<a class="session state_tab tab_stat" href="pages/stat.html">
+					<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
 				</a>
 			</div>
 			<div id="body_wrap">
@@ -47,7 +53,7 @@
 			    </div>
 				<!-- <div class="panel-group" id="load_preview">
 				</div> -->
-				<div id="no_plans">Loading...
+				<div id="no_plans">No Plan for This Day...
 				</div>
 				<div id="main_plan">
 				</div>
@@ -64,5 +70,6 @@
 		<script type="text/javascript" src="..\database\firebase.js"></script>
 		<script type="text/javascript" src="..\public\url.js"></script>
 		<script type="text/javascript" src="..\js\load.js"></script>
+		<script type="text/javascript" src="..\js\main.js"></script>
 	</body>
 </html>
