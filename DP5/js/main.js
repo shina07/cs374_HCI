@@ -108,7 +108,7 @@ function add_exercise (index, args, userid, today, ix) {
 }
 
 function add_button () {
-	var html = '<a href="pages/add_body_part.html/userId=1" class="btn btn-info btn-lg add_plan_btn"><span class="glyphicon glyphicon-plus"></span> Add</a>'
+	var html = '<a href="pages/add_body_part.html?userId=1" class="btn btn-info btn-lg add_plan_btn"><span class="glyphicon glyphicon-plus"></span> Add</a>'
 	$(html).appendTo($("#main_plan"));
 }
 
