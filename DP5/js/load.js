@@ -40,7 +40,7 @@ function load_exercise() {
 			allRows : false,
 			onDayClick : function (events) {
 				$("#main_plan").empty();
-				
+
 				date_cell = $(this);
 				year = date_cell.data('year');
 				month = date_cell.data('month');
@@ -76,9 +76,19 @@ function load_plans (date) {
 	{
 		document.getElementById('no_plans').style.display = 'none';
 
-		for (var i = 0; i < plan["Progress_cnt"]; i++)
+		var keys = Object.keys(plan);
+
+		var total = plan["Total_cnt"]
+		progress = 0;
+
+		for (var i = 0; i < keys.length; i++)
 		{
-			add_exercise(i, plan[i]);
+			add_exercise(i, plan[keys[i]]);
+			progress += plan[keys[i]][["setNum"]]
+
+			if (progress == total)
+				break;
+
 		}
 	}
 }
