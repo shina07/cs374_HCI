@@ -159,4 +159,6 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
 		document.location.href = link
 	});
+
+	$('.no_plans').css('display', 'none');
 }

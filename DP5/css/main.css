@@ -2,7 +2,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-#wrap {}
+#wrap {
+	width: 100%;
+}
 
 #header {
 	top: 0;
@@ -16,11 +18,23 @@ body {
 	text-align: center;
 }
 
+.state_tab {
+	width: 24%;
+	height: 100%;
+	color: #CCCCCC;
+	display: inline-block;
+}
+
+.active_tab {
+	color: #2297F1;
+	background-color: #F3F3F3;
+	border-bottom: 3px solid #2297F1;
+}
+
 #header .glyphicon {
 	height: 100%;
 	padding: 8px;
-	font-size: 32px;
-	color: #2297F1;
+	font-size: 24px;
 }
 
 #back_btn {
@@ -95,6 +109,8 @@ body {
 }
 
 .add_plan_btn {
+	width: 240px;
 	margin-top: 10px;
+	padding: 5px 10px;
 	display: inline-block;
 }

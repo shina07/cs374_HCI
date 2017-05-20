@@ -13,6 +13,7 @@
 	<body>
 		<div id="wrap">
 			<div id="header">
+				<!--
 				<a id="back_btn" href="#" style="visibility: hidden;">
 					<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 				</a>
@@ -28,7 +29,19 @@
 							<td><a class="load_btn" href="pages\load.html">Load Routine</a></td>
 						</tr>
 					</table>
-				</div>			
+				</div>-->
+				<a class="state_tab tab_list" href="#">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+				</a>
+				<a class="state_tab tab_plan active_tab" href="#">
+					<span class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
+				</a>
+				<a class="state_tab tab_calendar" href="#">
+					<span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				</a>
+				<a class="state_tab tab_stat" href="#">
+					<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+				</a>
 			</div>
 
 			<div id="body_wrap">
@@ -39,9 +52,13 @@
 					<!-- "workout_list_success" is for a workout done,							-->
 					<!-- "workout_list_edited" is for a workout edited to lower weight or reps,	-->
 					<!-- "workout_list_failed" is for a workout not completed.					-->
+					<div class="no_plans workout_list_one">There is no plans today.</div>
 				</div>
 				<a href="pages\add_body_part.html" class="btn btn-info btn-lg add_plan_btn">
-					<span class="glyphicon glyphicon-plus"></span> Add
+					<span class="glyphicon glyphicon-plus"></span> Add new workout
+				</a>
+				<a href="pages\load.html" class="btn btn-success btn-lg add_plan_btn">
+					<span class="glyphicon glyphicon glyphicon-open"></span> Load from previous
 				</a>
 			</div>
 		</div>

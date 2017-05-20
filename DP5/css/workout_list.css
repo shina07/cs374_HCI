@@ -19,6 +19,10 @@
 	height: 36px;
 	background-color: #FFFFFF;
 	border: 1px solid #DEDEDE;
+	text-align: middle;
+	line-height: 34px;
+	font-size: 14px;
+	color: #333333;
 }
 
 .workout_list_default {
