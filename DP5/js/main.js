@@ -17,7 +17,6 @@ var link_userId = -1;
 
 $(document).ready(function() {
 	var link_userId = getUrlParameter('userId');
-
 	read_plans();
 
 	$('a').each(function() {
@@ -60,15 +59,12 @@ function read_plans2(userid, today, i) {
 				var plans3 = data.val()
 				var json = {
 					"value" : JSON.parse(plans3.value),
-					//"original_value" : JSON.parse(plans3.original_value),
 					"done" : plans3.done
 				}
 				sets["set_" + (++count)] = json
 				plansSet.push({
 					name: plans2.workout_name,
-					changed: plans3.changed,
 					done: plans3.done,
-					//original_value: plans3.original_value,
 					value: plans3.value,
 					order: j
 				})
