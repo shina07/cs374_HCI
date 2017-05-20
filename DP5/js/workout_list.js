@@ -24,13 +24,6 @@ $(document).ready(function() {
 	}
 	
 	read_plans();
-
-	/*$('a').each(function() {
-		var link = $(this).attr('href')
-		
-		link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
-		$(this).attr('href', link)
-	});*/
 });
 
 function read_plans() {
@@ -105,11 +98,11 @@ function add_exercise (index, args, userid, today, ix) {
 
 	var keys = Object.keys(sets);
 	for (var i = 0; i < keys.length; i++) {
-		add_set (main_wrap_id, name, sets[keys[i]], userid, today, ix, i);
+		add_set (main_wrap_id, name, sets[keys[i]], userid, today, ix, i, keys.length);
 	}
 }
 
-function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
+function add_set (main_id, exercise_name, args, userid, today, ix, iy, len) {
 	var tags = data[exercise_name];
 	var values = args["value"];
 	var original = args["original_value"];
@@ -143,15 +136,19 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 			span += " "
 	}
 	$('#' + id).append('<span>' + span + '</span>')
-	
+	//$('#' + id).on('click',function() {
+	//	var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
+	//	link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
+	//	document.location.href = link
+	//});
 
 	if (firstDone && done == false) {
 		firstDone = false
 		if (undefinedLink) {
 			link_planId = ix
 			link_setId = iy
-			link_total = index
-			$('#header a').each(function() {
+			link_total = len
+			$('.session').each(function() {
 				var link = $(this).attr('href')
 				link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
 				$(this).attr('href', link)
