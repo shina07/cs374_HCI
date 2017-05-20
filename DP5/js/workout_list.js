@@ -28,10 +28,9 @@ $(document).ready(function() {
 var total_cnt = 0
 
 function read_plans() {
-	var param = get_url_params ();
-	var userid = getUrlParameter('userId');
-	var d = new Date();
-	var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
+	var param = get_url_params ()
+	var userid = getUrlParameter('userId')
+	var today = link_date
 
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
