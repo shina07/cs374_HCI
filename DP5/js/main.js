@@ -127,7 +127,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 	else if (same && done === "True")
 		class_name = "workout_list_success";
 	else if (!same && done === "True")
-		class_name = "workout_list_success";
+		class_name = "workout_list_edited";
 	else if (!same && done === "False")
 		class_name = "workout_list_failed";
 	else

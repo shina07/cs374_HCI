@@ -24,13 +24,10 @@ body {
 }
 
 #back_btn {
-	display: none;
 	float: left;
 }
 
 #home_btn {
-	padding-left: 12px;
-	float: left;
 	height: 100%;
 	line-height: 48px;
 	font-size: 24px;
