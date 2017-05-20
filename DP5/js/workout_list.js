@@ -19,32 +19,36 @@ $(document).ready(function() {
 		link_date = today;
 	}
 	if (link_planId == undefined || link_setId == undefined || link_total == undefined) {
-		console.log('uu')
 		undefinedLink = true
 	}
 	
 	read_plans();
 });
 
+var total_cnt = 0
+
 function read_plans() {
-	var param = get_url_params ();
-	var userid = getUrlParameter('userId');
-	var d = new Date();
-	var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
+	var param = get_url_params ()
+	var userid = getUrlParameter('userId')
+	var today = link_date
 
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
 		var plans = data.val()
+		if (plans == null)
+			$(".no_plans").text("There is no plans today.")
 		for (var key in plans) {
 			if (key == "Progress_cnt")
 				continue;
+			else if (key == "Total_cnt")
+				total_cnt = plans["Total_cnt"]
 			read_plans2(userid, today, key)
 		}
 	})
 }
 
 function read_plans2(userid, today, i) {
-	var count = 0;
+	var count = 0
 	var planRef2 = database.ref("PLANS/" + userid + "/" + today + "/" + i)
 	planRef2.once('value').then(function(data) {
 		var plans2 = data.val()
@@ -73,48 +77,48 @@ function read_plans2(userid, today, i) {
 					}
 					add_exercise(indexCnt++, input, userid, today, i)
 				}
-
 			})
 		}
 	})
 }
 
-var index = 0
+function add_exercise (index, args, userid, today, ix, clickable) {
+	var main_wrap_id = "#main_plan"
 
-function add_exercise (index, args, userid, today, ix) {
-	var main_wrap_id = "#main_plan";
-
-	var name = args["name"];
-	var sets = args["sets"];
+	var name = args["name"]
+	var sets = args["sets"]
 
 	var id = "plan_" + index.toString();
 
 	jQuery('<div/>', {
 		class : "workout_list_name",
 		id : id,
-	}).appendTo($(main_wrap_id));
+	}).appendTo($(main_wrap_id))
 
-	$('#' + id).append('<span>' + name + '</span>');
+	$('#' + id).append('<span>' + name + '</span>')
 
-	var keys = Object.keys(sets);
+	var keys = Object.keys(sets)
+	
 	for (var i = 0; i < keys.length; i++) {
-		add_set (main_wrap_id, name, sets[keys[i]], userid, today, ix, i, keys.length);
+		add_set (main_wrap_id, name, sets[keys[i]], userid, today, ix, i);
 	}
 }
 
-function add_set (main_id, exercise_name, args, userid, today, ix, iy, len) {
-	var tags = data[exercise_name];
-	var values = args["value"];
-	var original = args["original_value"];
-	var done = args["done"];
+var indexSet = 0
 
-	var id = "set_" + (index++).toString();
+function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
+	var tags = data[exercise_name]
+	var values = args["value"]
+	var original = args["original_value"]
+	var done = args["done"]
 
-	var class_name = "";
+	var id = "set_" + (indexSet++).toString()
+
+	var class_name = ""
 	if (done == true)
-		class_name = "workout_list_success";
+		class_name = "workout_list_success"
 	else
-		class_name = "workout_list_default";
+		class_name = "workout_list_default"
 
 	jQuery('<div/>', {
 		class : "workout_list_one " + class_name,
@@ -136,18 +140,20 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy, len) {
 			span += " "
 	}
 	$('#' + id).append('<span>' + span + '</span>')
-	//$('#' + id).on('click',function() {
-	//	var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
-	//	link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+index
-	//	document.location.href = link
-	//});
+
+	// click a plan from list
+	$('#' + id).on('click',function() {
+		var link = document.location.toString().split("main.html")[0] + 'pages/workout.html'
+		link += '?userId='+userid+'&date='+today+'&planId='+ix+'&setId='+iy+'&total='+total_cnt
+		document.location.href = link
+	});
 
 	if (firstDone && done == false) {
 		firstDone = false
 		if (undefinedLink) {
 			link_planId = ix
 			link_setId = iy
-			link_total = len
+			link_total = total_cnt
 			$('.session').each(function() {
 				var link = $(this).attr('href')
 				link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
