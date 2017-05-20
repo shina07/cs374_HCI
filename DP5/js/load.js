@@ -2,10 +2,13 @@
 exercise = {};
 userid = 0;
 index = 0;
+date_chosen = "";
 
 $(document).ready(function () {
-	userid = get_url_params ()["userid"];
-	load_exercise ();
+	var params = get_url_params ();
+	userid = params["userId"];
+
+	load_exercise (userid);
 });
 
 function load_exercise() {
@@ -51,6 +54,7 @@ function load_exercise() {
 
 				var date = year + "-" + month + "-" + day;
 
+				date_chosen = date.toString();
 				load_plans(date);
 			}, 
 			// onDayHover : function (events) {
@@ -61,6 +65,11 @@ function load_exercise() {
 			},
 	    });
 	});
+}
+
+function load_to_main (date) {
+	console.log(date);
+	window.location.href = "../main.html?userId=" + userid.toString() + "&date=" + date;
 }
 
 function load_plans (date) {
@@ -90,6 +99,15 @@ function load_plans (date) {
 				break;
 
 		}
+
+		var loadbtn = document.createElement("button");
+ 		loadbtn.classList.add("btn");
+ 		loadbtn.classList.add("btn-info");
+ 		loadbtn.setAttribute("type", "button");
+ 		loadbtn.setAttribute("style", "float:center");
+ 		loadbtn.setAttribute("onclick", "load_to_main(date_chosen);");
+ 		loadbtn.innerHTML = "Load";
+ 		document.getElementById('main_plan').appendChild(loadbtn);
 	}
 }
 
@@ -120,7 +138,7 @@ function add_exercise (index, args) {
 
 function add_set (main_id, exercise_name, args) {
 	var tags = data[exercise_name];
-	var values = args["value"];
+	var values = JSON.parse(args["value"]);
 	var original = args["original_value"];
 	var done = args["done"];
 
