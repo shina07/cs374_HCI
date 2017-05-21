@@ -14,9 +14,6 @@ $(document).ready(function() {
 			$(this).attr('href', link)
 		});
 	}
-
-	/* ADDED by S H Yoon*/
-	document.getElementById("add").setAttribute("href", "pages/add_body_part.html?userId=" + link_userId);
 });
 
 // http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
