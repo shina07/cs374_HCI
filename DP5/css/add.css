@@ -68,15 +68,7 @@
     display: inline-block;
 }
 
-.panel-body {
-    padding: 0;
-}
 
-.panel-footer{
-    text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
-}
 
 .confirm_btn {
     font-size: 18px;
@@ -105,4 +97,28 @@
 }
 .image_on, .home:active .image_off{
     display:block
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.panel-footer{
+    text-align: center;
+    //padding-left: 10%;
+    //padding-right: 10%;
+    vertical-align: middle;
+    line-height: 15px;
+}
+.fixed-panel {
+    height: 50px;
+    text-align: center;
+    font-size: 3.5vw;
+    padding-top: 5%;
+}
+
+.tool-panel {
+    padding-top: 15%;
+    height: 50px;
+    text-align: center;
 }

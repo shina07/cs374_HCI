@@ -32,21 +32,40 @@
     $(document).ready(function(){
         switch (body_part){
             case "chest":
-                //$("#ezbar").hide();
+                $("#ezbar").hide();
                 $("#olympicbar").hide();
                 $("#etc").hide();
                 var chest_barbell = [["bench-press","-1.png", "-2.png"],["bent-arm-pullover", "-1.png", "-2.png"],["decline-bench-press", "-1.png", "-2.png"],["incline-bench-press", "-1.png", "-2.png"], ["wide-grip-bench-press", "-1.png", "-2.png"], ["wide-grip-decline-bench-press", "-1.png", "-2.png"]];
                 add_to_shown_lst("chest","barbell", chest_barbell);
-                // add to shown lst chest barbell 대신 다른것들 하기
+                var chest_bodyweight = [['wide-push-ups', '-1.png', '-2.png'], ['push-ups-3', '-1.png', '-2.png'], ['chest-dips', '-1.png', '-2.png'], ['close-triceps-pushup', '-1.gif', '-2.gif'], ['push-up-with-feet-on-an-exercise-ball', '-1.png', '-2.png'], ['one-armed-biased-push-up', '-1.png', '-2.png']];
+                add_to_shown_lst("chest", "bodyweight", chest_bodyweight);
+                var chest_cable = [['flat-bench-cable-flys', '-1.png', '-2.png'], ['cable-crossover', '-1.png', '-2.png'], ['incline-cable-flyes', '-1.png', '-2.png']];
+                add_to_shown_lst("chest","cable", chest_cable);
+                var chest_dumbbell = [['one-arm-bench-press', '-1.png', '-2.png'], ['one-arm-flat-bench-flys', '-1.png', '-2.png'], ['dumbbell-flys', '-1.png', '-2.png'], ['dumbbell-decline-flys', '-1.png', '-2.png'], ['incline-flys', '-1.png', '-2.png'], ['incline-flys-with-a-twist', '-1.png', '-2.png'], ['decline-dumbbell-bench-press', '-1.png', '-2.png'], ['incline-press', '-1.png', '-2.png'], ['hammer-grip-incline-bench-press', '-1.png', '-2.png']];
+                add_to_shown_lst("chest", "dumbbell", chest_dumbbell);
+                var chest_machine = [['smith-incline-bench-press', '-1.png', '-2.png'], ['butterfly-machine', '-1.png', '-2.png'], ['incline-chest-press', '-1.png', '-2.png'], ['smith-bench-press', '-1.png', '-2.png'], ['seated-bench-press', '-1.png', '-2.png'], ['decline-chest-press', '-1.png', '-2.png']];
+                add_to_shown_lst("chest", "machine", chest_machine);
                 break;
             case "shoulder":
                 $("#ezbar").hide();
+                $("#olympicbar").hide();
+                $("#etc").hide();
+                $("#bodyweight").hide();
+                var shoulder_barbell = [['barbell-front-raises', '-1.png', '-2.png'], ['seated-military-shoulder-press', '-1.png', '-2.png'], ['barbell-upright-rows', '-1.png', '-2.png'], ['barbell-shrugs', '-1.png', '-2.png'], ['hang-cleans', '-1.gif', '-2.gif']];
+                var shoulder_cable = [['cable-upright-rows', '-1.png', '-2.png'], ['cable-shrugs', '-1.png', '-2.png'], ['cable-seated-rear-lateral-raise', '-1.png', '-2.png'], ['bent-over-cable-lateral-raises', '-1.png', '-2.png'], ['cable-front-raises', '-1.png', '-2.png']];
+                var shoulder_dumbbell = [['dumbbell-lateral-raises', '-1.png', '-2.png'], ['dumbbell-front-raises-2', '-1.png', '-2.png'], ['lying-one-arm-rear-lateral-raise', '-1.png', '-2.png'], ['dumbbell-raise', '-1.png', '-2.png'], ['lying-rear-lateral-raise', '-1.png', '-2.png'], ['dumbbell-upright-row', '-1.png', '-2.png'], ['cuban-press', '-1.png', '-2.png'], ['arnold-press', '-1.png', '-2.png'], ['iron-cross', '-1.png', '-2.png'], ['one-arm-upright-row', '-1.png', '-2.png'], ['dumbbell-shoulder-press', '-1.png', '-2.png'], ['dumbbell-shrugs', '-1.png', '-2.png']];
+                var shoulder_machine = [['shoulder-press-machine', '-1.png', '-2.png'], ['smith-machine-upright-row', '-1.png', '-2.png'], ['smith-machine-shrugs', '-1.png', '-2.png']];
+                add_to_shown_lst("shoulder", "barbell", shoulder_barbell);
+                add_to_shown_lst("shoulder","cable", shoulder_cable);
+                add_to_shown_lst("shoulder","dumbbell", shoulder_dumbbell);
+                add_to_shown_lst("shoulder","machine", shoulder_machine);
                 break;
             case "back":
                 break;
             case "triceps":
                 break;
             case "biceps":
+                $("#etc").hide();
                 break;
             case "abs":
                 break;
@@ -73,7 +92,7 @@
             innerAfter += tool + "/" + workout_name + img1 + "' style='width:100%' />";
             innerAfter += "<img class='thumb image_off' src='../../img/" + bodypart +"/";
             innerAfter += tool + "/" + workout_name + img2 + "' style='width:100%' />";
-            innerAfter += "</a></div><div class='panel-footer' onclick=" + onclickref + ">" + workout_name + "</div></div></div>";
+            innerAfter += "</a></div><div class='panel-footer fixed-panel' style='' onclick=" + onclickref + ">" + workout_name + "</div></div></div>";
             console.log(innerAfter);
             document.getElementById(tool).innerHTML = innerAfter;
         }
@@ -103,31 +122,31 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/Barbell-100.png" style="width:100%"></div>
-                        <div class="panel-footer"> Barbell </div>
+                        <div class="tool-panel panel-footer"> Barbell </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><div class="list" id="barbell_list">Barbell Workouts</div></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
-            <!-- DUMBELL -->
-            <div style="color:#2297F1" id="dumbell">
+            <!-- DUMBBELL -->
+            <div style="color:#2297F1" id="dumbbell">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/Dumbbell-100.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> Dumbell </div>
+                        <div class="panel-footer tool-panel"> Dumbbell </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><div class="list">Dumbell Workouts</div></div>
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbbell_press&userId='+userId;">
+                        <div class="panel-body"><div class="list">Dumbbell Workouts</div></div>
                         <div class="panel-footer"> desc </div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <!-- EZ Bar -->
@@ -135,25 +154,17 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/EZ%20Curl%20Bar-100.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> EZ Bar </div>
+                        <div class="panel-footer tool-panel"> EZ Bar </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
+                <!--div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default">
                         <div class="panel-body"><a class="home"><img class="thumb image_on" id="test!!!" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-1.gif" style="width:100%" />
                             <img class="thumb image_off" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-2.gif" style="width:100%" />
                         </a></div>
                         <div class="panel-footer" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;"> biceps exercise </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default">
-                        <div class="panel-body"><a class="home"><img class="thumb image_on" id="tes" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-1.gif" style="width:100%" />
-                            <img class="thumb image_off" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-2.gif" style="width:100%" />
-                        </a></div>
-                        <div class="panel-footer" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;"> biceps exercise </div>
-                    </div>
-                </div>
+                </div-->
             </div>
 
             <!-- Cable -->
@@ -161,15 +172,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/Cable%20Release%20Filled-100.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> Cable </div>
+                        <div class="panel-footer tool-panel"> Cable </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <!--Olympic bar -->
@@ -177,15 +188,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/olympicbar.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> Olympic Bar </div>
+                        <div class="panel-footer tool-panel"> OlympicBar </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <!-- Machine -->
@@ -193,15 +204,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/Steampunk-100.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> Machine </div>
+                        <div class="panel-footer tool-panel"> Machine </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <!-- BodyWeight -->
@@ -209,15 +220,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/Fat%20Man-100.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> Body Weight </div>
+                        <div class="panel-footer tool-panel"> BodyWeight </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <!-- etc -->
@@ -225,15 +236,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/ex/More-96.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> ETC </div>
+                        <div class="panel-footer tool-panel"> ETC </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
+                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
                     <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
                         <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer"> desc</div>
                     </div>
-                </div>
+                </div-->
             </div>
 
         </div>
