@@ -84,27 +84,7 @@
         elem.parentNode.removeChild(elem);
         exercise_sets -= 1;
     }
-    function send_plans(){ // erased
-        var planId = 0;
-        var planRef = database.ref("PLANS/" + userId + "/" + exercise_date);
-        planRef.once("value", function(snapshot){
-            console.log("AHHH", snapshot.val().length);
-            if(planId==NaN){
-                planId = 0;
-            }
-            console.log(planId);
-        });
-        var planref = database.ref("PLANS/" + userId +"/" + exercise_date);
-        planref.child(planId).set({
-            workout_name: exercise_name,
-            sets: set_accumulator,
-            setNum: exercise_sets
-        });
-        planref.once("value", function(snapshot){
-            planId += 1;
-        });
-        //document.location.href = "../../main.html?userId=" + userId;
-    }
+
     function send_plan(){
         var planRef = database.ref("PLANS/"+userId + "/" + exercise_date);
         //console.log("PLANS/"+userId + "/" + exercise_date);
@@ -147,14 +127,18 @@
 <body>
 <div id="wrap">
     <div id="header">
-        <a id="back_btn" href="#">
-            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        <a class="state_tab tab_list active_tab" href="#">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
         </a>
-        <a id="home_btn" href="../main.html">
-            <span>Workout Plans</span>
+        <a class="session state_tab tab_plan" href="../workout.html">
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
         </a>
-        <a id="menu_btn" href="#">
-            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        <a class="session state_tab tab_calendar" href="../load.html">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        </a>
+        <a class="session state_tab tab_stat" href="../stat.html">
+            <img class="not_implemented" src="../../img/being_ready2.png"/>
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
         </a>
     </div>
 
