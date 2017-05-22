@@ -103,14 +103,18 @@
 <body>
 <div id="wrap">
     <div id="header">
-        <a id="back_btn" href="#">
-            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        <a class="state_tab tab_list active_tab" href="#">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
         </a>
-        <a id="home_btn" href="../main.html">
-            <span>Workout Plans</span>
+        <a class="session state_tab tab_plan" href="../workout.html">
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
         </a>
-        <a id="menu_btn" href="#">
-            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+        <a class="session state_tab tab_calendar" href="../load.html">
+            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        </a>
+        <a class="session state_tab tab_stat" href="../stat.html">
+            <img class="not_implemented" src="../../img/being_ready2.png"/>
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
         </a>
     </div>
 
@@ -121,132 +125,81 @@
             <div style="color:#2297F1" id="barbell">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
                     <div class="panel panel-default">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/Barbell-100.png" style="width:100%"></div>
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Barbell-100.png" style="width:100%"></div>
                         <div class="tool-panel panel-footer"> Barbell </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><div class="list" id="barbell_list">Barbell Workouts</div></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
 
             <!-- DUMBBELL -->
             <div style="color:#2297F1" id="dumbbell">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/Dumbbell-100.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Dumbbell-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Dumbbell </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbbell_press&userId='+userId;">
-                        <div class="panel-body"><div class="list">Dumbbell Workouts</div></div>
-                        <div class="panel-footer"> desc </div>
-                    </div>
-                </div-->
             </div>
 
             <!-- EZ Bar -->
             <div style="color:#2297F1" id="ezbar">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/EZ%20Curl%20Bar-100.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/EZ%20Curl%20Bar-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> EZ Bar </div>
                     </div>
                 </div>
-                <!--div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default">
-                        <div class="panel-body"><a class="home"><img class="thumb image_on" id="test!!!" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-1.gif" style="width:100%" />
-                            <img class="thumb image_off" src="../../img/biceps/ezbar/close-grip-ez-bar-curl-2.gif" style="width:100%" />
-                        </a></div>
-                        <div class="panel-footer" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;"> biceps exercise </div>
-                    </div>
-                </div-->
             </div>
 
             <!-- Cable -->
             <div style="color:#2297F1" id="cable">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/Cable%20Release%20Filled-100.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Cable%20Release%20Filled-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Cable </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
 
             <!--Olympic bar -->
             <div style="color:#2297F1" id="olympicbar">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/olympicbar.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/olympicbar.jpg" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> OlympicBar </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
 
             <!-- Machine -->
             <div style="color:#2297F1" id="machine">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/Steampunk-100.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Steampunk-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Machine </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
 
             <!-- BodyWeight -->
             <div style="color:#2297F1" id="bodyweight">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/Fat%20Man-100.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Fat%20Man-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> BodyWeight </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
 
             <!-- etc -->
             <div style="color:#2297F1" id="etc">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=barbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/ex/More-96.png" class="img-responsive" style="width:100%" alt=""></div>
+                    <div class="panel panel-default" >
+                        <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/More-96.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> ETC </div>
                     </div>
                 </div>
-                <!--div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="padding:0">
-                    <div class="panel panel-default" onclick="location.href='add_param.html?exercise=dumbell_press&userId='+userId;">
-                        <div class="panel-body"><img class="thumb" src="../../img/5th grade.png" class="img-responsive" style="width:100%" alt=""></div>
-                        <div class="panel-footer"> desc</div>
-                    </div>
-                </div-->
             </div>
-
         </div>
     </div>
 </div>

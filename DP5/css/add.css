@@ -121,4 +121,10 @@
     padding-top: 15%;
     height: 50px;
     text-align: center;
+    color: #ffffff;
+    background-color: #2e6da4;
+}
+
+.tool-body {
+    border-color: #2e6da4;
 }
