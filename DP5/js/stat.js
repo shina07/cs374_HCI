@@ -1,5 +1,7 @@
 $(document).ready(function() {
     $('.panel').css("height", (window.screen.height).toString()+"px")
+
+    loadData()
 })
 
 /* kinds of chart
@@ -7,6 +9,44 @@ $(document).ready(function() {
     2. ratio of each part to total number plan - pie
     3. summury for each day - bar
 */
+/*-----------------------------------------------------------+
+| dateLength = Number of dates                               |
+| completed = number of completed worktous for all days      |
+| uncompleted = number of uncompleted worktous for all days  |
++-----------------------------------------------------------*/
+
+function loadData() {
+    completed = 0, uncompleted = 0;
+    recentDays = new Array()
+
+    var userRef = database.ref("PLANS/" + link_userId)
+    userRef.once('value').then(function(userData) {
+        plans = userData.val()
+        dateLength = Object.keys(plans).length
+
+        // 1
+        for (var key in plans) {
+            var dateRef = database.ref("PLANS/" + link_userId + "/" + key)
+            dateRef.once('value').then(function(dateData) {
+                if (dateData.val()["completed"] == true)
+                    completed++;
+                else if (dateData.val()["completed"] == undefined)
+                    uncompleted++;
+            })
+        }
+
+        // 2
+        for (var key in plans) {
+            var dateRef = database.ref("PLANS/" + link_userId + "/" + key)
+            dateRef.once('value').then(function(dateData) {
+                
+            })
+        }
+
+        // 3
+    })
+}
+
 $(function () {
     $.scrollify({
         section : ".panel",
@@ -123,4 +163,33 @@ $(function () {
             }
         }
     })
+<<<<<<< HEAD
 });
+=======
+
+    Highcharts.chart('container1', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+
+>>>>>>> 4a4caf7b6b2e0dfc473215336fdba2adaab0e956
