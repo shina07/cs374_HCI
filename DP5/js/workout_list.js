@@ -131,15 +131,16 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	var span = "";
 	for (var i = 0; i < values.length; i++) {
-		if (tags[i] === "reps")
+		/*if (tags[i] === "reps")
 			span += values[i] + " reps";
 		else if (tags[i] === "speed")
 			span += values[i] + " km/h";
 		else if (tags[i] === "time")
 			span += values[i] + " min";
 		else if (tags[i] === "weight")
-			span += values[i] + " kg";
+			span += values[i] + " kg";*/
 
+		span += values[i] + " " + unit[tags[i]]
 		if (i != args.length) 
 			span += " "
 	}
