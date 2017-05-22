@@ -46,6 +46,8 @@ function read_plans() {
 		for (var key in plans) {
 			if (key == "Total_cnt")
 				total_cnt = plans["Total_cnt"]
+			else if (key == "planId")
+				continue
 			else if (key == "Progress_cnt") {
 				progress_cnt = plans["Progress_cnt"]
 				if (progress_cnt == 0) {
