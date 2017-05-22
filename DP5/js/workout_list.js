@@ -18,9 +18,6 @@ $(document).ready(function() {
 		var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
 		link_date = today;
 	}
-	if (link_planId == undefined || link_setId == undefined || link_total == undefined) {
-		undefinedLink = true
-	}
 	
 	read_plans();
 });
@@ -35,14 +32,31 @@ function read_plans() {
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
 		var plans = data.val()
-		if (plans == null)
+		if (plans == null) {
 			$(".no_plans").text("There is no plans today.")
+			$('.session_main').each(function() {
+				var link = $(this).attr('href')
+				link += ('?userId=' + link_userId + '&date=' + link_date + '&total=0')
+				$(this).attr('href', link)
+				$(this).css('pointer-events', 'auto')
+			})
+		}
 		for (var key in plans) {
-			if (key == "Progress_cnt")
-				continue;
-			else if (key == "Total_cnt")
+			if (key == "Total_cnt")
 				total_cnt = plans["Total_cnt"]
-			read_plans2(userid, today, key)
+			else if (key == "Progress_cnt") {
+				if (plans["Progress_cnt"] == 0) {
+					$('.session_main').each(function() {
+						var link = $(this).attr('href')
+						link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=0&setId=0&total=' + plans["Total_cnt"])
+						$(this).attr('href', link)
+						$(this).css('pointer-events', 'auto')
+					})
+				}
+				continue;
+			}
+			else
+				read_plans2(userid, today, key)
 		}
 	})
 }
@@ -127,16 +141,8 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	var span = "";
 	for (var i = 0; i < values.length; i++) {
-		if (tags[i] === "reps")
-			span += values[i] + " reps";
-		else if (tags[i] === "speed")
-			span += values[i] + " km/h";
-		else if (tags[i] === "time")
-			span += values[i] + " min";
-		else if (tags[i] === "weight")
-			span += values[i] + " kg";
-
-		if (i != args.length)
+		span += values[i] + " " + unit[tags[i]]
+		if (i != args.length) 
 			span += " "
 	}
 	$('#' + id).append('<span>' + span + '</span>')
@@ -148,19 +154,19 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		document.location.href = link
 	});
 
-	if (firstDone && done == false) {
+	if (firstDone && !done) {
 		firstDone = false
-		if (undefinedLink) {
-			link_planId = ix
-			link_setId = iy
-			link_total = total_cnt
-			$('.session').each(function() {
-				var link = $(this).attr('href')
-				link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
-				$(this).attr('href', link)
-			});
-		}
+
+		link_planId = ix
+		link_setId = iy
+		link_total = total_cnt
+		$('.session_main').each(function() {
+			var link = $(this).attr('href')
+			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
+			$(this).attr('href', link)
+			$(this).css('pointer-events', 'auto')
+		});
 	}
-	
+
 	$('.no_plans').css('display', 'none');
 }

@@ -33,7 +33,7 @@ function load_exercise() {
 
 		for (var i = 0; i < dates.length; i++)
 		{
-			events[dates[i]] = {"number" : exercise[dates[i]]["Progress_cnt"] };
+			events[dates[i]] = {"number" : exercise[dates[i]]["Total_cnt"] };
 		}
 
 	    $(".responsive-calendar").responsiveCalendar({

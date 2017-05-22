@@ -1,6 +1,3 @@
-/**
- * Created by SEUNGHEE on 2017-05-20.
- */
 var data = {
     "Treadmill" : ["speed", "time"],
     "Bicycle" : ["speed", "time"],
@@ -12,6 +9,13 @@ var data = {
     "Bench Press" : ["weight", "reps"],
     "Body Tricep Press" : ["reps"]
 };
+
+var unit = {
+    "speed" : "km/h",
+    "time" : "min",
+    "weight" : "kg",
+    "reps" : "times"
+}
 
 var add_workout = {
     "CHEST" : {

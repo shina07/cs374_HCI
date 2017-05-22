@@ -24,7 +24,7 @@
 		<a class="session state_tab tab_plan active_tab" href="#">
 			<span class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
 		</a>
-		<a class="session state_tab tab_calendar" href="calendar.html">
+		<a class="session state_tab tab_calendar" href="load.html">
 			<span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span>
 		</a>
 		<a class="session state_tab tab_stat" href="stat.html">
@@ -33,6 +33,14 @@
 	</div>
 	<div class="loading" align="center">
 		Loading...
+	</div>
+	<div class="no_plan" align="center">
+		There is no plans today.
+	</div>
+	<div class="param_err" align="center">
+		<img src="../img/error_icon.png">
+		<p><b>Incorrect access.</b></p>
+		<p style="font-size: 15px">The information is not enough.</p>
 	</div>
 	<div class="workout_one" align="center">
 		<a class="session progress_wrap" href="..\main.html">
@@ -102,6 +110,7 @@
     <script type="text/javascript" src="..\lib\angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../public/url.js"></script>
+	<script type="text/javascript" src="../data/data.js"></script>
 	<script type="text/javascript" src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/workout.js"></script>
 </body>
