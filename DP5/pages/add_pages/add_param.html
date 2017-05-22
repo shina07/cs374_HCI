@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Import CSS -->
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/js/bootstrap.min.js">
-    <link rel="stylesheet" type="text/css" href="../../lib/jquery-3.2.1.min.js">
     <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
@@ -20,6 +18,12 @@
     var x = document.URL;
     var userId = (document.URL).split("=")[2];
     var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
+    exercise_name = exercise_name.split("-");
+    for(var i = 0;i<exercise_name.length;i++){
+        var capital = exercise_name[i].charAt(0).toUpperCase();
+        exercise_name[i] = capital + exercise_name[i].substring(1, exercise_name[i].length);
+    }
+    exercise_name = exercise_name.join(" ");
     var d = new Date();
     var exercise_date = d.getFullYear() + "-0" + (d.getMonth()+1) + "-" + d.getDate();
     var exercise_weight = 10;
@@ -80,7 +84,7 @@
         elem.parentNode.removeChild(elem);
         exercise_sets -= 1;
     }
-    function send_plans(){
+    function send_plans(){ // erased
         var planId = 0;
         var planRef = database.ref("PLANS/" + userId + "/" + exercise_date);
         planRef.once("value", function(snapshot){
@@ -105,16 +109,14 @@
         var planRef = database.ref("PLANS/"+userId + "/" + exercise_date);
         //console.log("PLANS/"+userId + "/" + exercise_date);
         planRef.once("value", function(snapshot){
-            var value = snapshot.val();
-            var planId = value['planId'];
-            var Progress_cnt = value['Progress_cnt'];
-            var Total_cnt = value['Total_cnt'];
-            console.log("planId:",planId);
-            if(planId == undefined){
+            var IsExists = snapshot.child("planId").exists();
+            console.log("IsExists: ", IsExists);
+
+            if(!IsExists){
                 planRef.set({
-                    planId: 0,
+                    planId: 1,
                     Progress_cnt: 0,
-                    Total_cnt: 0
+                    Total_cnt: exercise_sets
                 });
                 planRef.child(0).set({
                     workout_name: exercise_name,
@@ -123,9 +125,13 @@
                 })
             }
             else {
+                var value = snapshot.val();
+                var planId = value['planId'];
+                var Progress_cnt = value['Progress_cnt'];
+                var Total_cnt = value['Total_cnt'];
                 planRef.update({
                     Total_cnt: Total_cnt + exercise_sets,
-                    planId: PlanId + 1
+                    planId: planId + 1
                 });
                 planRef.child(planId).set({
                     workout_name: exercise_name,
@@ -133,7 +139,8 @@
                     setNum: exercise_sets
                 });
             }
-        })
+            document.location.href = "../../main.html?userId=" + userId;
+        });
     }
 </script>
 
