@@ -2,16 +2,16 @@ var link_userId, link_date, link_planId, link_setId, link_total;
 
 $(document).ready(function() {
 	link_userId = getUrlParameter('userId');
-	link_date = getUrlParameter('date')
-	link_planId = getUrlParameter('planId')
-	link_setId = getUrlParameter('setId')
-	link_total = getUrlParameter('total')
+	link_date = getUrlParameter('date');
+	link_planId = getUrlParameter('planId');
+	link_setId = getUrlParameter('setId');
+	link_total = getUrlParameter('total');
 
 	if (link_userId != undefined && link_date != undefined && link_planId != undefined && link_setId != undefined && link_total != undefined) {
 		$('.session').each(function() {
-			var link = $(this).attr('href')
-			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
-			$(this).attr('href', link)
+			var link = $(this).attr('href');
+			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total);
+			$(this).attr('href', link);
 		});
 	}
 });

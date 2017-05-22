@@ -17,10 +17,6 @@
 <script type="text/javascript" src="../../database/firebase.js"></script>
 <script type="text/javascript" src="../../public/url.js"></script>
 <script>
-    //var urldict = get_url_params();
-    //console.log(urldict);
-    //var exercise_name = get_url_params();
-    //console.log(exercise_name);
     var x = document.URL;
     var userId = (document.URL).split("=")[2];
     var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
@@ -29,20 +25,11 @@
     var exercise_weight = 10;
     var exercise_reps = 10;
     var exercise_sets = 0;
-    //plan Id retrieval
-    var planId = 0;
-    var planRef = database.ref("PLANS/"+userId+"/"+exercise_date)
-    planRef.once("value", function(snapshot){
-        planId = snapshot.val().length;
-        if(planId==NaN){
-            planId = 0;
-        }
-    });
     var set_accumulator = {};
 
     function weight_dec(){
         exercise_weight -= 1;
-        if (exericse_weight > 0) {
+        if (exercise_weight > 0) {
             document.getElementById("weight").innerHTML = exercise_weight;
         }
 
@@ -94,9 +81,15 @@
         exercise_sets -= 1;
     }
     function send_plans(){
-        console.log("####");
-        console.log(userId);
-        console.log(exercise_name);
+        var planId = 0;
+        var planRef = database.ref("PLANS/" + userId + "/" + exercise_date);
+        planRef.once("value", function(snapshot){
+            console.log("AHHH", snapshot.val().length);
+            if(planId==NaN){
+                planId = 0;
+            }
+            console.log(planId);
+        });
         var planref = database.ref("PLANS/" + userId +"/" + exercise_date);
         planref.child(planId).set({
             workout_name: exercise_name,
@@ -106,7 +99,41 @@
         planref.once("value", function(snapshot){
             planId += 1;
         });
-        document.location.href = "../../main.html?userId=" + userId;
+        //document.location.href = "../../main.html?userId=" + userId;
+    }
+    function send_plan(){
+        var planRef = database.ref("PLANS/"+userId + "/" + exercise_date);
+        //console.log("PLANS/"+userId + "/" + exercise_date);
+        planRef.once("value", function(snapshot){
+            var value = snapshot.val();
+            var planId = value['planId'];
+            var Progress_cnt = value['Progress_cnt'];
+            var Total_cnt = value['Total_cnt'];
+            console.log("planId:",planId);
+            if(planId == undefined){
+                planRef.set({
+                    planId: 0,
+                    Progress_cnt: 0,
+                    Total_cnt: 0
+                });
+                planRef.child(0).set({
+                    workout_name: exercise_name,
+                    sets: set_accumulator,
+                    setNum: exercise_sets
+                })
+            }
+            else {
+                planRef.update({
+                    Total_cnt: Total_cnt + exercise_sets,
+                    planId: PlanId + 1
+                });
+                planRef.child(planId).set({
+                    workout_name: exercise_name,
+                    sets: set_accumulator,
+                    setNum: exercise_sets
+                });
+            }
+        })
     }
 </script>
 
@@ -139,7 +166,7 @@
                             <button type="button" class="btn btn-info" onclick="weight_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
-                            <button id="weight" type="button" class="btn btn-default" disabled><b>
+                            <button id="weight" type="button" style="font-weight:bold;" class="btn btn-default" disabled><b>
                                 <script>document.write(exercise_weight);</script></b></button>
                             <button type="button" class="btn btn-info" onclick="weight_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
@@ -156,7 +183,7 @@
                             <button type="button" class="btn btn-info" onclick="reps_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
-                            <button id="reps" type="button" class="btn btn-default" disabled><b>
+                            <button id="reps" type="button" style="font-weight:bold;" class="btn btn-default" disabled><b>
                                 <script>document.write(exercise_reps);</script></b></button>
                             <button type="button" class="btn btn-info" onclick="reps_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
@@ -173,7 +200,7 @@
         </div>
         <div class="panel panel-info" id="sets"></div>
         <div>
-            <button type="button" class="btn btn-info confirm_btn" onclick="send_plans()">Confirm</button>
+            <button type="button" class="btn btn-info confirm_btn" onclick="send_plan()">Confirm</button>
         </div>
         </div>
 
@@ -182,7 +209,6 @@
     <!-- Import JavaScript -->
     <script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <script type="application/json" src="../../data/data.js"></script>
     <script type="text/javascript" src="../../js/main.js"></script>
 
