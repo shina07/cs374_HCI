@@ -163,33 +163,4 @@ $(function () {
             }
         }
     })
-<<<<<<< HEAD
 });
-=======
-
-    Highcharts.chart('container1', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-});
-
->>>>>>> 4a4caf7b6b2e0dfc473215336fdba2adaab0e956
