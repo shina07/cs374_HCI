@@ -7,13 +7,21 @@ $(document).ready(function() {
 	link_setId = getUrlParameter('setId')
 	link_total = getUrlParameter('total')
 
-	if (link_userId != undefined && link_date != undefined && link_planId != undefined && link_setId != undefined && link_total != undefined) {
-		$('.session').each(function() {
-			var link = $(this).attr('href')
-			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
-			$(this).attr('href', link)
-		});
-	}
+	$('.session').each(function() {
+		var link = $(this).attr('href')
+		if (link_userId != undefined) {
+			link += ('?userId=' + link_userId)
+			if (link_date != undefined)
+				link += ('&date=' + link_date)
+			if (link_planId != undefined)
+				link += ('&planId=' + link_planId)
+			if (link_setId != undefined)
+				link += ('&setId=' + link_setId)
+			if (link_total != undefined)
+				link += ('&total=' + link_total)
+		}
+		$(this).attr('href', link)
+	})
 });
 
 // http://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js

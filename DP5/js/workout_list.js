@@ -18,9 +18,6 @@ $(document).ready(function() {
 		var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
 		link_date = today;
 	}
-	if (link_planId == undefined || link_setId == undefined || link_total == undefined) {
-		undefinedLink = true
-	}
 	
 	read_plans();
 });
@@ -37,7 +34,7 @@ function read_plans() {
 		var plans = data.val()
 		if (plans == null) {
 			$(".no_plans").text("There is no plans today.")
-			$('.session').each(function() {
+			$('.session_main').each(function() {
 				var link = $(this).attr('href')
 				link += ('?userId=' + link_userId + '&total=0')
 				$(this).attr('href', link)
@@ -143,7 +140,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		else if (tags[i] === "weight")
 			span += values[i] + " kg";
 
-		if (i != args.length)
+		if (i != args.length) 
 			span += " "
 	}
 	$('#' + id).append('<span>' + span + '</span>')
@@ -157,16 +154,15 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	if (firstDone && done) {
 		firstDone = false
-		if (undefinedLink) {
-			link_planId = ix
-			link_setId = iy
-			link_total = total_cnt
-			$('.session').each(function() {
-				var link = $(this).attr('href')
-				link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
-				$(this).attr('href', link)
-			});
-		}
+
+		link_planId = ix
+		link_setId = iy
+		link_total = total_cnt
+		$('.session_main').each(function() {
+			var link = $(this).attr('href')
+			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
+			$(this).attr('href', link)
+		});
 	}
 
 	$('.no_plans').css('display', 'none');
