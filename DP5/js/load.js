@@ -12,6 +12,7 @@ $(document).ready(function () {
 });
 
 function load_exercise() {
+
 	var planRef = database.ref("PLANS");
 
 	planRef.once("value", function(data) {
@@ -28,6 +29,7 @@ function load_exercise() {
 		var today = new Date()
 		year = today.getFullYear();
 		month = today.getMonth() + 1;
+		day = today.getDay();
 
 		var events = {}
 
@@ -64,6 +66,13 @@ function load_exercise() {
 
 			},
 	    });
+
+    	document.getElementById('no_plans').innerHTML = "No Plan for This Day...";
+		var today = find_today();
+
+		if (today != null) {
+			today.click();
+		}
 	});
 }
 
@@ -173,7 +182,30 @@ function add_set (main_id, exercise_name, args) {
 	$('#' + id).append('<span>' + span + '</span>');
 }
 
+function find_today () {
 
+	var today = new Date()
+	var	year = today.getFullYear();
+	var	month = today.getMonth() + 1;
+	var	day = today.getDay();
+
+	var allElements = document.getElementsByTagName('a');
+
+	for (var i = 0, n = allElements.length; i < n; i++)
+	{
+		var element = allElements[i];
+		if (element.getAttribute('data-day') == day 
+			&& element.getAttribute('data-month') == month
+			&& element.getAttribute('data-year') == year)
+		{
+			// Element exists with attribute. Add to array.
+			//element.click();
+			return element;
+		}
+	}
+	return null;
+
+}
 
 
 
