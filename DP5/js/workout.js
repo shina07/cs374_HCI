@@ -192,7 +192,7 @@ function set_click_event() {
 			setNum : plans.setNum
 		})
 		total += 1
-		ref = database.ref("PLANS/"+user_id+"/"date)
+		ref = database.ref("PLANS/"+user_id+"/"+date)
 		ref.update({
 			Total_cnt: total
 		})
