@@ -20,6 +20,14 @@ $(document).ready(function() {
 			if (link_total != undefined)
 				link += ('&total=' + link_total)
 		}
+		else {
+			parsed = document.location.href.split('/')
+			if (parsed[parsed.length - 1] == 'login.html') {}
+			else if (parsed[parsed.length - 1] == 'main.html')
+				document.location.href = 'login.html'
+			else
+				document.location.href = '../login.html'
+		}
 		$(this).attr('href', link)
 	})
 });

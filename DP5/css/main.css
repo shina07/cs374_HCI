@@ -157,3 +157,11 @@ body {
 .session_main {
 	pointer-events: none;
 }
+
+.not_implemented {
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 79%;
+	z-index: 10;
+}
