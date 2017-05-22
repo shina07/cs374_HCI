@@ -35,14 +35,21 @@ function read_plans() {
 	var planRef = database.ref("PLANS/" + userid + "/" + today)
 	planRef.once('value').then(function(data) {
 		var plans = data.val()
-		if (plans == null)
+		if (plans == null) {
 			$(".no_plans").text("There is no plans today.")
+			$('.session').each(function() {
+				var link = $(this).attr('href')
+				link += ('?userId=' + link_userId + '&total=0')
+				$(this).attr('href', link)
+			})
+		}
 		for (var key in plans) {
 			if (key == "Progress_cnt")
 				continue;
 			else if (key == "Total_cnt")
 				total_cnt = plans["Total_cnt"]
-			read_plans2(userid, today, key)
+			else
+				read_plans2(userid, today, key)
 		}
 	})
 }
@@ -148,7 +155,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		document.location.href = link
 	});
 
-	if (firstDone && done == false) {
+	if (firstDone && done) {
 		firstDone = false
 		if (undefinedLink) {
 			link_planId = ix
@@ -161,6 +168,6 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 			});
 		}
 	}
-	
+
 	$('.no_plans').css('display', 'none');
 }
