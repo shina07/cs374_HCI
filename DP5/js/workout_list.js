@@ -36,15 +36,25 @@ function read_plans() {
 			$(".no_plans").text("There is no plans today.")
 			$('.session_main').each(function() {
 				var link = $(this).attr('href')
-				link += ('?userId=' + link_userId + '&total=0')
+				link += ('?userId=' + link_userId + '&date=' + link_date + '&total=0')
 				$(this).attr('href', link)
+				$(this).css('pointer-events', 'auto')
 			})
 		}
 		for (var key in plans) {
-			if (key == "Progress_cnt")
-				continue;
-			else if (key == "Total_cnt")
+			if (key == "Total_cnt")
 				total_cnt = plans["Total_cnt"]
+			else if (key == "Progress_cnt") {
+				if (plans["Progress_cnt"] == 0) {
+					$('.session_main').each(function() {
+						var link = $(this).attr('href')
+						link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=0&setId=0&total=' + plans["Total_cnt"])
+						$(this).attr('href', link)
+						$(this).css('pointer-events', 'auto')
+					})
+				}
+				continue;
+			}
 			else
 				read_plans2(userid, today, key)
 		}
@@ -131,15 +141,6 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	var span = "";
 	for (var i = 0; i < values.length; i++) {
-		/*if (tags[i] === "reps")
-			span += values[i] + " reps";
-		else if (tags[i] === "speed")
-			span += values[i] + " km/h";
-		else if (tags[i] === "time")
-			span += values[i] + " min";
-		else if (tags[i] === "weight")
-			span += values[i] + " kg";*/
-
 		span += values[i] + " " + unit[tags[i]]
 		if (i != args.length) 
 			span += " "
@@ -163,6 +164,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 			var link = $(this).attr('href')
 			link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=' + link_planId + '&setId=' + link_setId + '&total=' + link_total)
 			$(this).attr('href', link)
+			$(this).css('pointer-events', 'auto')
 		});
 	}
 

@@ -1,7 +1,45 @@
 $(document).ready(function() {
     $('.panel').css("height", (window.screen.height).toString()+"px")
+
+    loadData()
 })
 
+/*-----------------------------------------------------------+
+| dateLength = Number of dates                               |
+| completed = number of completed worktous for all days      |
+| uncompleted = number of uncompleted worktous for all days  |
++-----------------------------------------------------------*/
+function loadData() {
+    completed = 0, uncompleted = 0;
+    recentDays = new Array()
+
+    var userRef = database.ref("PLANS/" + link_userId)
+    userRef.once('value').then(function(userData) {
+        plans = userData.val()
+        dateLength = Object.keys(plans).length
+
+        // 1
+        for (var key in plans) {
+            var dateRef = database.ref("PLANS/" + link_userId + "/" + key)
+            dateRef.once('value').then(function(dateData) {
+                if (dateData.val()["completed"] == true)
+                    completed++;
+                else if (dateData.val()["completed"] == undefined)
+                    uncompleted++;
+            })
+        }
+
+        // 2
+        for (var key in plans) {
+            var dateRef = database.ref("PLANS/" + link_userId + "/" + key)
+            dateRef.once('value').then(function(dateData) {
+                
+            })
+        }
+
+        // 3
+    })
+}
 
 $(function () {
     $.scrollify({
@@ -144,3 +182,4 @@ $(function () {
         }]
     });
 });
+
