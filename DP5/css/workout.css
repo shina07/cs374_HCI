@@ -4,6 +4,25 @@
 	color: #aaaaaa;
 }
 
+.no_plan {
+	margin-top: 50%;
+	font-size: 20px;
+	color: #aaaaaa;
+	display: none;
+}
+
+.param_err {
+	margin-top: 35%;
+	font-size: 20px;
+	color: #aaaaaa;
+	display: none;
+}
+
+.param_err img {
+	width: 20%;
+	margin-bottom: 20px;
+}
+
 .workout_one {
 	width: 100%;
 	margin-top: 56px;

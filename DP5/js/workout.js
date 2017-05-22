@@ -1,7 +1,28 @@
 function ready_func() {
 	url = get_url_params()
-	parsing_url(url)
-	get_from_firebase(user_id, date, plan_id, set_num);
+
+	if (url == undefined)
+	{
+		$('.param_err').css("display", "block")
+		$('.loading').css("display", "none")
+		return
+	}
+
+	if (url.total == 0)
+	{
+		$('.no_plan').css("display", "block")
+		$('.loading').css("display", "none")
+	}
+	else if (Object.keys(url).length != 5)
+	{
+		$('.param_err').css("display", "block")
+		$('.loading').css("display", "none")
+	}
+	else
+	{
+		parsing_url(url)
+		get_from_firebase(user_id, date, plan_id, set_num)
+	}
 }
 
 function setup_progress() {
@@ -21,7 +42,7 @@ function setup_workout() {
 		$('.workout_edit').append(
 			`<div class="workout_edit_wrap">
 				<div class="workout_property">`
-					+`Weight`+
+					+data[workout_name][i]+
 				`</div>
 				<div class="btn-group" rold="group">
 					<button type="button" class="btn btn-info count_down"><span class="glyphicon glyphicon-minus"></span></button>
@@ -29,7 +50,7 @@ function setup_workout() {
 					<button type="button" class="btn btn-info count_up"><span class="glyphicon glyphicon-plus"></span></button>
 				</div>
 				<div class="workout_unit">`
-					+`kg`+
+					+unit[data[workout_name][i]]+
 				`</div>
 			</div>`)
 	}
