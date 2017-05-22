@@ -2,7 +2,11 @@ $(document).ready(function() {
     $('.panel').css("height", (window.screen.height).toString()+"px")
 })
 
-
+/* kinds of chart
+    1. completion / incompletion - pie
+    2. ratio of each part to total number plan - pie
+    3. summury for each day - bar
+*/
 $(function () {
     $.scrollify({
         section : ".panel",
@@ -50,7 +54,7 @@ $(function () {
                         type: 'pie'
                     },
                     title: {
-                        text: 'Completion'
+                        text: 'Completion / Incompletion'
                     },
                     tooltip: {
                         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -119,28 +123,4 @@ $(function () {
             }
         }
     })
-
-    Highcharts.chart('container1', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
 });

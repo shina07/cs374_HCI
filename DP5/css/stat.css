@@ -1,22 +1,36 @@
-#navigator {
+.navigator {
 	font-size: 30px;
-	width: 90%;
+	width: 100%;
 	text-align: center;
-	display: inline-block;l
+	position: fixed;
 }
 
-#st-left {
-	float: left;
+.n_up {
+	top: 56px;
 }
 
-#st-right {
-	float: right;
+.n_down {
+	bottom: 0;
 }
 
 #body_wrap {
 	margin-top: 0;
+	display: none;
 }
 
 .chart {
-	margin-top: 80px;
+	margin-top: 40%;
+}
+
+.loading {
+	margin-top: 50%;
+	font-size: 20px;
+	color: #aaaaaa;
+}
+
+.not_enough {
+	margin-top: 50%;
+	font-size: 20px;
+	color: #aaaaaa;
+	display: none;
 }

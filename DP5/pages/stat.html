@@ -25,21 +25,25 @@
 			<a class="session state_tab tab_plan" href="workout.html">
 				<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
 			</a>
-			<a class="session state_tab tab_calendar" href="calendar.html">
+			<a class="session state_tab tab_calendar" href="load.html">
 				<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 			</a>
 			<a class="session state_tab tab_stat active_tab" href="#">
 				<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
 			</a>
 		</div>
-
+		<div class="loading" align="center">
+			Loading...		
+		</div>
+		<div class="not_enough" align="center">
+			<p>You exercised less than 5...</p>
+			<p>Do more and See your data in graph</p>
+		</div>
 		<div id="body_wrap">
-			<!-- BODY -->
-		<!-- 	<div id="navigator">
-				<span id="st-left" class="glyphicon glyphicon-chevron-left"></span>
-				<span id="statistic">WOOOOOOOW</span>
-				<span id="st-right" class="glyphicon glyphicon-chevron-right"></span>
-			</div> -->
+			<!-- BODY -->	
+		 	<div class="navigator n_up">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+			</div>
 			<div class="panel">
 				<div id="container1" class="chart"></div>
 			</div>
@@ -48,6 +52,9 @@
 			</div>
 			<div class="panel">
 				<div id="container3" class="chart"></div>
+			</div>
+			<div class="navigator n_down">
+				<span class="glyphicon glyphicon-chevron-down"></span>
 			</div>
 		</div>
 	</div>
