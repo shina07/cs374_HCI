@@ -3,6 +3,7 @@
 	width: 100%;
 	text-align: center;
 	position: fixed;
+	z-index: 1;
 }
 
 .n_up {
@@ -19,7 +20,7 @@
 }
 
 .chart {
-	margin-top: 40%;
+	margin-top: 25%;
 }
 
 .loading {

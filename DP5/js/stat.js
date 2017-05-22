@@ -1,6 +1,11 @@
 $(document).ready(function() {
     $('.panel').css("height", (window.screen.height).toString()+"px")
-
+    $('.n_up').on("click", function() {
+        $.scrollify.previous()
+    })
+    $('.n_down').on("click", function() {
+        $.scrollify.next()  
+    })
     loadData()
 })
 
@@ -22,7 +27,14 @@ function loadData() {
     var userRef = database.ref("PLANS/" + link_userId)
     userRef.once('value').then(function(userData) {
         plans = userData.val()
-        dateLength = Object.keys(plans).length
+        if (plans!=null)
+        {
+            dateLength = Object.keys(plans).length    
+        }
+        else
+        {
+            dateLength = 0
+        }
 
         // 1
         for (var key in plans) {
@@ -51,12 +63,12 @@ $(function () {
     $.scrollify({
         section : ".panel",
         easing: "easeOutExpo",
-        scrollSpeed: 1100,
+        scrollSpeed: 1000,
         scrollbars: true,
         setHeights: false,
         overflowScroll: false,
         updateHash: true,
-        touchScroll:true,
+        touchScroll: true,
         before:function(index, sections) {
             switch (index)
             {
