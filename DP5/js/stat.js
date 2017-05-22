@@ -42,7 +42,7 @@ function loadData() {
             dateRef.once('value').then(function(dateData) {
                 if (dateData.val()["completed"] == true)
                     completed++;
-                else if (dateData.val()["completed"] == undefined)
+                else
                     uncompleted++;
             })
         }

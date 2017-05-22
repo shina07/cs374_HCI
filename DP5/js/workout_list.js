@@ -154,7 +154,7 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		document.location.href = link
 	});
 
-	if (firstDone && done) {
+	if (firstDone && !done) {
 		firstDone = false
 
 		link_planId = ix
