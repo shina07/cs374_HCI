@@ -23,6 +23,8 @@ $(document).ready(function() {
 });
 
 var total_cnt = 0
+var progress_cnt = 0
+var linkChanged = false
 
 function read_plans() {
 	var param = get_url_params ()
@@ -44,13 +46,17 @@ function read_plans() {
 		for (var key in plans) {
 			if (key == "Total_cnt")
 				total_cnt = plans["Total_cnt"]
+			else if (key == "planId")
+				continue
 			else if (key == "Progress_cnt") {
-				if (plans["Progress_cnt"] == 0) {
+				progress_cnt = plans["Progress_cnt"]
+				if (progress_cnt == 0) {
 					$('.session_main').each(function() {
 						var link = $(this).attr('href')
 						link += ('?userId=' + link_userId + '&date=' + link_date + '&planId=0&setId=0&total=' + plans["Total_cnt"])
 						$(this).attr('href', link)
 						$(this).css('pointer-events', 'auto')
+						linkChanged = true
 					})
 				}
 				continue;
@@ -154,8 +160,9 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 		document.location.href = link
 	});
 
-	if (firstDone && !done) {
+	if (((progress_cnt == total_cnt) && !linkChanged) || (firstDone && !done && !linkChanged)) {
 		firstDone = false
+		linkChanged = true
 
 		link_planId = ix
 		link_setId = iy

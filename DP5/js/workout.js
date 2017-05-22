@@ -191,14 +191,17 @@ function set_click_event() {
 		ref.update({
 			setNum : plans.setNum
 		})
+		total += 1
+		ref = database.ref("PLANS/"+user_id+"/"date)
+		ref.update({
+			Total_cnt: total
+		})
 
 		$('#done_wrap').css("display", "none")
 		$('#rest_wrap').css("display", "block")
 		$('#addSet').css("display", "none")
 		$('#gotoList').css("display", "none")
 		$('#next').css("display", "block")
-
-		total += 1
 
 		timerID = setInterval("timer()", 1000)
 	})
