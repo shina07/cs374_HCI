@@ -82,6 +82,7 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 
 ## Representative screenshots
 
+![screenshot01](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/DP%206-%20Hi-fi%20Prototyping.png)
 
 ## Individual Reflections
 
@@ -121,12 +122,17 @@ Lastly, in fact, I'm going to develope the fourth tab in our application which s
 - Loading contents at the chosen date below the calendar (when it has one)
 - Dynamically displaying workout list from firebase
 
-#### Difficulties
-
 I mainly focused on loading page. Loading feature involves loading all the workout data of current user, adding them into calendar with the right date, rendering the workouts of selected date, and load whole workout lists for selected date to the main page.
 Most of my concerns about loading page were related to UI. Our first plan about “Loading” was originally to let people add their customized routines and load what they already made. However, our team thought about the necessity of loading what user had done before afterward. Thus, I considered about the how UI should be placed to display both previous records and user-made records. Eventually, we decided not to include “create workout set” feature, instead, user can load workout list from specific date. This is when our current UI layout has been decided.
-Rest of UI consideration was pretty simple. Calendar should be large enough to avoid fat-finger effect when user clicks it, and workout list preview should be provided. Since calendar is more than half of current UI, it was possible to say that rest of the components were easy to think of the appropriate location in the layout of loading page. Load button should not be scrolled for efficiency of usability. And default focus for on loading page should be the same as today. These would be some minor consideration on loading UI.
+Key feature of UI in loading page is definitely the calendar. For efficiency, only the date that contains some workout lists are labeled in blue. In addition, I put the badges on right top of each date to notify how many exercise sets are there. Calendar should be large enough to avoid fat-finger effect when user clicks it, and workout list preview should be provided for user to choose which date to load. Each chosen date should be labeled differently as well.
+Rest of UI consideration was pretty simple, since calendar is about half of current UI. Load button should not be scrolled for efficiency of usability. It seems trivial to mention that the calendar should show current month and focus for on loading page should be the same as today by default. 
+
+#### Difficulties
+
+There were also some difficulties in displaying UI in as now. In the beginning, I was thinking about dynamic loading of workout lists for each month, but there were some technical difficulties of firebase feature and calendar event callback, so I just load all the data when the page is under loading. This causes inevitable delay in loading.
+In UI level, it seemed to be better to fix the position of calendar and load button, and let the preview division to be scrollable. However, separation between html scrollable division and fixed division came to the difficulties in the front-end implementation. Unfortunately, it was not successful to fully implement the page by the initial design, and our current layout is to let whole page to be scrollable. I am still working on fixing this into the way to fulfill our initial design.
 There were some technical difficulties related to the characteristics of mobile web page. Our web GUI is primarily assuming that all users are using our web GUI with mobile devices, but our implementation development was on PC. The library I used for displaying calendar was based on PC web page, so its event callback was based on PC event. This library has click event callback and hover event callback, but it does not support the feature of notifying which button has been clicked. The clicked cell in the calendar does not maintain the color change when we move off the cursor. Fortunately, this issue is solved by using the difference about hover event in mobile and PC. When we click in mobile, both hover and click event take place, so it was possible to add the feature of maintaining the color change of clicked button in my calendar.
+
 
 #### Implementation skill
 
@@ -150,32 +156,32 @@ Also, using firebase is too difficult to use. Certainly, its usage is easy to le
 
 #### Implementation skill
 
-We had difficulty to maintain current data like login session and recent plan because we were not allowed to use server. So we maintained these values through URL. After the user log in, login page hand on the user id info to main page. Then, main page should give informations including user id, date, recent plan, etc to other pages. To do this, I learned how can I parse the current URL. I first parsed URL and got user id value, and after all of the database are loaded, attached values to href attribute of a tags. 
+We had difficulty to maintain current data like login session and recent plan because we were not allowed to use server. So we maintained these values through URL. After the user log in, login page hand on the user id info to main page. Then, main page should give informations including user id, date, recent plan, etc to other pages. To do this, I first parsed URL and got user id value, and after all of the database are loaded, attached values to href attribute of a tags. It was a little hard coded but simple way without server.
 
 ## Studio Reflections
 
 You can go [here](https://docs.google.com/document/d/1Ti5ADdcaYSER7k4I_McWusfxXzvpgzDOh0VF05OcKIg/edit) and read DP6 feedbacks.
 
 1. Some buttons are too small to click. (Especially in add page)
->
+>We are going to edit interface of 'add' page to make buttons more intuitive to
 
 2. The function to change the order of workouts seems to need.
->
+>We planned the function to delete but didn't think of the function to change. We will add it soon.
 
 3. In the rest mode, buttons are too close.
->
+>We added interval between them.
 
 4. To give alert when the rest time is too long might be good.
->
+>We think the alert might be somewhat annoying to our users, so we just changed the color of timer.
 
 5. It is hard to count the weight or reps up by just one.
->
+>We already know about that problem, so we added +5 and -5 buttons to support to count up largely.
 
 6. When user select the date in calendar, cannot know which date is selected.
->
+>Color of selected date is different from others, it is light blue when others are blue. But if you didn’t recognize this, we will change the color of selected date into other color. Also, we will change the color of today into another color, then there will be three types of color.
 
 7. Cannot delete the workout sets which have been created.
->
+>We planned that users can delete a plan by swiping it in paper prototype, but we didn’t develop yet. We will add deletion soon.
 
 8. When done, does it need the rest time timer on the upper layer of the last 'done' set?
->
+>User may click the done button by fault or want to know the current workout information like name, set number or progress. It is why we made timer page to modal and added back button.
