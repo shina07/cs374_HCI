@@ -66,6 +66,19 @@
                 break;
             case "biceps":
                 $("#etc").hide();
+                $("#machine").hide();
+                var biceps_barbell = [['drag-curl', '-1.gif', '-2.gif'], ['lying-high-bench-biceps-curl', '-1.gif', '-2.gif'], ['bicep-curl-with-deadlift', '-1.gif', '-2.gif'], ['bicep-curls', '-1.gif', '-2.gif'], ['lying-incline-curl', '-1.gif', '-2.gif'], ['wide-grip-standing-biceps-curl', '-1.gif', '-2.gif']];
+                add_to_shown_lst("biceps", "barbell", biceps_barbell);
+                var biceps_bodyweight = [['chin-ups', '-1.png', '-2.png'], ['gironda-sternum-chins', '-1.png', '-1.png'], ['narrow-parallel-grip-chin-ups', '-1.png', '-2.png']];
+                add_to_shown_lst("biceps", "bodyweight", biceps_bodyweight);
+                var biceps_cable = [['lying-close-grip-biceps-curls', '-1.gif', '-2.gif'], ['preacher-curl', '-1.gif', '-2.gif'], ['hammer-curls-with-rope', '-1.gif', '-2.gif'], ['high-cable-curls', '-1.gif', '-2.gif'], ['standing-biceps-curl', '-1.gif', '-2.gif'], ['lying-bicep-cable-curl', '-1.gif', '-2.gif'], ['standing-one-arm-bicep-curl', '-1.gif', '-2.gif'], ['overhead-curl', '-1.gif', '-2.gif']];
+                add_to_shown_lst("biceps","cable",biceps_cable);
+                var biceps_dumbbell = [['bicep-curl-stork-stance', '-1.gif', '-2.gif'], ['biceps-curl', '-1.gif', '-2.gif'], ['concentration-curls', '-1.gif', '-2.gif'], ['seated-bicep-curl', '-1.gif', '-2.gif'], ['biceps-curl-reverse', '-1.gif', '-2.gif'], ['bicep-hammer-curl', '-1.gif', '-2.gif'], ['cross-body-hammer-curl', '-1.gif', '-2.gif'], ['two-arm-preacher-curl', '-1.gif', '-2.gif'], ['alternate-hammer-curl', '-1.gif', '-2.gif'], ['biceps-curl-squat', '-1.gif', '-2.gif'], ['incline-biceps-curl', '-1.gif', '-2.gif'], ['alternate-bicep-curl', '-1.gif', '-2.gif'], ['flexor-incline-curls', '-1.gif', '-2.gif'], ['forward-lunge-with-bicep-curl', '-1.gif', '-2.gif'], ['alternate-incline-curl', '-1.gif', '-2.gif'], ['step-up-single-leg-balance-with-bicep-curl', '-1.gif', '-2.gif']];
+                add_to_shown_lst("biceps","dumbbell",biceps_dumbbell);
+                var biceps_ezbar = [['close-grip-ez-bar-curl', '-1.gif', '-2.gif'], ['spider-curl', '-1.gif', '-2.gif'], ['ez-bar-curl', '-1.gif', '-2.gif'], ['preacher-curl-3', '-1.gif', '-2.gif'], ['seated-close-grip-concentration-curls', '-1.gif', '-2.gif']];
+                add_to_shown_lst("biceps","ezbar",biceps_ezbar);
+                var biceps_olympicbar = [['one-arm-bicep-curl-with-olympic-bar', '-1.gif', '-2.gif']];
+                add_to_shown_lst("biceps","olympicbar", biceps_olympicbar);
                 break;
             case "abs":
                 break;
