@@ -99,7 +99,7 @@ function timer() {
 	var sec = current_time % 60
 	sec = sec < 10 ? "0" + sec : sec + ""
 
-	if (min >= 1 && sec > 30)
+	if (min == "01" && sec == "30")
 	{
 		$('#timer').css('color', 'orange')
 	}
