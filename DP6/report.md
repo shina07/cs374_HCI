@@ -13,6 +13,7 @@ Our target users would be anyone who wants to keep their exercises during their 
 Main tasks featured in our hi-fi prototype are,
 
 1. Adding workout plans to each user’s daily workout list by navigating through body part, tool to be used and the type of exercise to be chosen as well as attributes to be set for that exercise by the user.
+aaaa
 2. Conducting exercises listed in daily workout list by clicking those items. It is assumed a user to use this feature while doing actual exercise. For user convenience,
 3. Loading workout routines that has been conducted and saved in our service system. Thereby user does not have to add every single numbers and set of exercises but by clicking workouts shown in calendar, things would be pasted to the user’s workout plan list.
 4. Visualizing the recorded items in order for user to be encouraged, and are able to check how they are getting better.
@@ -53,7 +54,50 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 
 ## Individual Reflections
 
+### Hyeong cheol
+
+#### UI contribution
+
+#### Difficulties
+
+#### Implementation skill
+
+### Seung hee
+
+#### UI contribution
+
+#### Difficulties
+
+#### Implementation skill
+
+### Tae soo
+
+#### UI contribution
+
+#### Difficulties
+
+#### Implementation skill
+
+### Min yeong
+
+#### UI contribution
+
+- **Logo image and title** We decided our service name to "Machoke", a character from Pokemon. And I downloaded its animated image(.gif), and made logo.
+- **Header** In mid-fi prototype, we had few functions like add and show list. But we made calendar, statistics after, so I changed our header design for convenience. Our main functions are viewing today's plans, changing their states into "done", and adding or loading. I thought that they are all important and they should be runned in parallel. So I made the header into 'tap' design like kakaotalk.
+
+#### Difficulties
+
+#### Implementation skill
 
 ## Studio Reflections
 
 You can go [here](https://docs.google.com/document/d/1Ti5ADdcaYSER7k4I_McWusfxXzvpgzDOh0VF05OcKIg/edit) and read DP6 feedbacks.
+
+1. Some buttons are too small to click. (Especially in add page)
+2. The function to change the order of workouts seems to need.
+3. In the rest mode, buttons are too close.
+4. To give alert when the rest time is too long might be good.
+5. It is hard to count the weight or reps up by just one.
+6. When user select the date in calendar, cannot know which date is selected.
+7. Cannot delete the workout sets which have been created.
+8. When done, does it need the rest time timer on the upper layer of the last 'done' set?
