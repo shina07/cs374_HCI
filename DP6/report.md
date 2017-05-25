@@ -53,7 +53,6 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 
 ## Individual Reflections
 
-![img_test](https://github.com/shina07/cs374_HCI/blob/master/DP4/report/resources/screenshot%201.png)
 
 ## Studio Reflections
 
