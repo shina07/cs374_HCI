@@ -22,11 +22,11 @@ $(document).ready(function() {
 		}
 		else {
 			parsed = document.location.href.split('/')
-			if (parsed[parsed.length - 1] == 'login.html') {}
+			if (parsed[parsed.length - 1] == 'index.html') {}
 			else if (parsed[parsed.length - 1] == 'main.html')
-				document.location.href = 'login.html'
+				document.location.href = 'index.html'
 			else
-				document.location.href = '../login.html'
+				document.location.href = '../index.html'
 		}
 		$(this).attr('href', link)
 	})
