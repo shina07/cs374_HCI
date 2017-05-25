@@ -82,7 +82,21 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 
 ## Representative screenshots
 
-![screenshot01](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/DP%206-%20Hi-fi%20Prototyping.png)
+![screenshot01](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/01.png)
+
+![screenshot02](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/02.png)
+
+![screenshot03](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/03.png)
+
+![screenshot04](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/04.png)
+
+![screenshot05](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/05.png)
+
+![screenshot06](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/06.png)
+
+![screenshot07](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/07.png)
+
+![screenshot08](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/08.png)
 
 ## Individual Reflections
 
