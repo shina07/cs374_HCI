@@ -1,14 +1,14 @@
-#DP6 : Hi-fi Prototyping
+# DP6 : Hi-fi Prototyping
 
-##POV
+## POV
 
 As it is stated in [DP3](https://github.com/shina07/cs374_HCI/blob/master/DP3/report/report.md) and [DP4](https://github.com/shina07/cs374_HCI/blob/master/DP4/report/report.md), we will focus on people who want to record their exercises while they are working out. Throughout several interviews, it was possible to note that recording of an exercise is annoying and inconvenient regardless of writing devices either papers or smartphones. These people have the needs of doing so easier and faster. The reason why it is hard to be done is because each exercise needs different attributes to record, and since these values depend on the nature of exercise, writing them down is hard to be done uniformly. Most of muscle exercises would contain weight, reps(=repetitions), sets and interval(=resting period between each set, unit=seconds), but cardio exercise or abs routine(=abdominal muscle exercise) need different attributes to record. Moreover, yet one is doing an exercise for instance, bench press, with the same number of reps and weight, intensity and stimulated muscle parts would be vary enormously depending on one’s gripping method, gripping width, bench slope and position of one’s feet. Another point we have found was, it turned out that people are actually feeling hard to name each exercise which can be a hinderance to recording. Having been considering its complexity, we need to catch at some compromising point, but with our UI, we want to face with, and deal with the difficulties the user currently has. Many issues were covered and will be dealt in the iterative process of our design.
 
-##Target users
+## Target users
 
 Our target users would be anyone who wants to keep their exercises during their workout. But we are feeling safe to narrow our target a bit, specifically to someone who has not been long starting systematic workouts. After interviewing with KAIST fitness professor SeokHee Kim and KAIST fitness club’s training manager GunHo Park, we noticed that novice users are more likely to keep their exercise records rather than exercise experts. In that point of view, we focused our system to be more friendly to users who are not knowing well about workouts.
 
-##Tasks
+## Tasks
 
 Main tasks featured in our hi-fi prototype are,
 
@@ -18,25 +18,25 @@ Main tasks featured in our hi-fi prototype are,
 4. Visualizing the recorded items in order for user to be encouraged, and are able to check how they are getting better.
 5. Signing in and up so that our service system can save individual information and records privately.
 
-##Implementation Notes
+## Implementation Notes
 
-####URL of your prototype
+#### URL of your prototype
 
 To use our prototype, please click [this](https://project-oh-hack-nyun-4a19e.firebaseapp.com). We used [Firebase Hosting](https://firebase.google.com/docs/hosting) for uploading our prototype.
 
 >URL : https://project-oh-hack-nyun-4a19e.firebaseapp.com
 
-####URL of your Git repository
+#### URL of your Git repository
 
 To read our code, please click [this](https://github.com/shina07/cs374_HCI/tree/master/DP5).
 
 >URL : https://github.com/shina07/cs374_HCI/tree/master/DP5
 
-####Libraries and frameworks
+#### Libraries and frameworks
 
 we used [jQuery](https://jquery.com), [bootstrap](http://getbootstrap.com), [firebase](https://firebase.google.com), [responsive calendar](http://w3widgets.com/responsive-calendar), [highcharts](https://www.highcharts.com).
 
-####Lessons from heuristic evaluation
+#### Lessons from heuristic evaluation
 
 We received many feedbacks from [heuristic evaluation](https://docs.google.com/spreadsheets/d/1hqnocjjT2g3WJcOJRWqTdF28ysC2qcNI-DYOdAHFUoQ/edit#gid=282922788) in the class, and picked 8 important usability issues.
 
@@ -49,10 +49,10 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 7. Is there any necessity for abbreviating repetitions to Reps?
 8. On adding workout plan, some cards are selectable and some are not, but they look all the same.
 
-##Representative screenshots
+## Representative screenshots
 
-##Individual Reflections
+## Individual Reflections
 
-##Studio Reflections
+## Studio Reflections
 
 You can go [here](https://docs.google.com/document/d/1Ti5ADdcaYSER7k4I_McWusfxXzvpgzDOh0VF05OcKIg/edit) and read DP6 feedbacks.
