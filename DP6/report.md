@@ -39,13 +39,13 @@ Main tasks featured in our hi-fi prototype are,
 
 ## Implementation Notes
 
-### URL of your prototype
+### URL of prototype
 
 To use our prototype, please click [this](https://project-oh-hack-nyun-4a19e.firebaseapp.com). We used [Firebase Hosting](https://firebase.google.com/docs/hosting) for uploading our prototype.
 
 >URL : https://project-oh-hack-nyun-4a19e.firebaseapp.com
 
-### URL of your Git repository
+### URL of Git repository
 
 To read our code, please click [this](https://github.com/shina07/cs374_HCI/tree/master/DP5).
 
@@ -82,21 +82,21 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 
 ## Representative screenshots
 
-![screenshot01](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/01.png)
+![screenshot01](img/01.png)
 
-![screenshot02](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/02.png)
+![screenshot02](img/02.png)
 
-![screenshot03](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/03.png)
+![screenshot03](img/03.png)
 
-![screenshot04](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/04.png)
+![screenshot04](img/04.png)
 
-![screenshot05](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/05.png)
+![screenshot05](img/05.png)
 
-![screenshot06](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/06.png)
+![screenshot06](img/06.png)
 
-![screenshot07](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/07.png)
+![screenshot07](img/07.png)
 
-![screenshot08](https://github.com/shina07/cs374_HCI/blob/master/DP6/img/08.png)
+![screenshot08](img/08.png)
 
 ## Individual Reflections
 
@@ -123,9 +123,23 @@ Lastly, in fact, I'm going to develope the fourth tab in our application which s
 
 #### UI contribution
 
+- Grid which to select body parts
+- Classification of each exercises, into body parts and tools.
+- Grid which to select which tool to be used and which exercise to be selected.
+- Clickable thumbnail image for each exercise that are indicating how performer should take movement for each exercise.
+- Page for setting attributes and adding to workout list for each exercise
+- Dynamically changing default value for attributes weight, reps - this should be reflected by reviewing the first set for each exercise.
+- Breadcrumb indicating which exercise is to be added, which depth is user currently navigating, in adding task.
+- Sign in & sign up page, modal and their functions
+
 #### Difficulties
 
+I assumed the part for user to add one’s workout plan, exercises and attributes for each exercise. This adding task had once been possessing a notable problem, that most users are not familiar with the ‘exercise-name’ that they should record. I seriously agonized over this issue for a long time, reconstructing whole page more than a few times.  At first, I considered a plane list-view page after selecting a body part, but that could never solve the issue if user does not have certainty with the name of one’s exercise. In short, I needed any kind of indicator which offers user to choose exercise easily. At last, ‘Literally dynamic 2D graphics for each exercise with movements shown when click’ has been adopted after deliberation. However, despite I had been thinking a lot for improving the adding-workout task, the grid feature still possessed many user interface issues, according to other students and TA. One issue arisen from studio was that user would like to click each thumbnail image of exercise, not its name on the footer. Well, I also thought this before, but in the same time, I wanted to provide feasible movements featured in the thumbnail image for user to know which exercise is which. Since hovering effect cannot work in our mobile-view web page, click was the one and only option for me to feature such action. This ‘mobile-view’ limitation made me difficult to feature multiple functions in one <div>. Moreover, the number of different exercises was overwhelming. There are thousands of exercises that needed to be classified in certain way and the classification as well as collecting all the graphic pictures for them were really hard to me to figure out.
+Using firebase on javascript has many convenient features such as on & once functions but it required me to carefully set up execution orders and callback functions. Because I intensively used database reference a lot in order to add one’s exercise, and the workout-add task had to be done before every other tasks, I had to design how the database in firebase looked like.
+
 #### Implementation skill
+
+For implementing our service system, I learned almost every components a web contains broadly, especially for mobile view pages. The crucial thing I have harvested was the fact that I now can use bootstrap/css extensively, including fancy grids, buttons, different-colored breadcrumbs, panels, and modals(in sign up page). Specifically, I do feel satisfied with the css effect I’ve made with each exercise’s thumbnail image features. With the experience I’ve underwent, I probably can make fancy effects in the future.
 
 ### Tae soo
 
