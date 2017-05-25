@@ -20,23 +20,23 @@ Main tasks featured in our hi-fi prototype are,
 
 ## Implementation Notes
 
-#### URL of your prototype
+### URL of your prototype
 
 To use our prototype, please click [this](https://project-oh-hack-nyun-4a19e.firebaseapp.com). We used [Firebase Hosting](https://firebase.google.com/docs/hosting) for uploading our prototype.
 
 >URL : https://project-oh-hack-nyun-4a19e.firebaseapp.com
 
-#### URL of your Git repository
+### URL of your Git repository
 
 To read our code, please click [this](https://github.com/shina07/cs374_HCI/tree/master/DP5).
 
 >URL : https://github.com/shina07/cs374_HCI/tree/master/DP5
 
-#### Libraries and frameworks
+### Libraries and frameworks
 
 we used [jQuery](https://jquery.com), [bootstrap](http://getbootstrap.com), [firebase](https://firebase.google.com), [responsive calendar](http://w3widgets.com/responsive-calendar), [highcharts](https://www.highcharts.com).
 
-#### Lessons from heuristic evaluation
+### Lessons from heuristic evaluation
 
 We received many feedbacks from [heuristic evaluation](https://docs.google.com/spreadsheets/d/1hqnocjjT2g3WJcOJRWqTdF28ysC2qcNI-DYOdAHFUoQ/edit#gid=282922788) in the class, and picked 8 important usability issues.
 
@@ -52,6 +52,8 @@ We received many feedbacks from [heuristic evaluation](https://docs.google.com/s
 ## Representative screenshots
 
 ## Individual Reflections
+
+![img_test](https://github.com/shina07/cs374_HCI/blob/master/DP4/report/resources/screenshot%201.png)
 
 ## Studio Reflections
 
