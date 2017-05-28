@@ -26,10 +26,10 @@ function load_exercise() {
 			exercise[dates[i].toString()] = routine;
 		}
 
-		var today = new Date()
-		year = today.getFullYear();
-		month = today.getMonth() + 1;
-		day = today.getDay();
+		var today = new Date();
+		var year = today.getFullYear();
+		var month = today.getMonth() + 1;
+		var day = today.getDate();
 
 		var events = {}
 
@@ -54,6 +54,9 @@ function load_exercise() {
 				if (month.toString().length < 2)
 					month = "0" + month;
 
+				if (day.toString().length < 2)
+					day = "0" + day;
+
 				var date = year + "-" + month + "-" + day;
 
 				date_chosen = date.toString();
@@ -65,21 +68,37 @@ function load_exercise() {
 			onMonthChange : function (events) {
 
 			},
+			onInit : function() {
+
+			},
 	    });
 
     	document.getElementById('no_plans').innerHTML = "No Plan for This Day...";
-		var today = find_today();
-
-		if (today != null) {
-			console.log(today);
-			today.click();
-		}
+		document.getElementById('load_button').style.display = 'none';
 	});
 }
 
 function load_to_main () {
-	date = date_chosen
-	window.location.href = "../main.html?userId=" + userid.toString() + "&date=" + date;
+
+	var today = new Date()
+	var year = today.getFullYear();
+	var month = today.getMonth() + 1;
+	var day = today.getDate();
+
+	if (month.toString().length < 2)
+		month = "0" + month;
+
+	if (day.toString().length < 2)
+		day = "0" + day;
+
+	var date = year + "-" + month + "-" + day;
+	console.log(date);
+	var planRef = database.ref("PLANS/"+userid + "/" + date);
+    planRef.once("value", function(data) {
+        planRef.set(exercise[date_chosen]);
+
+        window.location.href = "../main.html?userId=" + userid.toString();
+     });
 }
 
 function load_plans (date) {
@@ -89,11 +108,13 @@ function load_plans (date) {
 	if (plan == null)
 	{
 		document.getElementById('no_plans').style.display = 'block';
+		document.getElementById('load_button').style.display = 'none';
 		return;
 	}
 	else
 	{
 		document.getElementById('no_plans').style.display = 'none';
+		document.getElementById('load_button').style.display = 'block';
 
 		var keys = Object.keys(plan);
 
@@ -119,10 +140,6 @@ function load_plans (date) {
  	// 	loadbtn.innerHTML = "Load";
  	// 	document.getElementById('main_plan').appendChild(loadbtn);
 	}
-}
-
-function delete_plans () {
-	$("#main_plan").empty();
 }
 
 function add_exercise (index, args) {
@@ -201,9 +218,13 @@ function find_today () {
 		{
 			// Element exists with attribute. Add to array.
 			//element.click();
+			//$(element).trigger('hover'); 
+			$(element).click();
+			console.log(element)
 			return element;
 		}
 	}
+	console.log("NULL")
 	return null;
 
 }
