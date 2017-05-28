@@ -71,6 +71,7 @@ function load_exercise() {
 		var today = find_today();
 
 		if (today != null) {
+			console.log(today);
 			today.click();
 		}
 	});
@@ -187,7 +188,7 @@ function find_today () {
 	var today = new Date()
 	var	year = today.getFullYear();
 	var	month = today.getMonth() + 1;
-	var	day = today.getDay();
+	var	day = today.getDate();
 
 	var allElements = document.getElementsByTagName('a');
 
