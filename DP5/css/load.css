@@ -9,8 +9,43 @@
 	box-shadow: 0 1px 1px #bababa;
 }
 
+.container {
+  padding: 0 0 0 0;
+}
+
 #no_plans {
-  margin-top: 100px;
+  margin-top: 80%;
+}
+
+#main_plan {
+  margin-top: 80%;
+  overflow-y: auto;
+  margin-bottom: 70px;
+}
+
+#button_div {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+#load_button {
+  bottom: 20px;
+  width: 95%;
+  height: 40px;
+  margin: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 20;
+}
+
+.responsive-calendar {
+  margin-left: 3%;
+  margin-right: 3%;
+  position: fixed;
+  background-color: #FFFFFF;
 }
 
 .responsive-calendar .controls {

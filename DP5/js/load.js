@@ -76,8 +76,8 @@ function load_exercise() {
 	});
 }
 
-function load_to_main (date) {
-	console.log(date);
+function load_to_main () {
+	date = date_chosen
 	window.location.href = "../main.html?userId=" + userid.toString() + "&date=" + date;
 }
 
@@ -109,14 +109,14 @@ function load_plans (date) {
 
 		}
 
-		var loadbtn = document.createElement("button");
- 		loadbtn.classList.add("btn");
- 		loadbtn.classList.add("btn-info");
- 		loadbtn.setAttribute("type", "button");
- 		loadbtn.setAttribute("style", "float:center");
- 		loadbtn.setAttribute("onclick", "load_to_main(date_chosen);");
- 		loadbtn.innerHTML = "Load";
- 		document.getElementById('main_plan').appendChild(loadbtn);
+	// var loadbtn = document.createElement("button");
+ 	// 	loadbtn.classList.add("btn");
+ 	// 	loadbtn.classList.add("btn-info");
+ 	// 	loadbtn.setAttribute("type", "button");
+ 	// 	loadbtn.setAttribute("style", "float:center");
+ 	// 	loadbtn.setAttribute("onclick", "load_to_main(date_chosen);");
+ 	// 	loadbtn.innerHTML = "Load";
+ 	// 	document.getElementById('main_plan').appendChild(loadbtn);
 	}
 }
 
