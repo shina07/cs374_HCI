@@ -12,21 +12,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 </head>
-<script>
-    var userId = (document.URL).split("=")[1];
-    function body_selected_weight(part){
-        document.location.href = "add_pages/add_weight_exercise.html?body_part=" + part + "&userId=" + userId;
-    }
-    function body_selected_abs(){
-        document.location.href = "add_pages/add_abs_exercise.html?userId=" + userId;
-    }
-    function body_selected_cardio(){
-        document.location.href = "add_pages/add_cardio_exercise.html?userId=" + userId;
-    }
-    function body_selected_arm(){
-        document.location.href = "add_pages/add_arm_exercise.html?userId=" + userId;
-    }
-</script>
 <body >
     <div id="wrap">
         <div id="header">
@@ -117,5 +102,20 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 
+    <script>
+    var userId = getUrlParameter("userId");
+    function body_selected_weight(part){
+        document.location.href = "add_pages/add_weight_exercise.html?body_part=" + part + "&userId=" + userId;
+    }
+    function body_selected_abs(){
+        document.location.href = "add_pages/add_abs_exercise.html?userId=" + userId;
+    }
+    function body_selected_cardio(){
+        document.location.href = "add_pages/add_cardio_exercise.html?userId=" + userId;
+    }
+    function body_selected_arm(){
+        document.location.href = "add_pages/add_arm_exercise.html?userId=" + userId;
+    }
+</script>
 </body>
 </html>
