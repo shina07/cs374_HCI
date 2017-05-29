@@ -39,23 +39,27 @@ URL of our prototype is [here](https://project-oh-hack-nyun-4a19e.firebaseapp.co
 The ID must be made before the experiment depending on the user's unique number like student ID. So, collect the student ID or some unique number (not just ordering) for "userID" space. (The reason why we don't use order number for "userID" is that users don't have to know which order they take experiment. This might affect to the user's mentality.)
 
 > In train session - ID = train_userID & PW = 0000 w/o pre-dataset.
+> 
 > In test session - ID = test_userID & PW = 0000 w/ pre-dataset.
 
 #### Pre-dataset
 
 There should be pre-dataset in test account.
 
-> 3 past days, 2~3 workouts for each day, 3~6 sets for each workout, no plan at the day.
+> 3 past days, 2-3 workouts for each day, 3-6 sets for each workout, no plan at the day.
 
 ### Introduction
 
 > Your workout is a real training session only if you have specific goals, a planned vision of progress and a way to measure your results. From this reason, some people record their workouts. However, tracking workouts is an annoying task. Our team has focused on **"How to track your workouts in the simplest, most effective way possble"**.
+> 
 > MACHOKE - your workout note - is designed for providing technical aids to reduce the troublesomeness of recording workout results and to make the process of tracking each exercise details easier.
+> 
 > And we want to test the usability of our product by this user testing, and get some feedbacks.
 
 ### Informed consent
 
 > I confirm that the participant was given an opportunity to ask questions about the user testing, and all the questions asked by the participant have been answered correctly and to the best of my ability. I confirm that the individual has not been coerced into giving consent, and the consent has been given freely and voluntarily.
+> 
 > print the name of researcher/person talking to the consent: * * *
 
 ### Task list
