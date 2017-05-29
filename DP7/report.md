@@ -32,7 +32,10 @@ URL of our prototype is [here](https://project-oh-hack-nyun-4a19e.firebaseapp.co
 
 #### Environment
 
-(...)
+All the participants should use the same device for testing. Don't let them use their own device. We recommend to use mobile device, not laptop.
+
+- In mobile **[Recommended]** - Chrome application.
+- In laptop - Chrome browser. Only using mobile mode in development tool(shortcut: F12). Toggle device toolbar(shortcut: Ctrl + Shift + M) and select "Galaxy S5" at leftmost dropdown menu in device toolbar header.
 
 #### Accounts for test
 
