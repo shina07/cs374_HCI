@@ -30,6 +30,7 @@
         exercise_name[i] = capital + exercise_name[i].substring(1, exercise_name[i].length);
     }
     exercise_name = exercise_name.join(" ");
+
     var d = new Date();
     var exercise_date = d.getFullYear() + "-0" + (d.getMonth()+1) + "-" + d.getDate();
     var exercise_weight = 10;
@@ -37,26 +38,66 @@
     var exercise_sets = 0;
     var set_accumulator = {};
 
+    /* Make attributes editable */
+    $(document).ready(function() {
+        document.getElementById("weight").contentEditable = true;
+        document.getElementById("reps").contentEditable = true;
+        document.getElementById("weight").innerHTML = exercise_weight;
+        document.getElementById("reps").innerHTML = exercise_reps;
+    });
+
+    document.addEventListener('click', function(event){
+        console.log("CLICKED");
+        console.log("exerciseweight: ", exercise_weight);
+        console.log(document.getElementById("weight").innerHTML);
+        console.log(parseInt(document.getElementById("weight").innerHTML));
+        if (exercise_weight != parseInt(document.getElementById("weight").innerHTML)){
+            exercise_weight = parseInt(document.getElementById("weight").innerHTML);
+            console.log("weight changed to ", exercise_weight);
+        }
+        if (exercise_reps != parseInt(document.getElementById("reps").innerHTML)){
+            exercise_reps = parseInt(document.getElementById("reps").innerHTML);
+        }
+    });
+
     function weight_dec(){
+        if (exercise_weight != parseInt(document.getElementById("weight").innerHTML)){
+            exercise_weight = parseInt(document.getElementById("weight").innerHTML);
+        }
         exercise_weight -= 1;
         if (exercise_weight > 0) {
             document.getElementById("weight").innerHTML = exercise_weight;
         }
-
     }
     function weight_inc(){
+        console.log(exercise_weight)
+        if (exercise_weight != parseInt(document.getElementById("weight").innerHTML)){
+            exercise_weight = parseInt(document.getElementById("weight").innerHTML);
+        }
         exercise_weight += 1;
         document.getElementById("weight").innerHTML = exercise_weight;
     }
     function reps_dec(){
+        if (exercise_reps != parseInt(document.getElementById("reps").innerHTML)){
+            exercise_reps = parseInt(document.getElementById("reps").innerHTML);
+        }
         exercise_reps -= 1;
         document.getElementById("reps").innerHTML = exercise_reps;
     }
     function reps_inc(){
+        if (exercise_reps != parseInt(document.getElementById("reps").innerHTML)){
+            exercise_reps = parseInt(document.getElementById("reps").innerHTML);
+        }
         exercise_reps += 1;
         document.getElementById("reps").innerHTML = exercise_reps;
     }
     function set_addition(){
+        if (exercise_weight != parseInt(document.getElementById("weight").innerHTML)){
+            exercise_weight = parseInt(document.getElementById("weight").innerHTML)
+        }
+        if (exercise_reps != parseInt(document.getElementById("reps").innerHTML)){
+            exercise_reps = parseInt(document.getElementById("reps").innerHTML)
+        }
         var innerSet = {};
         exercise_sets += 1;
         var innerId = exercise_sets;
@@ -69,7 +110,7 @@
 
         inner_added += "weight: " + parseInt(exercise_weight) + " ";
         inner_added += "reps: " + parseInt(exercise_reps) + " ";
-        inner_added += "<a onclick='remove_by_id("+innerId+")'>X</div>";
+        inner_added += "<a onclick='remove_by_id("+innerId+")'><button type='button' class='btn btn-labeled btn-danger'><span class='btn-label'><i class='glyphicon glyphicon-trash'></i></span>Erase</button></div>";
         console.log("inner_added: ", inner_added);
         document.getElementById("sets").innerHTML = inner_current + inner_added;
     }
@@ -171,8 +212,8 @@
                             <button type="button" class="btn btn-info" onclick="weight_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
-                            <button id="weight" type="button" style="font-weight:bold;" class="btn btn-default" disabled><b>
-                                <script>document.write(exercise_weight);</script></b></button>
+                            <p id="weight" type="button" style="font-weight:bold;" class="btn btn-default" disabled><!--b>
+                                <script>document.write(exercise_weight);</script></b--></p>
                             <button type="button" class="btn btn-info" onclick="weight_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
@@ -188,8 +229,8 @@
                             <button type="button" class="btn btn-info" onclick="reps_dec()">
                                 <span class="glyphicon glyphicon-minus"></span>
                             </button>
-                            <button id="reps" type="button" style="font-weight:bold;" class="btn btn-default" disabled><b>
-                                <script>document.write(exercise_reps);</script></b></button>
+                            <p id="reps" type="button" style="font-weight:bold;" class="btn btn-default" disabled><!--b>
+                                <script>document.write(exercise_reps);</script></b--></p>
                             <button type="button" class="btn btn-info" onclick="reps_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
