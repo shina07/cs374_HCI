@@ -17,16 +17,20 @@
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/js/bootstrap.min.js">
     <script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
 </head>
 <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script type="text/javascript" src="../../database/firebase.js"></script>
+<!--script type="text/javacript" src="../../public/url.js"></script-->
+<script type="text/javascript" src="../../js/main.js"></script>
+
 <script>
-    var split = (document.URL).split("=");
-    var body_part = split[1].split("&")[0];
-    var userId = split[2];
+    //var split = (document.URL).split("=");
+    //var body_part = split[1].split("&")[0];
+    //var userId = split[2];
+    var body_part = getUrlParameter("body_part");
+    var userId = getUrlParameter("userId");
     console.log(body_part);
     console.log(userId);
     $(document).ready(function(){
@@ -132,6 +136,14 @@
     </div>
 
     <div id="body_wrap">
+        <div align="left"><ul id="breadcrumb">
+            <li><a href="#"><span class="icon icon-home"> </span></a></li>
+            <li><a href="#"><span class="icon icon-plus"> </span> Add exercise </a></li>
+            <li><a href="#"> Body Parts:</a></li>
+            <li id="bc_tool"><a href="#"> Tool: </a></li>
+            <!--li id="bc_exercise"><a href="#"> Exercise: </a></li-->
+        </ul>
+        </div>
         <!-- BODY -->
         <div class="container-fluid" style="padding-right:7%">
             <!-- BARBELL -->

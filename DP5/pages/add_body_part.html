@@ -6,10 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Import CSS -->
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/add.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Import JavaScript -->
+    <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../data/data.js"></script>
+    <script type="text/javascript" src="../public/url.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
 
 </head>
 <body >
@@ -32,6 +43,14 @@
 
         <div id="body_wrap">
             <!-- BODY -->
+            <div align="left"><ul id="breadcrumb">
+                <li><a href="#"><span class="icon icon-home"> </span></a></li>
+                <li><a href="#"><span class="icon icon-plus"> </span> Add exercise </a></li>
+                <li><a href="#"> Body Parts:</a></li>
+                <!--li id="bc_tool"><a href="#"> Tool: </a></li>
+                <li id="bc_exercise"><a href="#"> Exercise: </a></li-->
+            </ul>
+            </div>
             <div class="container-fluid">
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color:#2297F1">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
@@ -43,7 +62,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
                         <div class="panel panel-default" onclick="body_selected_weight('shoulder')">
                             <div class="panel-body"><img class="thumb" src="../img/shoulder.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer" align="left"><text style="font-size:16px;">SHOULDER</text></div>
+                            <div class="panel-footer" align="center" style="padding-left:7px"><text style="font-size:16px">SHOULDER</text></div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
@@ -104,17 +123,16 @@
 
     <script>
     var userId = getUrlParameter("userId");
+    var currentURL = document.location.href;
     function body_selected_weight(part){
-        document.location.href = "add_pages/add_weight_exercise.html?body_part=" + part + "&userId=" + userId;
+        //document.location.href = "add_pages/add_weight_exercise.html?body_part=" + part + "&userId=" + userId;
+        document.location.href = "add_pages/add_weight_exercise.html?" + currentURL.split("?")[1] + "&body_part="+ part;
     }
     function body_selected_abs(){
         document.location.href = "add_pages/add_abs_exercise.html?userId=" + userId;
     }
     function body_selected_cardio(){
         document.location.href = "add_pages/add_cardio_exercise.html?userId=" + userId;
-    }
-    function body_selected_arm(){
-        document.location.href = "add_pages/add_arm_exercise.html?userId=" + userId;
     }
 </script>
 </body>

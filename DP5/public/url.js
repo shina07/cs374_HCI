@@ -10,7 +10,7 @@ function parse_url_params (url) {
 	var get_end = url.indexOf("#") + 1 || url.length + 1;
 	var query = url.slice(get_start, get_end - 1);
 	var pairs = query.replace(/\+/g, " ").split("&");
-	var params = {}
+	var params = {};
 	var i, n, v, nv;
 
 	if (query === url || query === "")

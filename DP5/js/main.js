@@ -8,7 +8,8 @@ $(document).ready(function() {
 	link_total = getUrlParameter('total')
 
 	$('.session').each(function() {
-		var link = $(this).attr('href')
+		var link = $(this).attr('href');
+		if ( link.indexOf("?") > -1 ){ link = link.split("?")[0]}
 		if (link_userId != undefined) {
 			link += ('?userId=' + link_userId)
 			if (link_date != undefined)
@@ -24,7 +25,9 @@ $(document).ready(function() {
 			parsed = document.location.href.split('/')
 			if (parsed[parsed.length - 1] == 'index.html') {}
 			else if (parsed[parsed.length - 1] == 'main.html')
-				document.location.href = 'index.html'
+				document.location.href = 'index.html';
+			else if (parsed[parsed.length - 1] == 'add_weight_exercise.html' || parsed[parsed.length - 1] == 'add_param.html')
+				document.location.href = '../../index.html'
 			else
 				document.location.href = '../index.html'
 		}

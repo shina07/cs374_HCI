@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Import CSS -->
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="../../lib/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../css/main.css">
     <link rel="stylesheet" type="text/css" href="../../css/add.css">
     <link rel="stylesheet" href="../../css/workout.css">
@@ -14,10 +13,17 @@
 <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script type="text/javascript" src="../../database/firebase.js"></script>
 <script type="text/javascript" src="../../public/url.js"></script>
-<script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+    var params = get_url_params();
     var x = document.URL;
-    var userId = (document.URL).split("=")[2];
-    var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
+    //var userId = (document.URL).split("=")[2];
+    //var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
+    var userId = params["userId"][0];
+    var exercise_name = params["exercise"][0];
+    console.log(userId); console.log(exercise_name);
     exercise_name = exercise_name.split("-");
     for(var i = 0;i<exercise_name.length;i++){
         var capital = exercise_name[i].charAt(0).toUpperCase();
@@ -142,7 +148,15 @@
         </a>
     </div>
 
-    <div id="body_wrap">
+    <div id="body_wrap" >
+        <div align="left"><ul id="breadcrumb">
+            <li><a href="#"><span class="icon icon-home"> </span></a></li>
+            <li><a href="#"><span class="icon icon-plus"> </span> Add exercise </a></li>
+            <li><a href="#"> Body Parts: Chest </a></li>
+            <li id="bc_tool"><a href="#"> Tool: Barbell </a></li>
+            <li id="bc_exercise"><a href="#"> Exercise: Wide Grip Bench Press </a></li>
+        </ul>
+        </div>
         <!-- BODY -->
         <div class="panel panel-info" >
             <div class="panel-heading" id="exercise_name">
