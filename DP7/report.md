@@ -116,20 +116,11 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 
 ## Session observations
 
-> Participants: Who are they? How did you recruit them? Why are they representative target users? Add brief demographic, context information about each participant that is relevant to your interface.
-
-> Use at least one photo or sketch for each participant and provide a summary description of each session (e.g., What was unique about this participant? Main takeaway from this participant?).
+> Youtube link for tester 1 : https://www.youtube.com/watch?v=qLfDViR6CWM&t=2s
+> Youtube link for tester 1 : https://www.youtube.com/watch?v=QWcvg062k-Q
 
 ## Usability lessons
 
-> List at least 10 usability problems you discovered. Organize them by high-level task or theme, not by each participant or time. But mention which participant ran into the problem by referring to them as P1, P2, ... (e.g., search results did not show the price information (P1, P3)). For each problem, indicate how critical the problem is: high, medium, and low. Finally, show how you plan to address each of the problems.
-
-> High-level reflections: What did you overall learn from the user testing experience? What would you do differently for better results and insights?
-
 ## Studio reflections
 
-> Summarize the feedback from the studio session, and mention how you addressed it or will address it later in the process.
-
 ## Plan for iteration
-
-> You'll have an additional week to finalize your overall design process. Discuss in your team how to use this time most effectively, and make a few concrete goals. Justify your goals.
