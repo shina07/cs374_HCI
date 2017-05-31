@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_abs()">
+                        <div class="panel panel-default" onclick="body_selected_weight('abs')">
                             <div class="panel-body"><img class="thumb" src="../img/abs.jpg" class="img-responsive" style="width:100%" alt=""></div>
                             <div class="panel-footer">ABS</div>
                         </div>
@@ -127,9 +127,6 @@
     function body_selected_weight(part){
         //document.location.href = "add_pages/add_weight_exercise.html?body_part=" + part + "&userId=" + userId;
         document.location.href = "add_pages/add_weight_exercise.html?" + currentURL.split("?")[1] + "&body_part="+ part;
-    }
-    function body_selected_abs(){
-        document.location.href = "add_pages/add_abs_exercise.html?userId=" + userId;
     }
     function body_selected_cardio(){
         document.location.href = "add_pages/add_cardio_exercise.html?userId=" + userId;

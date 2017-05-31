@@ -23,7 +23,8 @@
     //var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
     var userId = params["userId"][0];
     var exercise_name = params["exercise"][0];
-    console.log(userId); console.log(exercise_name);
+    var body_part = params["body_part"][0];
+    console.log(userId); console.log(exercise_name); console.log(body_part);
     exercise_name = exercise_name.split("-");
     for(var i = 0;i<exercise_name.length;i++){
         var capital = exercise_name[i].charAt(0).toUpperCase();
@@ -34,6 +35,7 @@
     var d = new Date();
     var exercise_date = d.getFullYear() + "-0" + (d.getMonth()+1) + "-" + d.getDate();
     var exercise_weight = 10;
+    if (body_part == "abs"){ exercise_weight = 0; }
     var exercise_reps = 10;
     var exercise_sets = 0;
     var set_accumulator = {};

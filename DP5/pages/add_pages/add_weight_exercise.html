@@ -67,6 +67,20 @@
             case "back":
                 break;
             case "triceps":
+                $("#etc").hide();
+                $("#olympicbar").hide();
+                var triceps_barbell = [['reverse-triceps-bench-press', '-1.gif', '-2.gif'], ['jm-press', '-1.gif', '-2.gif'], ['lying-triceps-press', '-1.gif', '-2.gif'], ['narrow-grip-bench-press', '-1.png', '-2.png'], ['old-school-reverse-extensions', '-1.gif', '-2.gif'], ['incline-triceps-extension-2', '-1.gif', '-2.gif'], ['standing-overhead-triceps-extension', '-1.gif', '-2.gif'], ['seated-overhead-triceps-extension', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps", "barbell", triceps_barbell);
+                var triceps_bodyweight = [['tricep-dips-2', '-1.gif', '-2.gif'], ['close-triceps-pushup', '-1.gif', '-2.gif'], ['standing-towel-triceps-extension', '-1.gif', '-2.gif'], ['bench-dips', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps","bodyweight", triceps_bodyweight);
+                var triceps_cable = [['triceps-pushdown-with-v-bar', '-1.gif', '-2.gif'], ['standing-triceps-extension', '-1.gif', '-2.gif'], ['standing-one-arm-low-pulley-triceps-extension', '-1.gif', '-2.gif'], ['kneeling-concentration-triceps-extension', '-1.gif', '-2.gif'], ['triceps-pushdown-with-rope', '-1.gif', '-2.gif'], ['one-arm-tricep-extension', '-1.gif', '-2.gif'], ['low-triceps-extension', '-1.gif', '-2.gif'], ['kneeling-triceps-extension', '-1.gif', '-2.gif'], ['incline-triceps-extension', '-1.gif', '-2.gif'], ['lying-triceps-extension', '-1.gif', '-2.gif'], ['reverse-grip-triceps-pushdown', '-1.gif', '-2.gif'], ['triceps-pushdown', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps", "cable", triceps_cable);
+                var triceps_dumbbell = [['seated-bent-over-one-arm-triceps-extension', '-1.gif', '-2.gif'], ['standing-one-arm-triceps-extension', '-1.gif', '-2.gif'], ['triceps-kickback', '-1.gif', '-2.gif'], ['decline-triceps-extension', '-1.gif', '-2.gif'], ['tate-press', '-1.gif', '-2.gif'], ['incline-triceps-extensions', '-1.gif', '-2.gif'], ['lying-triceps-extension-2', '-1.gif', '-2.gif'], ['lying-triceps-extension-across-face', '-1.gif', '-2.gif'], ['single-arm-supinated-triceps-extension', '-1.gif', '-2.gif'], ['single-arm-pronated-triceps-extension', '-1.gif', '-2.gif'], ['seated-triceps-press', '-1.gif', '-2.gif'], ['lying-supine-two-arm-triceps-extension', '-1.gif', '-2.gif'], ['one-arm-triceps-extension', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps", "dumbbell", triceps_dumbbell);
+                var triceps_ezbar = [['decline-ez-bar-triceps-extension', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps", "ezbar", triceps_ezbar);
+                var triceps_machine = [['triceps-extensions', '-1.gif', '-2.gif'], ['tricep-dips', '-1.gif', '-2.gif'], ['close-grip-bench-press', '-1.gif', '-2.gif']];
+                add_to_shown_lst("triceps", "machine", triceps_machine);
                 break;
             case "biceps":
                 $("#etc").hide();
@@ -85,6 +99,16 @@
                 add_to_shown_lst("biceps","olympicbar", biceps_olympicbar);
                 break;
             case "abs":
+                $("#barbell").hide();
+                $("#cable").hide();
+                $("#dumbbell").hide();
+                $("#ezbar").hide();
+                $("#olympicbar").hide();
+                $("#machine").hide();
+                var abs_bodyweight = [['cross-body-crunch', '-1.gif', '-2.gif'], ['bent-knee-hip-raise', '-1.gif', '-2.gif'], ['crunches', '-1.gif', '-2.gif'], ['decline-oblique-crunch', '-1.gif', '-2.gif'], ['decline-crunch', '-1.gif', '-2.gif'], ['leg-raises', '-1.png', '-2.png'], ['side-plank', '-1.png', '-1.png']];
+                add_to_shown_lst("abs", "bodyweight", abs_bodyweight);
+                var abs_etc = [['side-bend', '-1.gif', '-2.gif'], ['crunches-with-legs-on-stability-ball', '-1.gif', '-2.gif'], ['ab-rollout-on-knees', '-1.gif', '-2.gif'], ['seated-ab-crunch', '-1.gif', '-2.gif'], ['ab-rollout', '-1.gif', '-2.gif']];
+                add_to_shown_lst("abs", "etc", abs_etc);
                 break;
             case "legs":
                 break;
@@ -101,7 +125,7 @@
             var img1 = workouts[i][1];
             var img2 = workouts[i][2];
             console.log(workout_name);
-            onclickref = "\"location.href='add_param.html?exercise=" + workout_name +"&userId=" +userId + "';\"";
+            onclickref = "\"location.href='add_param.html?exercise=" + workout_name + "&body_part=" + bodypart +"&userId=" +userId + "';\"";
             innerPrev = document.getElementById(tool).innerHTML;
             innerAfter = innerPrev + "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4' style='padding:0'>";
             innerAfter += "<div class='panel panel-default'><div class='panel-body'><a class='home'>";
