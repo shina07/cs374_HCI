@@ -127,9 +127,9 @@ Our team is planning to show out our gratitude towards participants by giving ou
 
 ## Session observations
 
-Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below. Note that description for each, includes the justification, explaining that all three of them are representative users, in other words, worth testing.
+Our team went through a series of user testing, including three representative users. Detailed descriptions for each participant are written below. Note that description for each, includes the justification, explaining that all three of them are representative users, in other words, worth testing. Each user tests are recorded and the resulting video is uploaded in youtube. Please check each of them via given links.
 
-We couldn't take any picture because all our participants didn't want it. Instead, we prepared videos capturing mobile screen and added their youtube links to our report.
+We couldn't take any picture because all our participants didn't want it.
 
 <br/>
 
