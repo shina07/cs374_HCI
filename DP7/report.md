@@ -75,7 +75,7 @@ In the studio session, we expressed our intention of carrying out user testing w
 
 #### **Task 1**: Log in and add new plans
 
-Because we will test the users who do their workouts, we will not specify the detail of plans. workout name, number of sets, weight and repetitions all depend on the participants. Then, we can observe usabability issues like if they can find workouts they will do easily, and if they plan and exercise, or exercise and plan.
+Because we will test the users who do their workouts, we will not specify the detail of plans. workout name, number of sets, weight and repetitions all depend on the participants. Then, we can observe usability issues like if they can find workouts they will do easily, and if they plan and exercise, or exercise and plan.
 
 > First, you can log in our service with this given test acount, ID is 'test' and password is '1234'. Next, in the main screen, please tap 'add new workout' button, and add plans you want to do.
 
