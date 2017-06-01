@@ -55,7 +55,7 @@ There should be pre-dataset in test account.
 
 ### Introduction
 
-> Your workout is a real training session only if you have specific goals, a planned vision of progress and a way to measure your results. From this reason, some people record their workouts. However, tracking workouts is an annoying task Our team focused on **How to Track Your Workouts in the Simplest, Most Effective Way Possible**.
+> Your workout is a real training session only if you have specific goals, a planned vision of progress and a way to measure your results. From this reason, some people record their workouts. However, tracking workouts is an annoying task. Our team focused on **How to Track Your Workouts in the Simplest, Most Effective Way Possible**.
 >
 > MACHOKE - your workout note - is designed for providing technical aids to reduce the troublesomeness of recording workout results and to make the process of tracking each exercise details easier.
 >
@@ -122,6 +122,7 @@ Our team is planning to show out our gratitude towards participants by giving ou
 
 > (...)
 
+<br/>
 ## Session observations
 
 Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below.
@@ -165,6 +166,10 @@ Frankly, the time when we first contacted Junhwan and until the last minute befo
 >
 > He is current training manager of KAIST fitness club, and the reasons we recruited him are almost same with the reason we described for the tester #1. Although he does not currently recording his own exercises (it’s because he is an expert, and because he prefers to do exercise extemporaneously these days, in other words, he does exercise in improvised manner), he can reflect our target user since he wrote his own for years, right after he first started his exercise.
 
+#### Summary description
+
+There were some issues which Gunho had pointed out when he tested our service in our prior DP: paper prototyping, but not reflected. What he had said was, he is so spontaneous that he usually not ‘plan’ how many sets he would do before an exercise starts. The issue was seriously considered but we sticked to ‘plan’ exercise sets scheme in order to reduce button clicks during exercise. Meanwhile, our service evolved much so that we can also cover user like Gunho, but we realized that we still need more concerns for those users. When we inspected, Gunho just planned only one set, saying that he would not know how many sets he would do at that moment, and added another set every time he had done with a set but wanted to do more. In fact, that’s not what we expected and sadly our user kept facing with repetitive pop-up, asking whether it’d add another set or not, before showing rest interval time. This reported issue left our team to revise some part of our UI.
+
 #### Observations
 
 - He wonders the difference of 'add' and 'confirm' buttons.
@@ -201,6 +206,7 @@ Frankly, the time when we first contacted Junhwan and until the last minute befo
 - The timer should be shown when 'add more set' button appears.
 - Height of buttons is too small.
 
+<br/>
 ## Usability lessons
 
 1. It seems to need a function to be able to add the customized exercises.
@@ -280,6 +286,7 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 
 
+<br/>
 ## Studio reflections
 
 - The video or audio recording is better than just taking photo.
@@ -288,7 +295,12 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 - How would you take the user testing?
 
-> We tested our users in real environment which means that the users did exercises in health club as usually they do.
+> We tested our users in real environment which means that the users did exercises in the fitness center as usually they do.
 
+- How about the users who exercise not in gym?
+
+> It doesn’t matter. Whoever does exercise can use our application wherever they want because we just simply give the exercise forms, workout list, the previous records. Just use when you want!
+
+<br/>
 ## Plan for iteration
 
