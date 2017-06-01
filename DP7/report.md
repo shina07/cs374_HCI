@@ -14,7 +14,7 @@ About **30minutes**, not included interview time. (It is very loosely appropriat
 
 #### Recording
 
-Using smartphone, we will record the entire session that our participants take the experiment. It includes voice recordings, photos, written notes.
+Using smartphone, we will record the entire session that our participants take the experiment. It includes screen captures, written notes.
 
 #### Individual roles
 
@@ -39,11 +39,9 @@ All the participants should use the same device for testing. Don't let them use 
 
 #### Accounts for test
 
-The ID must be made before the experiment depending on the user's unique number like student ID. So, collect the student ID or some unique number (not just ordering) for "userID" space. (The reason why we don't use order number for "userID" is that users don't have to know which order they take experiment. This might affect to the user's mentality.)
+The ID must be made before the experiment because it should has the previous plans. If user signs in our service, he/she cannot use 'load' function.
 
-> In train session - ID = train_userID & PW = 0000 w/o pre-dataset.
-> 
-> In test session - ID = test_userID & PW = 0000 w/ pre-dataset.
+> ID : test / PW : 1234
 
 #### Pre-dataset
 
@@ -69,19 +67,15 @@ There should be pre-dataset in test account.
 
 #### **Task 1**: Log in and add new plans
 
-Because we should observe if the user can find a specific workout easily, we made some constraints like workout name, weight, and repetition.
-
-> You have your own ID and password for user testing. First, please log in our service with given account, and add new workout plans with following conditions : You are going to do five sets of bench press. You will use 20kg barbell and repeat 10 times for the first set, but repetition will be gradually increased by 2.
+> task 1
 
 #### **Task 2**: Complete workout plans
 
-The users use our service while they are exercising, so user testing also will be go along in the same condition. The participants really do their worktout, and we have to observe their behavior.
-
-> Next, please follow these steps : **1.** Assume that you don't know how to do this exercise (barbell press). Try to find any help about how can you do this. **2.** You did the first set. Change your current plan to complete and go to the second set. **3.** You did only 8 times for the second set. Change the repetition 12 to 8 for your current plan. **4.** Do all the remainging plans, and go to the main screen.
+> task 2
 
 #### **Task 3**: Load previous plans
 
-> You can load a list of plans you have done before. Because the test account has some previous dataset, assume that you have used our service. Open the calendar, and then, try to load plans you did on 29. May.
+> You can load a list of plans you have done before. Open the calendar, and then, try to load plans you did on 29. May.
 
 ### Questionnaires
 
