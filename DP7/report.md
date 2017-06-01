@@ -20,9 +20,9 @@ Using smartphone, we will record the entire session that our participants take t
 
 1 facilitator and 3 observers (Except facilitator and one observer who records the participants, the others should take a distance to the user in order for user to concentrate their workout.)
 
-Facilitator : (name)
+Facilitator : Seunghee
 
-Observers : (name), (name), (name)
+Observers : Minyeong, Taesoo, Hyeongcheol
 
 #### URL
 
@@ -63,15 +63,19 @@ There should be pre-dataset in test account.
 > 
 > print the name of researcher/person talking to the consent: * * *
 
+### Turorial or training
+
+
+
 ### Task list
 
 #### **Task 1**: Log in and add new plans
 
-> task 1
+> First, you can log in our service with this given test acount, ID is 'test' and password is '1234'. Next, in the main screen, please tap 'add new workout' button, and add plans you want to do.
 
 #### **Task 2**: Complete workout plans
 
-> task 2
+> If you fininshed to add plans, select one of the plans and start exercising. Please tell us if you have any difficulties until you do all the plans.
 
 #### **Task 3**: Load previous plans
 
@@ -113,6 +117,37 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 > Participants: Who are they? How did you recruit them? Why are they representative target users? Add brief demographic, context information about each participant that is relevant to your interface.
 
 > Use at least one photo or sketch for each participant and provide a summary description of each session (e.g., What was unique about this participant? Main takeaway from this participant?).
+
+### Participant 1
+
+> **Joonhwan, Choi**
+> [youtube link](https://www.youtube.com/watch?v=qLfDViR6CWM) of screen captures video during the testing
+
+#### Observations
+
+- He sometimes didn't tap 'NEXT' button before starting next set.
+- He changes 'repetition' during exercising a lot. We have thought that many users will plan strictly, but he plans roughly and change details after each set of workout.
+- He doesn't focus on the text. There are two buttons 'Add more set' and 'Go to main' after finishing all the sets, but he doesn't read the text and tap what he doesn't want.
+- It takes a lot of time to add plans. He doesn't find the name of workout fast.
+- He taps plan buttons in list instead of header. (These two buttons have same function.)
+- He does well in using the timer for break time.
+- He uses a large value of weight. To reach 62kg from 20kg, he taps + button 42 times.
+- He doesn't plan all the workout he will do today, but plan one workout.
+
+#### Interview
+
+### Participant 2
+
+> **geonho, Park**
+> [youtube link](https://www.youtube.com/watch?v=QWcvg062k-Q) of screen captures video during the testing
+
+#### Observations
+
+- He wonders the difference of 'add' and 'confirm' buttons.
+- He taps the picture instead of workout name in 'add' page.
+- He wants to plan the next workout during the break time. But the user cannot do anything during the break time in our service.
+
+#### Interview
 
 ## Usability lessons
 
