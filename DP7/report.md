@@ -20,9 +20,9 @@ Using smartphone, we will record the entire session that our participants take t
 
 1 facilitator and 3 observers (Except facilitator and one observer who records the participants, the others should take a distance to the user in order for user to concentrate their workout.)
 
-Facilitator : Seunghee
+**Facilitator** : Seunghee
 
-Observers : Minyeong, Taesoo, Hyeongcheol
+**Observers** : Minyeong, Taesoo, Hyeongcheol
 
 #### URL
 
@@ -121,6 +121,7 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 ### Participant 1
 
 > **Joonhwan, Choi**
+>
 > [youtube link](https://www.youtube.com/watch?v=qLfDViR6CWM) of screen captures video during the testing
 
 #### Observations
@@ -139,6 +140,7 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 ### Participant 2
 
 > **geonho, Park**
+>
 > [youtube link](https://www.youtube.com/watch?v=QWcvg062k-Q) of screen captures video during the testing
 
 #### Observations
