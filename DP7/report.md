@@ -123,6 +123,8 @@ Our team is planning to show out our gratitude towards participants by giving ou
 > (...)
 
 <br/>
+<br/>
+
 ## Session observations
 
 Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below.
@@ -207,6 +209,8 @@ There were some issues which Gunho had pointed out when he tested our service in
 - Height of buttons is too small.
 
 <br/>
+<br/>
+
 ## Usability lessons
 
 1. It seems to need a function to be able to add the customized exercises.
@@ -287,6 +291,8 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 
 <br/>
+<br/>
+
 ## Studio reflections
 
 - The video or audio recording is better than just taking photo.
