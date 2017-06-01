@@ -6,9 +6,9 @@
 
 #### Place
 
-**Health club at KAIST** (Anywhere users prefer is OK)
+**Fitness center at KAIST** (Anywhere users prefer is OK)
 
-The reason why the place of experiment is a health club is that we can focus the user’s actual usage for our application in real environment without any interference by unfriendly situation.
+The reason why the place of experiment is a fitness center is that we can focus the user’s actual usage for our application in real environment without any interference by unfriendly situation.
 
 #### Expected time for each participants
 
@@ -75,13 +75,19 @@ In the studio session, we expressed our intention of carrying out user testing w
 
 #### **Task 1**: Log in and add new plans
 
+Because we will test the users who do their workouts, we will not specify the detail of plans. workout name, number of sets, weight and repetitions all depend on the participants. Then, we can observe usabability issues like if they can find workouts they will do easily, and if they plan and exercise, or exercise and plan.
+
 > First, you can log in our service with this given test acount, ID is 'test' and password is '1234'. Next, in the main screen, please tap 'add new workout' button, and add plans you want to do.
 
 #### **Task 2**: Complete workout plans
 
+This task is closely connected with task 1. After the users add all the plans, they can open 'exercising' page by tapping a plan. It includes video help, progress bar, editing plans, and timer.
+
 > If you fininshed to add plans, select one of the plans and start exercising. Please tell us if you have any difficulties until you do all the plans.
 
 #### **Task 3**: Load previous plans
+
+We will use our test accounts because the participants doesn't have any history. There already exists pre-dataset, so users can experience how to load previous plans.
 
 > You can load a list of plans you have done before. Open the calendar, and then, try to load plans you did on 29. May.
 
@@ -122,11 +128,15 @@ Our team went through a series of user testing, including three representative u
 
 ### Participant 1
 
-> **Junhwan, Choi**
+> **Junhwan, Choi** (Male, 22 years old)
 >
 > [youtube link](https://www.youtube.com/watch?v=qLfDViR6CWM) of screen captures video during the testing
 >
 > He is the current president of KAIST fitness club, LINE. At first glance, you might think that he is not likely to be fit to our target user population since our team put more weight on exercise beginners rather than experts. But before considering whether user is a novice or not, we are targeting users who want to keep their exercises recorded and users who want to conduct their exercise more systematically. In that point of view, he is the apt person who we are looking for. He takes exercise, 3 hours everyday, never missed any of his body parts. and also writes down what he does although he has already become an expert. Moreover, he is training new members in fitness club which allows him to concern more about exercise beginners. Most importantly, he is the one who checks every club member’s weekly workout notes. Therefore he understands how annoying the recording is, and agrees that our service really is of utility value.
+
+#### Summary description
+
+Frankly, the time when we first contacted Junhwan and until the last minute before the actual testing, he didn’t look happy at all. When we asked, ‘Aren’t we disrupting you?’, he responded bluntly, ‘Yes, you are, a bit’.  However, after conducting prepared tasks while doing an actual exercise, he expressed his idea actively, with his face flushed with excitement. Since he was our very first tester to be tested while doing user’s actual workout, and was murmuring in a rather brusque tone, we were indeed nervous at the beginning. However, we relieved after he showed a bright face, saying, “Overall, really nice”. In one sentence, he told us that our service seemed complicated than he thought but it will be good enough if the user get used to it.
 
 #### Observations
 
@@ -149,9 +159,11 @@ Our team went through a series of user testing, including three representative u
 
 ### Participant 2
 
-> **gunho, Park**
+> **gunho, Park** (Male, 23 years old)
 >
 > [youtube link](https://www.youtube.com/watch?v=QWcvg062k-Q) of screen captures video during the testing
+>
+> He is current training manager of KAIST fitness club, and the reasons we recruited him are almost same with the reason we described for the tester #1. Although he does not currently recording his own exercises (it’s because he is an expert, and because he prefers to do exercise extemporaneously these days, in other words, he does exercise in improvised manner), he can reflect our target user since he wrote his own for years, right after he first started his exercise.
 
 #### Observations
 
@@ -169,9 +181,11 @@ Our team went through a series of user testing, including three representative u
 
 ### Participant 3
 
-> **daehyeong, Lee**
+> **daehyeong, Lee** (Male, 28 years old)
 >
 > [youtube link](https://www.youtube.com/watch?v=TIMOxgBq7p8) of screen captures video during the testing
+>
+> We have been happy to meet with Daehyeong since he was the one and only person among our previous user testers, who knows what HCI field and its research is. As an Industrial Engineering student, He has worked as a developer for 4 years as an alternative military service, he now works for an IT company NextMatch which is famous for AMANDA, the well known social dating app. He told us that he took HCI course before and has shared expansive conversation regarding our service. But that’s not the sole reason we recruited him as our third user to be tested. He is also a member of KAIST fitness club, starting from this semester and he’s currently recording all his exercises using his smartphone memo app. He disclosed that he feels annoying, each time he writes whole thing regarding exercise that has been done. Undoubtedly, he is the one who we are looking for.
 
 #### Observations
 
@@ -189,6 +203,81 @@ Our team went through a series of user testing, including three representative u
 
 ## Usability lessons
 
+1. It seems to need a function to be able to add the customized exercises.
+
+> Task 1. Low. P1
+>
+> One of users said that “Why is the exercises already made? Does it need to be?”. When we heard that, we can know we don’t need to give all the exercise form to user. If a user want to some exercises, then just let the user be able to make own exercise form.Because the exercise form is very simple, it won’t be problem. We only need to give basic exercise form in order for novice users to easily make their own workout records. So, we’re going to add this function to make users be able to have their customized exercises.
+
+2. The up and down buttons for changing value is limited to just up or down only by one.
+
+> Task 1. Medium. P1, P2
+>
+> This problem has been continuously raised. To fix this problem, actually we added the typing mode to change the number value for exercise parameters. But we think users felt this is not enough. Because the user is always correct, we’re going to add the up and down buttons which can add the number by 5 in add section. We hope this is enough otherwise we may have to add the +-10 buttons.
+
+3. It is inconvenient that newly added exercise is not focused automatically. It hides below the previous added exercises.
+
+> Task 1. Medium. P1
+>
+> If a user adds new sets and had a lot of sets already, the added sets may not be shown unless the user scroll down. To fix this issue, we thought two solution. One is to add new sets to the beginning of the list not the end. The other is to automatically focus the screen to current set which should be done now. The former solution might let the user confuse because the sets order and exercises order are completely different so we rejected it.
+
+4. The default value of each exercise should be different.
+
+> Task 1. Medium. P1
+>
+> We set the default number value for exercise parameters to 10. But the problem is all exercise is really different so their default parameter value should be different. To do this, we should find the adequate parameter number for default value of each exercise and set this default. This default value can be modified depending on the last value which the user set while doing exercise.
+
+5. Images in ‘add’ looks clickable, but it doesn’t.
+
+> Task 1. High. P2, P3
+>
+> In page for adding plans, there are workout names and their corresponding images. We first made these images move if the user clicks them. They are clickable, but it just show a simple animation. In user testing, we observed that participants like to click image than text because image is bigger than text. So, we decided to delete animation from the images and will change them clickable (so that it can change url).
+
+6. There is no need that the back button in timer is big.
+
+> Task 2. Low. P3
+>
+> There is ‘back’ button when the user taps ‘done’ and timer appears. Its size is same as other buttons but its color is emphasized, so it is obtrusive. However, no one used this button during user testing, and one asked why ‘back’ button exists. We realized that there is no need that the back button is emphasized, so we decided to make it smaller than now. Or we will throw this button, and add ‘x’ button, which closes the timer.
+
+7. The readability of the description text on the timer screen is bad.
+
+> Task 2. Low. P1
+>
+> In case that the user complete the whole set of one exercise, the user have to choose one of the buttons which are “Go to main” and “Add more set” button. We thought the name of button is not enough for user to recognize what the button do. So, we added a description text above buttons. But in practice, all of the users didn’t read description text. They just click one of them in not knowing what the button do. We think the reason is because of visibility of the description text. It can’t capture the focus of users. Now the color of the text is white and the size is small, so we think we should change the color and size in order to let the user read this text.
+
+8. Second tab was not used at all.
+
+> Task 2. Low. P1, P2, P3
+>
+> Second tab shows the current set which the user have to do. But most of users didn’t use second tab but just click the set in first tab, main list of workout.
+We now think the reason of why users don’t care this tab is because the icon of second tab doesn’t have clear meaning. Therefore we should change the icon of second tab or add some texts below icons to give more clear meaning to user.
+
+9. There is a timer between sets, but not between workouts.
+
+> Task 2. Medium. P2, P3
+>
+> At first, we expected that if the user do all the sets for one workout, he/she would pick the next workout from the list. But our participants asked why there is no timer between workouts, and they said it is needed. So, we will add this feature soon, and there will be three buttons after the last set, ‘add more set’, ‘go to main’, and ‘next’.
+
+10. In the page of resting interval, it would be better to go to the next set automatically after designated resting time.
+
+> Task 2. High. P1, P2, P3
+>
+> Current implementation of measuring resting time is to count up from 00:00. This way of design was based on the consideration that different users might have different resting time. We basically let user to decide when to move on to the next set. What we did not notice, however, was the point that users must pick up the cellphone and press “Next Button” every time they go to the next set. This usability issue implies the necessity of “counting down” of measuring resting time, and automatically move to the next set when the count reaches to 0.
+
+11. The user wants to do something in rest time. But now the timer occupies the entire screen so the user can’t do anything in our application during rest time.
+
+> Task 2. High. P2
+>
+> There is ‘back’ button when the user taps ‘done’ and timer appears. Its size is same as other buttons but its color is emphasized, so it is obtrusive. However, no one used this button during user testing, and one asked why ‘back’ button exists. We realized that there is no need that the back button is emphasized, so we decided to make it smaller than now. Or we will throw this button, and add ‘x’ button, which closes the timer.
+
+12. Rather than overwriting current workout lists by the loaded contents, it seems better to append the loaded contents after the current workout.
+
+> Task 3. Medium. P1
+>
+> We implemented the load functionality based on the assumption that the user would load workout lists before starting workout. It is quite obvious, however, for user to suddenly think of what he/she had done before while working out, and load the workout lists with some workout done already. Otherwise, user might suffer from the consequence of deleting all the list of done exercises by loading feature, if the user doesn’t know that the loading would overwrite everything by loaded contents.
+
+### High-level reflection
+
 
 
 ## Studio reflections
@@ -202,3 +291,4 @@ Our team went through a series of user testing, including three representative u
 > We tested our users in real environment which means that the users did exercises in health club as usually they do.
 
 ## Plan for iteration
+
