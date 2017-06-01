@@ -6,7 +6,9 @@
 
 #### Place
 
-**Health club at KAIST** (Anywhere users prefer is OK because in doing so we can focus the user's actual usage for our application without any interference by unfriendly situation)
+**Health club at KAIST** (Anywhere users prefer is OK)
+
+The reason why the place of experiment is a health club is that we can focus the user’s actual usage for our application in real environment without any interference by unfriendly situation.
 
 #### Expected time for each participants
 
@@ -14,11 +16,11 @@ About **30minutes**, not included interview time. (It is very loosely appropriat
 
 #### Recording
 
-Using smartphone, we will record the entire session that our participants take the experiment. It includes screen captures, written notes.
+Using smartphone, we record the entire session that users take the experiment on video.
 
 #### Individual roles
 
-1 facilitator and 3 observers (Except facilitator and one observer who records the participants, the others should take a distance to the user in order for user to concentrate their workout.)
+1 facilitator and 3 observers (Except facilitator and one observer who record the participant, the others should take a distance to the user in order for user to concentrate their workout.)
 
 **Facilitator** : Seunghee
 
@@ -32,16 +34,18 @@ URL of our prototype is [here](https://project-oh-hack-nyun-4a19e.firebaseapp.co
 
 #### Environment
 
-All the participants should use the same device for testing. Don't let them use their own device. We recommend to use mobile device, not laptop.
+All users must the same device for testing. Don’t let users use their own device. Prepare one of laptop or mobile device before. We highly recommend to use mobile device not laptop unless there is some problem.
 
-- In mobile **[Recommended]** - Chrome application.
+- In mobile **[Recommended]** - Chrome.
 - In laptop - Chrome browser. Only using mobile mode in development tool(shortcut: F12). Toggle device toolbar(shortcut: Ctrl + Shift + M) and select "Galaxy S5" at leftmost dropdown menu in device toolbar header.
 
 #### Accounts for test
 
-The ID must be made before the experiment because it should has the previous plans. If user signs in our service, he/she cannot use 'load' function.
+The ID must be made before the experiment depending on the user’s unique number like student ID. So, collect the student ID or some unique number (not just ordering) for “userID” space.
 
-> ID : test / PW : 1234
+The reason why we don’t use just the order number for “userID” is that users don’t have to know which order they take the experiment. This might affect to the user’s mentality. So we should avoid the ordering effect.
+
+> ID : test_userID / PW : 1234
 
 #### Pre-dataset
 
@@ -51,17 +55,17 @@ There should be pre-dataset in test account.
 
 ### Introduction
 
-> Your workout is a real training session only if you have specific goals, a planned vision of progress and a way to measure your results. From this reason, some people record their workouts. However, tracking workouts is an annoying task. Our team has focused on **"How to track your workouts in the simplest, most effective way possble"**.
-> 
+> Your workout is a real training session only if you have specific goals, a planned vision of progress and a way to measure your results. From this reason, some people record their workouts. However, tracking workouts is an annoying task Our team focused on **How to Track Your Workouts in the Simplest, Most Effective Way Possible**.
+>
 > MACHOKE - your workout note - is designed for providing technical aids to reduce the troublesomeness of recording workout results and to make the process of tracking each exercise details easier.
-> 
+>
 > And we want to test the usability of our product by this user testing, and get some feedbacks.
 
 ### Informed consent
 
 > I confirm that the participant was given an opportunity to ask questions about the user testing, and all the questions asked by the participant have been answered correctly and to the best of my ability. I confirm that the individual has not been coerced into giving consent, and the consent has been given freely and voluntarily.
-> 
-> print the name of researcher/person talking to the consent: * * *
+>
+> print the name of researcher/person talking to the consent: O O O
 
 ### Turorial or training
 
@@ -151,16 +155,33 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 
 #### Interview
 
+### Participant 3
+
+> **daehyeong, Lee**
+>
+> [youtube link](https://www.youtube.com/watch?v=TIMOxgBq7p8) of screen captures video during the testing
+
+#### Observations
+
+- He types the number of weight directly, not using + or - buttons.
+- He sometimes misses tapping 'next' button.
+- He taps image of button when adding plans, but it doesn't work.
+- He only adds one set for one workout, then uses 'add more set' until it is finished.
+
+#### Interview
+
 ## Usability lessons
 
-> List at least 10 usability problems you discovered. Organize them by high-level task or theme, not by each participant or time. But mention which participant ran into the problem by referring to them as P1, P2, ... (e.g., search results did not show the price information (P1, P3)). For each problem, indicate how critical the problem is: high, medium, and low. Finally, show how you plan to address each of the problems.
 
-> High-level reflections: What did you overall learn from the user testing experience? What would you do differently for better results and insights?
 
 ## Studio reflections
 
-> Summarize the feedback from the studio session, and mention how you addressed it or will address it later in the process.
+- The video or audio recording is better than just taking photo.
+
+> Most of users didn’t want to be recorded in video or taken some photos, so we recorded the display of smartphone by using recording application for video.
+
+- How would you take the user testing?
+
+> We tested our users in real environment which means that the users did exercises in health club as usually they do.
 
 ## Plan for iteration
-
-> You'll have an additional week to finalize your overall design process. Discuss in your team how to use this time most effectively, and make a few concrete goals. Justify your goals.
