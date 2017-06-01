@@ -69,7 +69,7 @@ There should be pre-dataset in test account.
 
 ### Turorial or training
 
-In the studio session, we expressed our intention of carrying out user testing without any tutorial or training, since we thought intuitive UI is one of the strengths of our prototype. However, it was possible to observe that users cannot easily distinguish the difference between “ADD Button” and “CONFIRM Button” at the end of addition part, from the first two user testing. Our team intentionally placed those buttons at the end of addition for consecutive addition of sets and confirm at the end, but the label and UI design was not intuitive enough for user to catch the feature immediately. Thus, we explained the difference of the feature of the two buttons, and decided to inform the last test user about the functionality difference of the two buttons from the beginning. We structured this session contents in order to serve as tutorial.
+In the studio session, we expressed our intention of carrying out user testing without any tutorial or training, since we thought intuitive UI is one of the strengths of our prototype. However, it was possible to observe that users cannot easily distinguish the difference between 'add' button and 'confirm' button at the end of addition part, from the first two user testing. Our team intentionally placed those buttons at the end of addition for consecutive addition of sets and confirm at the end, but the label and UI design was not intuitive enough for user to catch the feature immediately. Thus, we explained the difference of the feature of the two buttons, and decided to inform the last test user about the functionality difference of the two buttons from the beginning. We structured this session contents in order to serve as tutorial.
 
 ### Task list
 
@@ -118,16 +118,18 @@ We will use our test accounts because the participants doesn't have any history.
 
 ### Debrief prompt
 
-Our team is planning to show out our gratitude towards participants by giving our starbucks or equivalent gifticon as we did in the previous user testings. (paper & low-fi prototypes)
+Our team is planning to show out our gratitude towards participants by giving our starbucks or equivalent gifticon as we did in the previous user testings. After the test being done, the facilitator read out below written debrief.
 
-> (...)
+> Thank you for your participation! You’ve managed and handled so well and indeed helpful for us. Feedbacks you have raised, and the observation we had made will be reflected to our service in affirmative way. After correcting our errors and making changes to be improved, we’ll announce you again with our modified prototype. Thank- you!
 
 <br/>
 <br/>
 
 ## Session observations
 
-Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below.
+Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below. Note that description for each, includes the justification, explaining that all three of them are representative users, in other words, worth testing.
+
+<br/>
 
 ### Participant 1
 
@@ -135,11 +137,13 @@ Our team went through a series of user testing, including three representative u
 >
 > [youtube link](https://www.youtube.com/watch?v=qLfDViR6CWM) of screen captures video during the testing
 >
-> He is the current president of KAIST fitness club, LINE. At first glance, you might think that he is not likely to be fit to our target user population since our team put more weight on exercise beginners rather than experts. But before considering whether user is a novice or not, we are targeting users who want to keep their exercises recorded and users who want to conduct their exercise more systematically. In that point of view, he is the apt person who we are looking for. He takes exercise, 3 hours everyday, never missed any of his body parts. and also writes down what he does although he has already become an expert. Moreover, he is training new members in fitness club which allows him to concern more about exercise beginners. Most importantly, he is the one who checks every club member’s weekly workout notes. Therefore he understands how annoying the recording is, and agrees that our service really is of utility value.
+> P1 tested our service while doing 1. Incline Bench Press; 2. Incline Flys; 3. Incline Press.
+>
+> He is current president of KAIST fitness club, namely, LINE. At first glance, you might think that he is not likely to be fit to our target user population since our team put more focus on exercise beginners rather than experts. But before considering whether user is a novice or not, we are targeting users who want to keep their exercises recorded and users who want to conduct their exercise more systematically. In that point of view, Junhwan is the apt person who we are looking for. He takes exercise, 3 hours everyday, never missed any of his body parts and also writes down what he does, although he has already become an exercise expert. Moreover, he provides training for new members in fitness club which allows him to concern more about exercise beginners. Most importantly, he is the one who checks every club member’s weekly workout notes. Therefore he understands how annoying the recording is, and agrees that our service really is of utility value.
 
 #### Summary description
 
-Frankly, the time when we first contacted Junhwan and until the last minute before the actual testing, he didn’t look happy at all. When we asked, ‘Aren’t we disrupting you?’, he responded bluntly, ‘Yes, you are, a bit’.  However, after conducting prepared tasks while doing an actual exercise, he expressed his idea actively, with his face flushed with excitement. Since he was our very first tester to be tested while doing user’s actual workout, and was murmuring in a rather brusque tone, we were indeed nervous at the beginning. However, we relieved after he showed a bright face, saying, “Overall, really nice”. In one sentence, he told us that our service seemed complicated than he thought but it will be good enough if the user get used to it.
+Frankly, the time when we first contacted Junhwan and until the last minute before the actual testing, he didn’t look happy at all. When we asked, ‘Aren’t we disrupting you?’, he responded bluntly, ‘Yes, you are, a bit’.  However, after conducting prepared tasks while doing an actual exercise, he expressed his idea actively, with his face flushed with excitement. Since he was our very first tester to be tested while doing user’s actual workout, and was murmuring in a rather brusque tone, we were indeed nervous at the beginning. However, we relieved after he showed a bright face, saying, “Overall, really nice”. In one sentence, he told us that our service seemed complicated than he thought but it will be good enough if the user get used to it. As we expected, he set up all sets with weight and reps for an exercise he was going to do, and modifies reps only a bit after done.
 
 #### Observations
 
@@ -160,17 +164,21 @@ Frankly, the time when we first contacted Junhwan and until the last minute befo
 - For timer, count-down seems better than count-up. I can save clicks if the timer is count-down.
 - Rather than overwriting everything by the loaded contents, it seems better to append the loaded contents after what was already there previously.
 
+<br/>
+
 ### Participant 2
 
 > **gunho, Park** (Male, 23 years old)
 >
 > [youtube link](https://www.youtube.com/watch?v=QWcvg062k-Q) of screen captures video during the testing
 >
-> He is current training manager of KAIST fitness club, and the reasons we recruited him are almost same with the reason we described for the tester #1. Although he does not currently recording his own exercises (it’s because he is an expert, and because he prefers to do exercise extemporaneously these days, in other words, he does exercise in improvised manner), he can reflect our target user since he wrote his own for years, right after he first started his exercise.
+> P2 tested our service while doing 1. Dumbbell Decline Flys; 2. Incline Press; 3. Cable Crossover. The uploaded video tended to be a bit longer than other testers. It’s because the latter part other than three exercises, were used when we were interviewing with Gunho after the test.
+>
+> He is current training manager of KAIST fitness club, and the reasons we recruited him are almost same with the reason described in tester 1. Although he does not currently recording his own exercises (it’s because he is an expert, and because he prefers to do exercise extemporaneously these days, in other words, he does exercise in improvised manner), he can reflect our target user since he wrote his own for years, right after he first started his exercise. In addition to amplify the reason why we chose Junhwan and Gunho, we want to assert that our team contemplated fully. We decided that it would be better to test someone who has much experience on workout in order for us to get critical feedbacks. Since tester P1 and P2 are known to be the best in KAIST, we contacted them without hesitation.
 
 #### Summary description
 
-There were some issues which Gunho had pointed out when he tested our service in our prior DP: paper prototyping, but not reflected. What he had said was, he is so spontaneous that he usually not ‘plan’ how many sets he would do before an exercise starts. The issue was seriously considered but we sticked to ‘plan’ exercise sets scheme in order to reduce button clicks during exercise. Meanwhile, our service evolved much so that we can also cover user like Gunho, but we realized that we still need more concerns for those users. When we inspected, Gunho just planned only one set, saying that he would not know how many sets he would do at that moment, and added another set every time he had done with a set but wanted to do more. In fact, that’s not what we expected and sadly our user kept facing with repetitive pop-up, asking whether it’d add another set or not, before showing rest interval time. This reported issue left our team to revise some part of our UI.
+There were some issues which Gunho had pointed out when he tested our service in our prior DP: paper prototyping, but not reflected. What he had said was, he is so spontaneous that he usually not ‘plan’ how many sets he would do before an exercise starts. The issue was seriously considered but we sticked to ‘plan’ exercise sets scheme in order to reduce button clicks during exercise. Meanwhile, our service evolved much so that we can also cover user like Gunho, but we realized that we still need more concerns for those users. When we inspected, Gunho just planned only one set, saying that he would not know how many sets he would do at that moment, and added another set every time he had done with a set but wanted to do more. In fact, that’s not what we expected and sadly our user kept facing with repetitive pop-up, asking whether it’d add another set or not, before showing rest interval time. This reported issue led our team to revise some part of our UI.
 
 #### Observations
 
@@ -186,13 +194,21 @@ There were some issues which Gunho had pointed out when he tested our service in
 - There is a timer between sets, but not between workouts.
 - Weight of Workouts using cable is large, but tapping buttons to change value one by one is tired.
 
+<br/>
+
 ### Participant 3
 
 > **daehyeong, Lee** (Male, 28 years old)
 >
 > [youtube link](https://www.youtube.com/watch?v=TIMOxgBq7p8) of screen captures video during the testing
 >
-> We have been happy to meet with Daehyeong since he was the one and only person among our previous user testers, who knows what HCI field and its research is. As an Industrial Engineering student, He has worked as a developer for 4 years as an alternative military service, he now works for an IT company NextMatch which is famous for AMANDA, the well known social dating app. He told us that he took HCI course before and has shared expansive conversation regarding our service. But that’s not the sole reason we recruited him as our third user to be tested. He is also a member of KAIST fitness club, starting from this semester and he’s currently recording all his exercises using his smartphone memo app. He disclosed that he feels annoying, each time he writes whole thing regarding exercise that has been done. Undoubtedly, he is the one who we are looking for.
+> P3 tested our service while doing 1. Incline Bench Press; 2. Flat Bench Press.
+>
+> We have been happy to meet with Daehyeong since he was the one and only person among nine of the previous testers, who knows what HCI field and its research is. As an Industrial Engineering student, He has worked as a developer for 4 years as an alternative military service, he now works for an IT company NextMatch which is famous for AMANDA, the well known social dating app. He told us that he took HCI course before and has shared expansive conversation regarding our service. But that’s not the sole reason we recruited him as our third user to be tested. He is also a member of KAIST fitness club, starting from this semester (yet he has been doing exercise for  and he’s currently recording all his exercises using his smartphone memo app. He disclosed that he feels annoying, each time he writes whole thing regarding exercise that has been done. Undoubtedly, he is the one who we are looking for.
+
+#### Summary description
+
+After conducting user testing twice, we had to acknowledge that some explanations are necessary in order for user to USE our service. Thereby in third user testing, we explained a bit more while navigating each tasks and functions. Another notable difference was that P3 only tested two different exercises while P1 and P2 tested three different exercises due to the limitation of available time we had in the third session. There is also a minor difference on testing device, that P1, P2 tested with LG V10 smartphone while P3 tested with Samsung galaxy S5 due to battery issue. Our team had talked more about interface design with Daehyeong, than other testers. conducting user testing twice, we had to acknowledge that some explanations are necessary in order for user to USE our service. Thereby in third user testing, we explained a bit more while navigating each tasks and functions. Another notable difference was that P3 only tested two different exercises while P1 and P2 tested three different exercises due to the limitation of available time we had in the third session.
 
 #### Observations
 
@@ -272,7 +288,7 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 > Task 2. High. P1, P2, P3
 >
-> Current implementation of measuring resting time is to count up from 00:00. This way of design was based on the consideration that different users might have different resting time. We basically let user to decide when to move on to the next set. What we did not notice, however, was the point that users must pick up the cellphone and press “Next Button” every time they go to the next set. This usability issue implies the necessity of “counting down” of measuring resting time, and automatically move to the next set when the count reaches to 0.
+> Current implementation of measuring resting time is to count up from 00:00. This way of design was based on the consideration that different users might have different resting time. We basically let user to decide when to move on to the next set. What we did not notice, however, was the point that users must pick up the cellphone and press 'next' button every time they go to the next set. This usability issue implies the necessity of 'counting down' of measuring resting time, and automatically move to the next set when the count reaches to 0.
 
 11. The user wants to do something in rest time. But now the timer occupies the entire screen so the user can’t do anything in our application during rest time.
 
@@ -303,10 +319,23 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 > We tested our users in real environment which means that the users did exercises in the fitness center as usually they do.
 
-- How about the users who exercise not in gym?
+- How about the users who exercise not in fitness center?
 
 > It doesn’t matter. Whoever does exercise can use our application wherever they want because we just simply give the exercise forms, workout list, the previous records. Just use when you want!
 
 <br/>
+<br/>
+
 ## Plan for iteration
 
+The term “Iteration” has the implication of repeating another step of what we have done. Our group interpreted this as the meaning of choosing one step of DP and repeat it again. It seems quite obvious to enhance our Hi-Fi prototype to apply the feedback from user testing.
+
+Throughout all the prototyping steps we carried out in this course, we built prototype and then conduct user testing. This would be the first user testing with adopting previous feedback. Naturally, our first goal would be fixing all the usability issues suggested from this user testing. No matter how critical the issue is, these issues is given straight to be fixed.
+
+Our actual planning for this step starts from here. At this point, we thought of our essential motivation of implementing this web GUI. We wanted to achieve three things: easy, useful, and versatile. It is possible to say that we focused on achieving easiness of using the web application until now. It is time to proceed for another points.
+
+For being useful, we are planning to support graphical summary and analysis for the workout done by the user. This was actually part of our Hi-Fi prototyping, but we could not finish implementing this part for time constraints. graphical summary would help user to be motivated by showing the achievement and current workout status. Our initial plan was to rank all the online user and compare the score with friends, but it seems excessive as Hi-Fi prototyping.
+
+Another goal is to be versatile. What it means to be versatile is to be fitting all users’ way of recording. Some people would need weight in abdominal exercise while some people wouldn’t, and some people prefer [weight, reps] format while some people prefer the opposite way. This kind of versatility can be accomplished by providing individual configuration for web GUI.
+
+Finally, our last, and perhaps the most important, goal is to refine aesthetic feature of GUI. A group of four CS major students could not think of design in artistic way. If time is allowed, we want to focus on achieving our long-cherished wish.
