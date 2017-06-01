@@ -69,7 +69,7 @@ There should be pre-dataset in test account.
 
 ### Turorial or training
 
-
+In the studio session, we expressed our intention of carrying out user testing without any tutorial or training, since we thought intuitive UI is one of the strengths of our prototype. However, it was possible to observe that users cannot easily distinguish the difference between “ADD Button” and “CONFIRM Button” at the end of addition part, from the first two user testing. Our team intentionally placed those buttons at the end of addition for consecutive addition of sets and confirm at the end, but the label and UI design was not intuitive enough for user to catch the feature immediately. Thus, we explained the difference of the feature of the two buttons, and decided to inform the last test user about the functionality difference of the two buttons from the beginning. We structured this session contents in order to serve as tutorial.
 
 ### Task list
 
@@ -112,25 +112,25 @@ There should be pre-dataset in test account.
 
 ### Debrief prompt
 
-Our team is planning to show out our gratitude towards paricipants by giving our starbucks or equivalent gifticon as we did in the previous user testings. (paper & low-fi prototypes)
+Our team is planning to show out our gratitude towards participants by giving our starbucks or equivalent gifticon as we did in the previous user testings. (paper & low-fi prototypes)
 
 > (...)
 
 ## Session observations
 
-> Participants: Who are they? How did you recruit them? Why are they representative target users? Add brief demographic, context information about each participant that is relevant to your interface.
-
-> Use at least one photo or sketch for each participant and provide a summary description of each session (e.g., What was unique about this participant? Main takeaway from this participant?).
+Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below.
 
 ### Participant 1
 
-> **Joonhwan, Choi**
+> **Junhwan, Choi**
 >
 > [youtube link](https://www.youtube.com/watch?v=qLfDViR6CWM) of screen captures video during the testing
+>
+> He is the current president of KAIST fitness club, LINE. At first glance, you might think that he is not likely to be fit to our target user population since our team put more weight on exercise beginners rather than experts. But before considering whether user is a novice or not, we are targeting users who want to keep their exercises recorded and users who want to conduct their exercise more systematically. In that point of view, he is the apt person who we are looking for. He takes exercise, 3 hours everyday, never missed any of his body parts. and also writes down what he does although he has already become an expert. Moreover, he is training new members in fitness club which allows him to concern more about exercise beginners. Most importantly, he is the one who checks every club member’s weekly workout notes. Therefore he understands how annoying the recording is, and agrees that our service really is of utility value.
 
 #### Observations
 
-- He sometimes didn't tap 'NEXT' button before starting next set.
+- He sometimes doesn't tap 'NEXT' button before starting next set.
 - He changes 'repetition' during exercising a lot. We have thought that many users will plan strictly, but he plans roughly and change details after each set of workout.
 - He doesn't focus on the text. There are two buttons 'Add more set' and 'Go to main' after finishing all the sets, but he doesn't read the text and tap what he doesn't want.
 - It takes a lot of time to add plans. He doesn't find the name of workout fast.
@@ -141,9 +141,15 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 
 #### Interview
 
+- It needs adding 'super set', which has various workouts in one routine.
+- There are data for workout name already, but I think it is not good. It would be better if I can add workout to data.
+- I think that recent plans should be in the top of the screen, but it is in the bottom.
+- For timer, count-down seems better than count-up. I can save clicks if the timer is count-down.
+- Rather than overwriting everything by the loaded contents, it seems better to append the loaded contents after what was already there previously.
+
 ### Participant 2
 
-> **geonho, Park**
+> **gunho, Park**
 >
 > [youtube link](https://www.youtube.com/watch?v=QWcvg062k-Q) of screen captures video during the testing
 
@@ -154,6 +160,12 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 - He wants to plan the next workout during the break time. But the user cannot do anything during the break time in our service.
 
 #### Interview
+
+- Count-down timer seems better than count-up timer.
+- How about showing timer smaller so that I can add next plans while timer is running?
+- Timer for break time looks like a sub function, but it is overemphasized.
+- There is a timer between sets, but not between workouts.
+- Weight of Workouts using cable is large, but tapping buttons to change value one by one is tired.
 
 ### Participant 3
 
@@ -169,6 +181,11 @@ Our team is planning to show out our gratitude towards paricipants by giving our
 - He only adds one set for one workout, then uses 'add more set' until it is finished.
 
 #### Interview
+
+- How about changing order of 'next' button and timer? I think it is better that 'next' button appears and then the timer is shown.
+- I could type number directly when I add a plan, but I couldn't do when I edit it.
+- The timer should be shown when 'add more set' button appears.
+- Height of buttons is too small.
 
 ## Usability lessons
 
