@@ -8,15 +8,15 @@
 
 **Fitness center at KAIST** (Anywhere users prefer is OK)
 
-The reason why the place of experiment is a fitness center is that we can focus the user’s actual usage for our application in real environment without any interference by unfriendly situation.
+The reason why the place of experiment is a ‘fitness center’ is because we can focus on the user’s actual usage of our service application in REAL environment. In order to maintain consistency, our testing would be held in Sports Complex.
 
 #### Expected time for each participants
 
-About **30minutes**, not included interview time. (It is very loosely appropriated so that users don't have to care about the time limit.)
+About 20~30mins since we are asking user to conduct three different exercises where each exercise might contain 3 ~ 5 sets. Few more minutes would be needed for the interview. This is loosely appropriated so that users don’t have to care about the time limit.
 
 #### Recording
 
-Using smartphone, we record the entire session that users take the experiment on video.
+Using smartphone, we video record the device’s screen for the entire session which contains how user walk through our service.
 
 #### Individual roles
 
@@ -304,6 +304,17 @@ We now think the reason of why users don’t care this tab is because the icon o
 
 ### High-level reflection
 
+Our Hi-Fi prototype was our fourth prototype in this class (including paper paper prototype), and perhaps the fourth prototype in our entire life, for all four of us. Honestly, we were quite confident for our implementation. And it didn’t take long to crush our pride.
+
+There is a korean proverb stating that *“A thousand hearings are not worth one seeing”*. This could be translated into HCI version as *“A thousand UI considerations are not worth one feedback from user”*. What our group kept noticing throughout the user testing was that the UI design we discussed for several hours becomes unnecessary things if user said so. That would be why we need several user testing until we get enough refinement. In fact, we already knew about this, we just not experienced yet. This would be the most important lesson we learned from user testing.
+
+Furthermore, it was indeed different to actually observe users using our prototype. We could observe what we couldn’t notice while we were discussing with each other in front of computer.
+
+It was possible to achieve satisfiable result throughout the user testing, but there were also some points to improve. One of the drawbacks of our user testing would be the user pool of the participants. We already mentioned that all participants are technically classified as expert group among all users. Our target users, in fact, would be the workout novices who want to record workout results, but we made a judgement that expert group would provide more qualitative feedbacks based on their experience of recording. Our forecasts seems being right on target based on the result we gathered, but consequentially, we don’t have any feedback from novice group. This limitation turned out as veiling our efforts for helping exercise beginner such as including youtube exercise video. All participants never clicked the exercise instruction video. In the reason of short of time, we only tested only three users, which is indeed small as testee pool. Hence, it seems that we should expand the user group for reliable results with various feedbacks.
+
+Another point that reflects us leaving much to be desired is our tutorial session. As it is mentioned above, there was no plan of providing tutorial or training for our web GUI, and it turned out that our design was not intuitive enough to skip tutorial. Unfortunately, it was the observation from the first two participants, and we provided formal tutorial only for the last participant. We should think carefully about the fact that “Tutorial or Training” was also one of the part in the presentation, even if it was commented as “optional”.
+
+It is definite to say we don’t have enough experience of prototyping and user testing, and we could get plenty of valuable feedback from the first two testing. Then we felt the desire of implementing more with applying the feedback from the first two user testing before starting the last test. However, we were not sure about the point that are we "ALLOWED” to make change in between the testing within the same DP session? We decided not to. If we have enough time to discuss this with professor or TA, then we could do that.
 
 
 <br/>
