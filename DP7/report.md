@@ -129,6 +129,8 @@ Our team is planning to show out our gratitude towards participants by giving ou
 
 Our team went through a series of user testing, including three representative users. Short description and observation for each participant are written below. Note that description for each, includes the justification, explaining that all three of them are representative users, in other words, worth testing.
 
+We couldn't take any picture because all our participants didn't want it. Instead, we prepared videos capturing mobile screen and added their youtube links to our report.
+
 <br/>
 
 ### Participant 1
