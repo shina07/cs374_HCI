@@ -15,7 +15,9 @@ $(document).ready(function() {
 
 	if (link_date == undefined) {
 		var d = new Date();
-		var today = d.getFullYear() + "-0" + (d.getMonth() + 1) + "-" + d.getDate();
+		var month = d.getMonth() + 1 < 10 ? "0" + (d.getMonth() + 1) : d.getMonth() + 1
+		var day = d.getDate() < 10 ? "0" + d.getDate() : d.getDate()
+		var today = d.getFullYear() + "-" + month + "-" + day;
 		link_date = today;
 	}
 	
@@ -173,6 +175,11 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 			$(this).attr('href', link)
 			$(this).css('pointer-events', 'auto')
 		});
+
+		$('html, body').animate({
+			scrollTop : $('#' + id).offset().top - 56},
+			'slow'
+		);
 	}
 
 	$('.no_plans').css('display', 'none');
