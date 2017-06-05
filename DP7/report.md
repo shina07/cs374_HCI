@@ -83,7 +83,7 @@ Because we will test the users who do their workouts, we will not specify the de
 
 This task is closely connected with task 1. After the users add all the plans, they can open 'exercising' page by tapping a plan. It includes video help, progress bar, editing plans, and timer.
 
-> If you fininshed to add plans, select one of the plans and start exercising. Please tell us if you have any difficulties until you do all the plans.
+> If you finished to add plans, select one of the plans and start exercising. Please tell us if you have any difficulties until you do all the plans.
 
 #### **Task 3**: Load previous plans
 
