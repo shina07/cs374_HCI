@@ -33,7 +33,9 @@
     exercise_name = exercise_name.join(" ");
 
     var d = new Date();
-    var exercise_date = d.getFullYear() + "-0" + (d.getMonth()+1) + "-" + d.getDate();
+    var month = d.getMonth() + 1 < 10 ? "0" + (d.getMonth() + 1) : d.getMonth() + 1;
+    var day = d.getDate() < 10 ? "0" + d.getDate() : d.getDate();
+    var exercise_date = d.getFullYear() + "-" + month + "-" + day;
     var exercise_weight = 20;
     if (body_part == "abs"){ exercise_weight = 0; }
     var exercise_reps = 10;
@@ -176,7 +178,7 @@
 <body>
 <div id="wrap">
     <div id="header">
-        <a class="state_tab tab_list active_tab" href="#">
+        <a class="session state_tab tab_list active_tab" href="../../main.html">
             <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
         </a>
         <a class="session state_tab tab_plan" href="../workout.html">

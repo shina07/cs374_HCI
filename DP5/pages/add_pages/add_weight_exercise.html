@@ -22,13 +22,9 @@
 </head>
 <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script type="text/javascript" src="../../database/firebase.js"></script>
-<!--script type="text/javacript" src="../../public/url.js"></script-->
 <script type="text/javascript" src="../../js/main.js"></script>
 
 <script>
-    //var split = (document.URL).split("=");
-    //var body_part = split[1].split("&")[0];
-    //var userId = split[2];
     var body_part = getUrlParameter("body_part");
     var userId = getUrlParameter("userId");
     console.log(body_part);
@@ -128,7 +124,7 @@
             onclickref = "\"location.href='add_param.html?exercise=" + workout_name + "&body_part=" + bodypart +"&userId=" +userId + "';\"";
             innerPrev = document.getElementById(tool).innerHTML;
             innerAfter = innerPrev + "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4' style='padding:0'>";
-            innerAfter += "<div class='panel panel-default'><div class='panel-body'><a class='home'>";
+            innerAfter += "<div class='panel panel-default' onclick="+onclickref+"><div class='panel-body'><a class='home'>";
             innerAfter += "<img class='thumb image_on' src='../../img/" + bodypart +"/";
             innerAfter += tool + "/" + workout_name + img1 + "' style='width:100%' />";
             innerAfter += "<img class='thumb image_off' src='../../img/" + bodypart +"/";
@@ -144,7 +140,7 @@
 <body>
 <div id="wrap">
     <div id="header">
-        <a class="state_tab tab_list active_tab" href="#">
+        <a class="session state_tab tab_list active_tab" href="../../main.html">
             <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
         </a>
         <a class="session state_tab tab_plan" href="../workout.html">
