@@ -149,9 +149,9 @@ function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
 
 	var span = "";
 	for (var i = 0; i < values.length; i++) {
-		span += values[i] + " " + unit[tags[i]]
+		span += "<span style='color: #2297F1;'>" + values[i] + "</span> " + unit[tags[i]]
 		if (i != args.length) 
-			span += " "
+			span += "&nbsp;&nbsp; "
 	}
 	$('#' + id).append('<span>' + span + '</span>')
 

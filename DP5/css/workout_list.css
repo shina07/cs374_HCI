@@ -15,11 +15,12 @@
 
 .workout_list_one {
 	margin: 8px auto;
+	padding-right: 10px;
 	width: 92%;
 	height: 36px;
 	background-color: #FFFFFF;
 	border: 1px solid #DEDEDE;
-	text-align: middle;
+	text-align: right;
 	line-height: 34px;
 	font-size: 14px;
 	color: #333333;
