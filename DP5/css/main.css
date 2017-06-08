@@ -35,10 +35,10 @@ body {
 }
 
 .state_tab {
-	width: 24%;
+	width: 25%;
 	height: 100%;
 	color: #CCCCCC;
-	display: inline-block;
+	float: left;
 }
 
 .active_tab {
