@@ -27,14 +27,14 @@
 }
 
 .workout_list_default {
-	border-right: 10px solid #CCCCCC;
+	border-right: 15px solid #CCCCCC;
 }
 .workout_list_success {
-	border-right: 10px solid #5CB85C;
+	border-right: 15px solid #5CB85C;
 }
 .workout_list_edited {
-	border-right: 10px solid #F0AD4E;
+	border-right: 15px solid #F0AD4E;
 }
 .workout_list_failed {
-	border-right: 10px solid #D9534F;
+	border-right: 15px solid #D9534F;
 }
