@@ -61,6 +61,19 @@
                 add_to_shown_lst("shoulder","machine", shoulder_machine);
                 break;
             case "back":
+                $("#ezbar").hide();
+                $("#olympicbar").hide();
+                $("#etc").hide();
+                var back_barbell = [['reverse-grip-bent-over-rows', '-1.png', '-2.png'], ['one-arm-side-deadlift', '-1.gif', '-2.gif'], ['romanian-deadlift', '-1.png', '-2.png'], ['barbell-deadlift', '-1.gif', '-2.gif'], ['bent-arm-pullover', '-1.png', '-2.png'], ['barbell-rear-delt-row', '-1.png', '-2.png'], ['barbell-clean', '-1.gif', '-2.gif'], ['good-mornings', '-1.png', '-2.png']];
+                add_to_shown_lst("back", "barbell", back_barbell);
+                var back_bodyweight = [['body-row', '-1.png', '-2.png'], ['narrow-parallel-grip-chin-ups', '-1.png', '-2.png'], ['chin-ups', '-1.png', '-2.png'], ['gironda-sternum-chins', '-1.png', '-2.png'], ['climbers-chin-up', '-1.png', '-2.png'], ['hyperextensions', '-1.png', '-2.png']];
+                add_to_shown_lst("back", "bodyweight", back_bodyweight);
+                var back_cable = [['wide-grip-lat-pull-down', '-1.gif', '-2.gif'], ['close-grip-front-lat-pull-down', '-1.png', '-2.png'], ['cable-seated-rows', '-1.png', '-2.png'], ['v-bar-pull-down', '-1.png', '-2.png'], ['straight-arm-push-down', '-1.png', '-2.png'], ['cable-seated-rear-lateral-raise', '-1.png', '-2.png'], ['bent-over-cable-lateral-raises', '-1.png', '-2.png'], ['underhand-pull-downs', '-1.png', '-2.png']];
+                add_to_shown_lst("back", "cable", back_cable);
+                var back_dumbbell = [['dumbbell-deadlift', '-1.gif', '-2.gif'], ['dumbbell-clean', '-1.gif', '-2.gif'], ['dead-lifts-2', '-1.png', '-2.png'], ['rear-deltoid-row', '-1.png', '-2.png'], ['lying-one-arm-rear-lateral-raise', '-1.png', '-2.png'], ['lying-rear-lateral-raise', '-1.png', '-2.png']];
+                add_to_shown_lst("back", "dumbbell", back_dumbbell);
+                var back_machine = [['dead-lifts', '-1.png', '-2.png'], ['smith-machine-rear-deltoid-row', '-1.png', '-2.png'], ['good-mornings-2', '-1.png', '-2.png']];
+                add_to_shown_lst("back", "machine", back_machine);
                 break;
             case "triceps":
                 $("#etc").hide();
