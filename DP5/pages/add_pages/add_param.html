@@ -22,10 +22,14 @@
     //var userId = (document.URL).split("=")[2];
     //var exercise_name = (x.split("=")[1].split("&")[0]).split("_").join(" ");
     var userId = params["userId"][0];
-    var exercise_name = params["exercise"][0];
+    var exercise_name_origin = params["exercise"][0];
     var body_part = params["body_part"][0];
-    console.log(userId); console.log(exercise_name); console.log(body_part);
-    exercise_name = exercise_name.split("-");
+    var img1 = params["img1"][0];
+    var img2 = params["img2"][0];
+    var tool = params["tool"][0];
+    console.log(userId); console.log(exercise_name); console.log(body_part); console.log(img1); console.log(img2);
+
+    var exercise_name = exercise_name_origin.split("-");
     for(var i = 0;i<exercise_name.length;i++){
         var capital = exercise_name[i].charAt(0).toUpperCase();
         exercise_name[i] = capital + exercise_name[i].substring(1, exercise_name[i].length);
@@ -48,6 +52,7 @@
         document.getElementById("reps").contentEditable = true;
         document.getElementById("weight").innerHTML = exercise_weight;
         document.getElementById("reps").innerHTML = exercise_reps;
+        document.getElementById("exercise_img").innerHTML = "<a class='home'><img class='bigthumb image_on' src='../../img/" +body_part + "/" + tool + "/" + exercise_name_origin + img1 + "' style='' />" + "<img class='bigthumb image_off' src='../../img/" + body_part + "/" + tool + "/" + exercise_name_origin + img2 + "' style='' /></a>"
     });
 
     document.addEventListener('click', function(event){
@@ -110,10 +115,10 @@
         set_accumulator['set'+parseInt(exercise_sets)] = innerSet;
 
         var inner_current = document.getElementById("sets").innerHTML;
-        var inner_added = "<div class='panel-body' id="+ parseInt(innerId) +">Set"+ parseInt(exercise_sets) + ":";
+        var inner_added = "<div class='panel-body' id="+ parseInt(innerId) +">Set&nbsp"+ parseInt(exercise_sets) + ":&nbsp";
 
-        inner_added += "weight: " + parseInt(exercise_weight) + " ";
-        inner_added += "reps: " + parseInt(exercise_reps) + " ";
+        inner_added += "weight: " + parseInt(exercise_weight) + "&nbsp&nbsp";
+        inner_added += "reps: " + parseInt(exercise_reps) + "&nbsp&nbsp";
         inner_added += "<a onclick='remove_by_id("+innerId+")'><button type='button' class='btn btn-labeled btn-danger'><span class='btn-label'><i class='glyphicon glyphicon-trash'></i></span>Erase</button></div>";
         console.log("inner_added: ", inner_added);
         document.getElementById("sets").innerHTML = inner_current + inner_added;
@@ -194,22 +199,19 @@
             <li><a href="#"><span class="icon icon-home"> </span></a></li>
             <li><a href="#"><span class="icon icon-plus"> </span> Add exercise </a></li>
             <li><a href="#"> Body Parts: Chest </a></li>
-            <li id="bc_tool"><a href="#"> Tool: Barbell </a></li>
-            <li id="bc_exercise"><a href="#"> Exercise: Wide Grip Bench Press </a></li>
+            <li id="bc_tool"><a href="#"> Tool: <script>document.write(tool);</script> </a></li>
+            <li id="bc_exercise"><a href="#"> Exercise: <script>document.write(exercise_name);</script> </a></li>
         </ul>
         </div>
         <!-- BODY -->
-        <div class="panel panel-info col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            <img class='thumb image_on' src=''../../img/' + bodypart +'/'></img>
-        </div>
-        <div class="panel panel-info col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+        <div class="panel panel-info col-lg-12 col-md-12 col-sm-12 col-xs-12" >
             <div class="panel-heading" id="exercise_name">
                 <script>document.write(exercise_name);</script></div>
             <div class="panel-body">
                 <div id="body_contents">
                     <div class="weight_wrap workout_edit_wrap">
                         <div class="workout_property">
-                            Weight
+                            <font size="3">Weight&nbsp(kg)&nbsp</font>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-info" onclick="weight_dec()">
@@ -220,13 +222,13 @@
                             <button type="button" class="btn btn-info" onclick="weight_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
-                        <div class="workout_unit">
+                        <!-- div class="workout_unit">
                             kg
-                        </div>
+                        </div -->
                     </div>
                     <div class="reps_wrap workout_edit_wrap">
                         <div class="workout_property">
-                            Reps
+                            <font size="3">Reps&nbsp(times)&nbsp</font>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-info" onclick="reps_dec()">
@@ -237,9 +239,9 @@
                             <button type="button" class="btn btn-info" onclick="reps_inc()">
                                 <span class="glyphicon glyphicon-plus"></span></button>
                         </div>
-                        <div class="workout_unit">
+                        <!-- div class="workout_unit">
                             times
-                        </div>
+                        </div -->
                     </div>
                     <div>
                         <button type="button" class="btn btn-info add_btn" onclick="set_addition()">ADD</button>
@@ -250,6 +252,11 @@
         <div class="panel panel-info" id="sets"></div>
         <div>
             <button type="button" class="btn btn-info confirm_btn" onclick="send_plan()">Confirm</button>
+        </div>
+        <div class="panel panel-info" align="center" style="margin-top: 30px;">
+            <div align="left">&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-film"></span></div>
+            <div class="panel-body" id="exercise_img"></div>
+            <div> CLICK <span class="glyphicon glyphicon-arrow-up"></span> to check how you'd DO  </div>
         </div>
         </div>
 

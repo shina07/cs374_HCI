@@ -125,7 +125,7 @@
             var img1 = workouts[i][1];
             var img2 = workouts[i][2];
             console.log(workout_name);
-            onclickref = "\"location.href='add_param.html?exercise=" + workout_name + "&body_part=" + bodypart +"&userId=" +userId + "';\"";
+            onclickref = "\"location.href='add_param.html?exercise=" + workout_name + "&img1=" + img1 + "&img2=" + img2 + "&body_part=" + bodypart + "&tool=" + tool + "&userId=" +userId + "';\"";
 
             innerPrev = document.getElementById(tool).innerHTML;
             innerAfter = innerPrev + "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4' style='padding:0'>";

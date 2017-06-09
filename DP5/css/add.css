@@ -1,6 +1,6 @@
 #body_contents {
     text-align: center;
-    font-size: 2em
+    //font-size: 2em
 }
 
 .container-fluid {
@@ -19,6 +19,13 @@
     border-radius: 4px;
     width: 100px;
     height:100px
+}
+
+.bigthumb {
+    //border: 1px solid #ddd;
+    //border-radius: 4px;
+    width: 200px;
+    height: 200px;
 }
 
 .list {
@@ -68,8 +75,8 @@
     display: inline-block;
 }
 
-.workout_unit {
-    font-size: 8px;
+.workout_property {
+    font-size: 7px;
 }
 
 .confirm_btn {
@@ -237,13 +244,13 @@
 }
 
 .body_part {
-    color: #81968F;
+    color: #9AA171;
     outline: 4px dashed #E0E4CC;
-    box-shadow: 0 0 0 4px #81968F;
+    box-shadow: 0 0 0 4px #9AA171;
     animation: 1s animateBorderOne ease infinite;
 }
 .body_part:hover,active {
-    outline-color: #81968F;
+    outline-color: #9AA171;
     box-shadow: 0 0 0 4px #E0E4CC;
 }
 
