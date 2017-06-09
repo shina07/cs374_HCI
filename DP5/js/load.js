@@ -127,11 +127,13 @@ function load_to_main () {
      	if (plans != null)
  		{
  			current_total = plans["Total_cnt"]
-
+ 			console.log("CT: " + current_total + "Plans: ")
+ 			console.log(plans)
  			var plankeys = Object.keys(plans);
 	    	for (var i = 0; i < plankeys.length; i++)
 			{
-				current_set += plans[keys[i]]["setNum"];
+				console.log(plans[i.toString()])
+				current_set += plans[i.toString()]["setNum"];
 				current_exercise += 1
 
 				if (current_set == current_total)
@@ -142,8 +144,8 @@ function load_to_main () {
 			plans["Total_cnt"] += total;
 	    	for (var i = 0; i < keys.length; i++)
 	    	{
-	    		plans[(i + current_exercise + 1).toString()] = workout_list[keys[i]]
-	    		progress += workout_list[keys[i]]["setNum"]
+	    		plans[(i + current_exercise).toString()] = workout_list[keys[i]]
+	    		progress += workout_list[i.toString()]["setNum"]
 
 	    		if (progress + current_total == plans["Total_cnt"])
 	    			break;
