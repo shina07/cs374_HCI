@@ -114,37 +114,47 @@ function load_to_main () {
 
 	}
 
-	var planRef = database.ref("PLANS/"+userid + "/" + date);
+	var planRef = database.ref("PLANS/" +userid + "/" + date);
     planRef.once("value", function(data) {
-    	var plans = data.val();
-    	var current_total = plans["Total_cnt"];
-    	var current_set = 0;
-    	var current_exercise = 0;
+ 		var plans = data.val();
 
-    	plans["Total_cnt"] += total;
-    	progress = 0;
+     	var current_total = 0;
 
-    	var plankeys = Object.keys(plans);
-    	for (var i = 0; i < plankeys.length; i++)
-		{
-			current_set += plans[keys[i]][["setNum"]]
-			current_exercise += 1
+     	var current_set = 0;
+     	var current_exercise = 0;
 
-			if (current_set == current_total)
-				break;
+     	progress = 0;
+     	if (plans != null)
+ 		{
+ 			current_total = plans["Total_cnt"]
 
-		}
+ 			var plankeys = Object.keys(plans);
+	    	for (var i = 0; i < plankeys.length; i++)
+			{
+				current_set += plans[keys[i]]["setNum"];
+				current_exercise += 1
 
-    	for (var i = 0; i < keys.length; i++)
-    	{
-    		plans[(i + current_exercise + 1).toString()] = workout_list[keys[i]]
-    		progress += workout_list[keys[i]]["setNum"]
+				if (current_set == current_total)
+					break;
 
-    		if (progress + current_total == plans["Total_cnt"])
-    			break;
-    	}
+			}
 
-        planRef.set(plans);
+			plans["Total_cnt"] += total;
+	    	for (var i = 0; i < keys.length; i++)
+	    	{
+	    		plans[(i + current_exercise + 1).toString()] = workout_list[keys[i]]
+	    		progress += workout_list[keys[i]]["setNum"]
+
+	    		if (progress + current_total == plans["Total_cnt"])
+	    			break;
+	    	}
+
+	    	console.log(plans)
+
+        	planRef.set(plans);
+ 		} else {
+ 			planRef.set(workout_list)
+ 		}
 
         window.location.href = "../main.html?userId=" + userid.toString();
      });
@@ -173,7 +183,7 @@ function load_plans (date) {
 		for (var i = 0; i < keys.length; i++)
 		{
 			add_exercise(i, plan[keys[i]]);
-			progress += plan[keys[i]][["setNum"]]
+			progress += plan[keys[i]]["setNum"]
 
 			if (progress == total)
 				break;
