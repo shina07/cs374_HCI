@@ -68,7 +68,9 @@
     display: inline-block;
 }
 
-
+.workout_unit {
+    font-size: 8px;
+}
 
 .confirm_btn {
     font-size: 18px;
@@ -99,6 +101,10 @@
     display:block
 }
 
+.panel {
+    padding: 0;
+}
+
 .panel-body {
     padding: 0;
 }
@@ -107,7 +113,17 @@
     text-align: center;
     vertical-align: middle;
     line-height: 15px;
+    font-size: 0.7em;
 }
+
+.body_text_9 {
+    font-size: 1.1em;
+}
+
+.body_text_8 {
+    font-size: 1em;
+}
+
 .fixed-panel {
     height: 50px;
     text-align: center;
@@ -116,6 +132,7 @@
 }
 
 .tool-panel {
+    font-size: 0.9em;
     padding-top: 15%;
     height: 50px;
     text-align: center;
@@ -131,6 +148,7 @@
     list-style: none;
     display: inline-block;
     zoom: 0.4;
+    padding-bottom: 15px;
 }
 #breadcrumb .icon {
     font-size: 14px;
@@ -216,4 +234,40 @@
 }
 #breadcrumb li a:active:after {
     border-left-color: #16a085;
+}
+
+.body_part {
+    color: #81968F;
+    outline: 4px dashed #E0E4CC;
+    box-shadow: 0 0 0 4px #81968F;
+    animation: 1s animateBorderOne ease infinite;
+}
+.body_part:hover,active {
+    outline-color: #81968F;
+    box-shadow: 0 0 0 4px #E0E4CC;
+}
+
+.grid_tool {
+    color: #046ca3;
+    outline: 4px dashed #E0E4CC;
+    box-shadow: 0 0 0 4px #046ca3;
+    animation: 1s animateBorderOne ease infinite;
+}
+.grid_tool:hover,active {
+    outline-color: #046ca3;
+    box-shadow: 0 0 0 4px #E0E4CC;
+}
+.grid_exercise {
+    color: #69D2E7;
+    outline: 4px dashed #E0E4CC;
+    box-shadow: 0 0 0 4px #69D2E7;
+    animation: 1s animateBorderOne ease infinite;
+}
+.grid_exercise:active,hover {
+    outline-color: #69D2E7;
+    box-shadow: 0 0 0 4px #E0E4CC;
+}
+
+.grid_invisible {
+    display: inline-block;
 }

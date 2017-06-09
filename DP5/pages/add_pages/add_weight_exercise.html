@@ -116,20 +116,39 @@
         var innerPrev, innerAfter;
         var img1, img2;
         var onclickref;
+        //innerPrev = document.getElementById(tool).innerHTML;
+        //innerAfter = innerPrev + "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12' style='padding;0'>"
+        //document.getElementById(tool).innerHTML = innerAfter;
         for(var i=0;i< workouts.length;i++){
             var workout_name = workouts[i][0];
+            var name_wo_dash = '';
             var img1 = workouts[i][1];
             var img2 = workouts[i][2];
             console.log(workout_name);
             onclickref = "\"location.href='add_param.html?exercise=" + workout_name + "&body_part=" + bodypart +"&userId=" +userId + "';\"";
+
             innerPrev = document.getElementById(tool).innerHTML;
             innerAfter = innerPrev + "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4' style='padding:0'>";
-            innerAfter += "<div class='panel panel-default' onclick="+onclickref+"><div class='panel-body'><a class='home'>";
+            innerAfter += "<div class='panel panel-default grid_exercise' onclick="+onclickref+"><div class='panel-body'><a class='home'>";
             innerAfter += "<img class='thumb image_on' src='../../img/" + bodypart +"/";
             innerAfter += tool + "/" + workout_name + img1 + "' style='width:100%' />";
             innerAfter += "<img class='thumb image_off' src='../../img/" + bodypart +"/";
             innerAfter += tool + "/" + workout_name + img2 + "' style='width:100%' />";
-            innerAfter += "</a></div><div class='panel-footer fixed-panel' style='' onclick=" + onclickref + ">" + workout_name + "</div></div></div>";
+            name_wo_dash = workout_name.split("-");
+            for(var j=0; j<name_wo_dash.length; j++){
+                var capital = name_wo_dash[j].charAt(0).toUpperCase();
+                name_wo_dash[j] = capital + name_wo_dash[j].substring(1, name_wo_dash[j].length);
+            }
+            name_wo_dash = name_wo_dash.join(" ");
+            innerAfter += "</a></div><div class='panel-footer fixed-panel' style='' onclick=" + onclickref + ">" + name_wo_dash + "</div></div></div>";
+            if (i==workouts.length-1 && workouts.length % 3 == 0){
+                innerAfter += "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 grid_invisible' style='padding:0'><div class='panel panel-default grid_exercise'><div class='panel-body'><img class='thumb' src='../../img/blank.jpg' style='width:100%' /></div><div class='panel-footer fixed-panel'>&nbsp&nbsp&nbsp&nbsp</div></div></div>";
+                innerAfter += "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 grid_invisible' style='padding:0'><div class='panel panel-default grid_exercise'><div class='panel-body'><img class='thumb' src='../../img/blank.jpg' style='width:100%' /></div><div class='panel-footer fixed-panel'>&nbsp&nbsp&nbsp&nbsp</div></div></div>";
+            }
+            else if (i==workouts.length-1 && workouts.length % 3 == 1){
+                innerAfter += "<div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 grid_invisible' style='padding:0'><div class='panel panel-default grid_exercise'><div class='panel-body'><img class='thumb' src='../../img/blank.jpg' style='width:100%' /></div><div class='panel-footer fixed-panel'>&nbsp&nbsp&nbsp&nbsp</div></div></div>";
+            }
+            //innerAfter += "</div>";
             console.log(innerAfter);
             document.getElementById(tool).innerHTML = innerAfter;
         }
@@ -165,7 +184,7 @@
             <!-- BARBELL -->
             <div style="color:#2297F1" id="barbell">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default grid_tool">
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Barbell-100.png" style="width:100%"></div>
                         <div class="tool-panel panel-footer"> Barbell </div>
                     </div>
@@ -175,7 +194,7 @@
             <!-- DUMBBELL -->
             <div style="color:#2297F1" id="dumbbell">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Dumbbell-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Dumbbell </div>
                     </div>
@@ -185,7 +204,7 @@
             <!-- EZ Bar -->
             <div style="color:#2297F1" id="ezbar">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/EZ%20Curl%20Bar-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> EZ Bar </div>
                     </div>
@@ -195,7 +214,7 @@
             <!-- Cable -->
             <div style="color:#2297F1" id="cable">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Cable%20Release%20Filled-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Cable </div>
                     </div>
@@ -205,7 +224,7 @@
             <!--Olympic bar -->
             <div style="color:#2297F1" id="olympicbar">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/olympicbar.jpg" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> OlympicBar </div>
                     </div>
@@ -215,7 +234,7 @@
             <!-- Machine -->
             <div style="color:#2297F1" id="machine">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Steampunk-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> Machine </div>
                     </div>
@@ -225,7 +244,7 @@
             <!-- BodyWeight -->
             <div style="color:#2297F1" id="bodyweight">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/Fat%20Man-100.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> BodyWeight </div>
                     </div>
@@ -235,7 +254,7 @@
             <!-- etc -->
             <div style="color:#2297F1" id="etc">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default grid_tool" >
                         <div class="panel-body tool-body"><img class="thumb" src="../../img/ex/More-96.png" class="img-responsive" style="width:100%" alt=""></div>
                         <div class="panel-footer tool-panel"> ETC </div>
                     </div>

@@ -38,68 +38,60 @@
         </div>
 
         <div id="body_wrap">
-            <!-- BODY -->
             <div align="left"><ul id="breadcrumb">
                 <li><a href="#"><span class="icon icon-home"> </span></a></li>
                 <li><a href="#"><span class="icon icon-plus"> </span> Add exercise </a></li>
                 <li><a href="#"> Body Parts:</a></li>
-                <!--li id="bc_tool"><a href="#"> Tool: </a></li>
-                <li id="bc_exercise"><a href="#"> Exercise: </a></li-->
             </ul>
             </div>
-            <div class="container-fluid">
-                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color:#2297F1">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('chest')">
-                            <div class="panel-body"><img class="thumb" id="body_front_chest" src="../img/chest.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">CHEST</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('shoulder')">
-                            <div class="panel-body"><img class="thumb" src="../img/shoulder.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer" align="center" style="padding-left:7px"><text style="font-size:16px">SHOULDER</text></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('back')">
-                            <div class="panel-body"><img class="thumb" src="../img/back.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">BACK</div>
-                        </div>
+            <!-- BODY -->
+            <div class="container-fluid" style="padding-right:8%">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('chest')">
+                        <div class="panel-body"><img class="thumb" id="body_front_chest" src="../img/chest.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_9">CHEST</div>
                     </div>
                 </div>
-                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color:#2297F1">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('triceps')" >
-                            <div class="panel-body"><img class="thumb" src="../img/triceps.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">TRICEPS</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('biceps')">
-                            <div class="panel-body"><img class="thumb" src="../img/biceps.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">BICEPS</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('abs')">
-                            <div class="panel-body"><img class="thumb" src="../img/abs.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">ABS</div>
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('shoulder')">
+                        <div class="panel-body"><img class="thumb" src="../img/shoulder.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer" align="center" style="padding-left:5px">SHOULDER</text></div>
                     </div>
                 </div>
-                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color:#2297F1">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_weight('legs')">
-                            <div class="panel-body"><img class="thumb" src="../img/legs.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">LEGS</div>
-                        </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('back')">
+                        <div class="panel-body"><img class="thumb" src="../img/back.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_9">BACK</div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:5px">
-                        <div class="panel panel-default" onclick="body_selected_cardio()">
-                            <div class="panel-body"><img class="thumb" src="../img/cardio.jpg" class="img-responsive" style="width:100%" alt=""></div>
-                            <div class="panel-footer">CARDIO</div>
-                        </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('triceps')" >
+                        <div class="panel-body"><img class="thumb" src="../img/triceps.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_8">TRICEPS</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('biceps')">
+                        <div class="panel-body"><img class="thumb" src="../img/biceps.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_8">BICEPS</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('abs')">
+                        <div class="panel-body"><img class="thumb" src="../img/abs.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_9">ABS</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_weight('legs')">
+                        <div class="panel-body"><img class="thumb" src="../img/legs.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_9">LEGS</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:0px">
+                    <div class="panel panel-default body_part" onclick="body_selected_cardio()">
+                        <div class="panel-body"><img class="thumb" src="../img/cardio.jpg" class="img-responsive" style="width:100%" alt=""></div>
+                        <div class="panel-footer body_text_8">CARDIO</div>
                     </div>
                 </div>
             </div>
