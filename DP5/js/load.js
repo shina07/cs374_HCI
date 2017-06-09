@@ -96,27 +96,55 @@ function load_to_main () {
 
 	var keys = Object.keys(workout_list);
 
-		var total = workout_list["Total_cnt"]
-		progress = 0;
+	var total = workout_list["Total_cnt"]
+	var progress = 0;
 
-		for (var i = 0; i < keys.length; i++)
+	for (var i = 0; i < keys.length; i++)
+	{
+		var set = parseInt(workout_list[keys[i]][["setNum"]])
+		for (var j = 0; j < set; j++)
 		{
-			var set = parseInt(workout_list[keys[i]][["setNum"]])
-			for (var j = 0; j < set; j++)
-			{
-				workout_list[keys[i]]["sets"]["set" + (j + 1).toString()]["done"] = false
-			}
+			workout_list[keys[i]]["sets"]["set" + (j + 1).toString()]["done"] = false
+		}
 
-			progress += set
+		progress += set
 
-			if (progress == total)
+		if (progress == total)
+			break;
+
+	}
+
+	var planRef = database.ref("PLANS/"+userid + "/" + date);
+    planRef.once("value", function(data) {
+    	var plans = data.val();
+    	var current_total = plans["Total_cnt"];
+    	var current_set = 0;
+    	var current_exercise = 0;
+
+    	plans["Total_cnt"] += total;
+    	progress = 0;
+
+    	var plankeys = Object.keys(plans);
+    	for (var i = 0; i < plankeys.length; i++)
+		{
+			current_set += plans[keys[i]][["setNum"]]
+			current_exercise += 1
+
+			if (current_set == current_total)
 				break;
 
 		}
 
-	var planRef = database.ref("PLANS/"+userid + "/" + date);
-    planRef.once("value", function(data) {
-        planRef.set(workout_list);
+    	for (var i = 0; i < keys.length; i++)
+    	{
+    		plans[(i + current_exercise + 1).toString()] = workout_list[keys[i]]
+    		progress += workout_list[keys[i]]["setNum"]
+
+    		if (progress + current_total == plans["Total_cnt"])
+    			break;
+    	}
+
+        planRef.set(plans);
 
         window.location.href = "../main.html?userId=" + userid.toString();
      });
