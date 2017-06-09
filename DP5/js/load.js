@@ -92,10 +92,31 @@ function load_to_main () {
 		day = "0" + day;
 
 	var date = year + "-" + month + "-" + day;
-	console.log(date);
+	workout_list = exercise[date_chosen]
+
+	var keys = Object.keys(workout_list);
+
+		var total = workout_list["Total_cnt"]
+		progress = 0;
+
+		for (var i = 0; i < keys.length; i++)
+		{
+			var set = parseInt(workout_list[keys[i]][["setNum"]])
+			for (var j = 0; j < set; j++)
+			{
+				workout_list[keys[i]]["sets"]["set" + (j + 1).toString()]["done"] = false
+			}
+
+			progress += set
+
+			if (progress == total)
+				break;
+
+		}
+
 	var planRef = database.ref("PLANS/"+userid + "/" + date);
     planRef.once("value", function(data) {
-        planRef.set(exercise[date_chosen]);
+        planRef.set(workout_list);
 
         window.location.href = "../main.html?userId=" + userid.toString();
      });
