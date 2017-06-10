@@ -129,7 +129,7 @@ function add_exercise (index, args, userid, today, ix, clickable) {
 var indexSet = 0
 
 function add_set (main_id, exercise_name, args, userid, today, ix, iy) {
-	var tags = data[exercise_name]
+	var tags = ["weight", "reps"]
 	var values = args["value"]
 	var original = args["original_value"]
 	var done = args["done"]
