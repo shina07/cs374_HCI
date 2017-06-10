@@ -122,6 +122,7 @@
         inner_added += "<a onclick='remove_by_id("+innerId+")'><button type='button' class='btn btn-labeled btn-danger'><span class='btn-label'><i class='glyphicon glyphicon-trash'></i></span>Erase</button></div>";
         console.log("inner_added: ", inner_added);
         document.getElementById("sets").innerHTML = inner_current + inner_added;
+        document.getElementById("get_started").style = "display:inline;"
     }
     function remove_by_id(target){
         var flag = false;
@@ -244,14 +245,14 @@
                         </div -->
                     </div>
                     <div>
-                        <button type="button" class="btn btn-info add_btn" onclick="set_addition()">ADD</button>
+                        <button type="button" class="btn btn-info add_btn" onclick="set_addition()">Decide Set Info.</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="panel panel-info" id="sets"></div>
         <div>
-            <button type="button" class="btn btn-info confirm_btn" onclick="send_plan()">Confirm</button>
+            <button type="button" id="get_started" class="btn btn-info confirm_btn" onclick="send_plan()" style="display:None;">Go Get Started !</button>
         </div>
         <div class="panel panel-info" align="center" style="margin-top: 30px;">
             <div align="left">&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-film"></span></div>
