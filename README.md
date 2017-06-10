@@ -42,3 +42,15 @@ To use our prototype, please click this. We used Firebase Hosting for uploading 
 ### How to Start
 
 > Just open index.html
+
+## Overview of our application
+
+Our application has 3 tabs. Each tab will be described in detail at following sections.
+
+### Main list of workout (First tab)
+
+### Current exercise (Second tab)
+
+> In this screen, you can see the most recent one set which you may do first in detail. This tab can be also accessed from main list by clicking one set of exercise. There are detail informations of set such as the order of set in exercise, total progress you did, the name of exercise and youtube video which explains how to do this exercise. Also you can directly edit the parameters of set in this screen. After completing exercise, you can enter the rest mode by clicking 'DONE' button. In rest mode, you can see the time you took the rest and toggle automatically or manually to go next set. If you choose automatically to go next set, you should set the rest time. The default rest time is 1 minute.
+
+### Calender (Last tab)
