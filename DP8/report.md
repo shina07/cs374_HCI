@@ -34,6 +34,8 @@
 
 > (...)
 
+<br/>
+
 ### Seung hee
 
 ###### What part of the UI implementation did you contribute to?
@@ -48,6 +50,8 @@
 
 > (...)
 
+<br/>
+
 ### Tae soo
 
 ###### What part of the UI implementation did you contribute to?
@@ -61,6 +65,8 @@
 ###### Throughout the team-based design project experience, what did you learn about the user-centered design process and web-based GUI implementation?
 
 > (...)
+
+<br/>
 
 ### Min yeong
 
