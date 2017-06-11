@@ -83,7 +83,8 @@
             var newpwd_rep = document.getElementById("create_pwd_repeat").value;
             UsersRef.child(userId).set({
                 username: newid,
-                password: newpwd
+                password: newpwd,
+                restmode: true
             });
             document.location.href = "main.html?userId=" + (userId);
             UsersRef.once("value", function(snapshot){

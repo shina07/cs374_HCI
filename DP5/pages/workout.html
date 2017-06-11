@@ -78,24 +78,48 @@
 		<div id="modal-timer" class="modal fade" role="dialog">
 			<div class="modal-dialog modal-full">
 				<div class="modal-content modal-full">
+					<div class="modal-header" style="border:none">
+						<button type="button" class="close" id="back" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<div class="modal-body" align="center">
 						<div id="done_wrap" class="modal_div">
 							<br />
 							<span id="setDone" class="modal_text">This Workout Done :)</span>
 							<span id="allDone" class="modal_text">WoW ! All Done :)</span>
 							<br /><br />
-							<span id="description">* If you click "Add more set" button,<br />
+							<span id="desc-icon" class="glyphicon glyphicon-exclamation-sign"></span>
+							<span id="description">If you click "Add more set" button,<br />
 							timer starts counting and you can go next set.</span>
 						</div>
 						<div id="rest_wrap" class="modal_div">
-							<span id="resttime" class="modal_text">Rest Time<br /></span>
+							<span class="resttime modal_text">Rest Time<br /></span>
 							<span id="timer">00 : 00</span>
+						</div>
+						<div id="rest_edit_wrap" class="modal_div">
+							<span class="resttime modal_text">Set Rest Time<br /></span>
+							<span id="min_up_first" class="glyphicon glyphicon-chevron-up edit_time up"></span>
+							<span id="min_up_second" class="glyphicon glyphicon-chevron-up edit_time up"></span>
+							<span id="dummy" class="glyphicon glyphicon-chevron-up edit_time up"></span>
+							<span id="sec_up_first" class="glyphicon glyphicon-chevron-up edit_time up"></span>
+							<span id="sec_up_second" class="glyphicon glyphicon-chevron-up edit_time up"></span>
+							<span id="set_timer"></span>
+							<span id="min_down_first" class="glyphicon glyphicon-chevron-down edit_time down"></span>
+							<span id="min_down_second" class="glyphicon glyphicon-chevron-down edit_time down"></span>
+							<span id="dummy" class="glyphicon glyphicon-chevron-up edit_time down"></span>
+							<span id="sec_down_first" class="glyphicon glyphicon-chevron-down edit_time down"></span>
+							<span id="sec_down_second" class="glyphicon glyphicon-chevron-down edit_time down"></span>
+							<button type="button" id="edit_ok" class="btn btn-primary btn-block">O K</button>
 						</div>
 						<button type="button" id="next" class="btn btn-primary btn-block">N E X T</button>
 						<button type="button" id="addSet" class="btn btn-primary btn-block">Add more set</button>
 						<button type="button" id="gotoList" class="btn btn-primary btn-block">Go to Main List</button>
+						<span id="auto_text" style="color:white;font-size: 20px">Auto next</span>
 						<br />
-						<button type="button" id="back" class="btn btn-warning btn-block" data-dismiss="modal">B A C K</button>
+						<button type="button" id="auto" class="btn btn-lg btn-toggle" data-toggle="button" autocomplete="off">
+							<div class="handle"></div>
+						</button>
 					</div>
 				</div>
 			</div>

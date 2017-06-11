@@ -94,16 +94,22 @@ function go_next() {
 
 function timer() {
 	current_time += 1
+
+	if (current_time > restTime && restmode) {
+		done()
+		go_next()
+	}
+
 	var min = Math.floor(current_time / 60)
 	min = min < 10 ? "0" + min : min + ""
 	var sec = current_time % 60
 	sec = sec < 10 ? "0" + sec : sec + ""
 
-	if (min == "01" && sec == "30")
+	if (restTime >= 10 && current_time > restTime-5 && current_time < restTime)
 	{
 		$('#timer').css('color', 'orange')
 	}
-	else if (min >= 2)
+	else if (restTime >= 10 && current_time > restTime)
 	{
 		$('#timer').css('color', 'red')
 	}
@@ -143,6 +149,8 @@ function set_click_event() {
 			$('#next').css("display", "none")
 			$('#gotoList').css("display", "block")
 			$('#addSet').css("display", "block")
+			$('#auto').css("display", "none")
+			$('#auto_text').css("display", "none")
 		}
 		else
 		{
@@ -152,8 +160,9 @@ function set_click_event() {
 			$('#next').css("display", "none")
 			$('#gotoList').css("display", "block")
 			$('#addSet').css("display", "block")			
+			$('#auto').css("display", "none")
+			$('#auto_text').css("display", "none")
 		}
-		
 	})
 
 	$('#back').click(function() {
@@ -210,7 +219,9 @@ function set_click_event() {
 		$('#rest_wrap').css("display", "block")
 		$('#addSet').css("display", "none")
 		$('#gotoList').css("display", "none")
-		$('#next').css("display", "block")
+		if (!restmode){
+			$('#next').css("display", "block")
+		}
 
 		timerID = setInterval("timer()", 1000)
 	})
@@ -221,6 +232,131 @@ function set_click_event() {
 
 	$('.count_down').click(function(e) {
 		change_workout_val(-1, this)
+	})
+
+	$('#auto').click(function() {
+		$('#next').toggle(200)
+		var ref = database.ref("USERS/"+user_id)
+		restmode = !restmode
+		ref.update({
+			restmode: restmode
+		})
+		if (restmode) {
+			clearInterval(timerID)
+			$('#rest_wrap').toggle(0)
+			$('#rest_edit_wrap').toggle(0)
+			$('#auto').toggle(0)
+			$('#auto_text').toggle(0)
+
+			var min = Math.floor(restTime / 60)
+			min = min < 10 ? "0" + min : min + ""
+			var sec = restTime % 60
+			sec = sec < 10 ? "0" + sec : sec + ""
+			$('#set_timer').text(min+" : "+sec)
+		}
+	})
+
+	$('#edit_ok').click(function() {
+		var ref = database.ref("PLANS/"+user_id+"/"+date+"/"+plan_id)
+		ref.update({
+			restTime: restTime
+		})
+
+		$('#rest_wrap').toggle(0)
+		$('#rest_edit_wrap').toggle(0)
+		$('#auto').toggle(0)
+		$('#auto_text').toggle(0)
+		timerID = setInterval("timer()", 1000)
+
+
+	})
+
+	$('#min_up_first').click(function() {
+		min = $('#set_timer').text().slice(0,2).split("")
+		sec = $('#set_timer').text().slice(5,7)
+		if (min[0] < 9) {
+			restTime += 600
+			min[0] = (parseInt(min[0])+1).toString()
+			min = min.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#min_up_second').click(function() {
+		min = $('#set_timer').text().slice(0,2).split("")
+		sec = $('#set_timer').text().slice(5,7)
+		if (min[1] < 9) {
+			restTime += 60
+			min[1] = (parseInt(min[1])+1).toString()
+			min = min.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#sec_up_first').click(function() {
+		min = $('#set_timer').text().slice(0,2)
+		sec = $('#set_timer').text().slice(5,7).split("")
+		if (sec[0] < 9) {
+			restTime += 10
+			sec[0] = (parseInt(sec[0])+1).toString()
+			sec = sec.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#sec_up_second').click(function() {
+		min = $('#set_timer').text().slice(0,2)
+		sec = $('#set_timer').text().slice(5,7).split("")
+		if (sec[1] < 9) {
+			restTime += 1
+			sec[1] = (parseInt(sec[1])+1).toString()
+			sec = sec.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#min_down_first').click(function() {
+		min = $('#set_timer').text().slice(0,2).split("")
+		sec = $('#set_timer').text().slice(5,7)
+		if (min[0] > 0) {
+			restTime -= 600
+			min[0] = (parseInt(min[0])-1).toString()
+			min = min.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#min_down_second').click(function() {
+		min = $('#set_timer').text().slice(0,2).split("")
+		sec = $('#set_timer').text().slice(5,7)
+		if (min[1] > 0) {
+			restTime -= 60
+			min[1] = (parseInt(min[1])-1).toString()
+			min = min.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#sec_down_first').click(function() {
+		min = $('#set_timer').text().slice(0,2)
+		sec = $('#set_timer').text().slice(5,7).split("")
+		if (sec[0] > 0) {
+			restTime -= 10
+			sec[0] = (parseInt(sec[0])-1).toString()
+			sec = sec.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
+	})
+
+	$('#sec_down_second').click(function() {
+		min = $('#set_timer').text().slice(0,2)
+		sec = $('#set_timer').text().slice(5,7).split("")
+		if (sec[1] > 0) {
+			restTime -= 1
+			sec[1] = (parseInt(sec[1])-1).toString()
+			sec = sec.join("")
+			$('#set_timer').text(min + " : " + sec)
+		}
 	})
 }
 
@@ -234,18 +370,27 @@ function parsing_url(url) {
 
 function get_from_firebase(user_id, date, plan_id, set_num) {
 	// get data that have some depth from firebase
+	var userRef = database.ref("USERS/"+user_id)
+	userRef.once("value", function(data) {
+		restmode = data.val().restmode
+	})
+
 	var ref = database.ref("PLANS/"+user_id+"/"+date)
 	ref.once("value", function(data) {
 		progress_cnt = data.val().Progress_cnt
 		plans = data.val()[plan_id]
 		workout_name = plans.workout_name
+		restTime = plans.restTime
 		set = plans["sets"]["set"+set_num]
 		set_info = JSON.parse(set.value)
 
 		setup_progress();
 		setup_workout();
 		set_click_event();
-
+		if (restmode) {
+			$('#auto').addClass('active')
+			$('#next').toggle()
+		}
 		$('.loading').css("display", "none")
 		$('.workout_one').css("display", "block")
 	})
@@ -253,9 +398,11 @@ function get_from_firebase(user_id, date, plan_id, set_num) {
 
 var timerID = -1
 var current_time = 0
+var restTime = 0
 
 var url = {}
 var user_id = -1
+var restmode
 var date = ""
 var plan_id = -1
 var set_num = -1
