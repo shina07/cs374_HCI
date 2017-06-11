@@ -113,6 +113,10 @@ function timer() {
 	{
 		$('#timer').css('color', 'red')
 	}
+	else
+	{
+		$('#timer').css('color', 'white')
+	}
 
 	$('#timer').text(min+" : "+sec)
 }
@@ -169,6 +173,7 @@ function set_click_event() {
 		clearInterval(timerID)
 		current_time = 0
 		setTimeout(function() {$('#timer').text("00 : 00")}, 300)
+		$('#timer').css('color', 'white')
 	})
 
 	$('#next').click(function() {
