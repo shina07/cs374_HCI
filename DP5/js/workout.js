@@ -222,6 +222,8 @@ function set_click_event() {
 		if (!restmode){
 			$('#next').css("display", "block")
 		}
+		$('#auto_text').css("display", "block")
+		$('#auto').css("display", "block")
 
 		timerID = setInterval("timer()", 1000)
 	})
