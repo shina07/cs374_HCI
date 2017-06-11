@@ -105,7 +105,7 @@ function timer() {
 	var sec = current_time % 60
 	sec = sec < 10 ? "0" + sec : sec + ""
 
-	if ((restTime > 5 && current_time > restTime-5) || (restTime <=  5 && current_time < restTime))
+	if ((restTime > 5 && current_time > restTime-5 && current_time <= restTime) || (restTime <=  5 && current_time < restTime))
 	{
 		$('#timer').css('color', 'orange')
 	}
