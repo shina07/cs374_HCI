@@ -95,7 +95,7 @@ function go_next() {
 function timer() {
 	current_time += 1
 
-	if (current_time > restTime && restmode) {
+	if ((current_time >= restTime) && restmode) {
 		done()
 		go_next()
 	}
@@ -105,11 +105,11 @@ function timer() {
 	var sec = current_time % 60
 	sec = sec < 10 ? "0" + sec : sec + ""
 
-	if (restTime >= 10 && current_time > restTime-5 && current_time < restTime)
+	if ((restTime > 5 && current_time > restTime-5) || (restTime <=  5 && current_time < restTime))
 	{
 		$('#timer').css('color', 'orange')
 	}
-	else if (restTime >= 10 && current_time > restTime)
+	else if (current_time > restTime)
 	{
 		$('#timer').css('color', 'red')
 	}
@@ -274,91 +274,75 @@ function set_click_event() {
 	})
 
 	$('#min_up_first').click(function() {
-		min = $('#set_timer').text().slice(0,2).split("")
-		sec = $('#set_timer').text().slice(5,7)
-		if (min[0] < 9) {
-			restTime += 600
-			min[0] = (parseInt(min[0])+1).toString()
-			min = min.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime >= 3000 ? restTime : restTime + 600
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#min_up_second').click(function() {
-		min = $('#set_timer').text().slice(0,2).split("")
-		sec = $('#set_timer').text().slice(5,7)
-		if (min[1] < 9) {
-			restTime += 60
-			min[1] = (parseInt(min[1])+1).toString()
-			min = min.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime >= 3540 ? restTime : restTime + 60
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#sec_up_first').click(function() {
-		min = $('#set_timer').text().slice(0,2)
-		sec = $('#set_timer').text().slice(5,7).split("")
-		if (sec[0] < 9) {
-			restTime += 10
-			sec[0] = (parseInt(sec[0])+1).toString()
-			sec = sec.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime >= 3590 ? restTime : restTime + 10
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#sec_up_second').click(function() {
-		min = $('#set_timer').text().slice(0,2)
-		sec = $('#set_timer').text().slice(5,7).split("")
-		if (sec[1] < 9) {
-			restTime += 1
-			sec[1] = (parseInt(sec[1])+1).toString()
-			sec = sec.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime >= 3599 ? restTime : restTime + 1
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#min_down_first').click(function() {
-		min = $('#set_timer').text().slice(0,2).split("")
-		sec = $('#set_timer').text().slice(5,7)
-		if (min[0] > 0) {
-			restTime -= 600
-			min[0] = (parseInt(min[0])-1).toString()
-			min = min.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime < 600 ? restTime : restTime - 600
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#min_down_second').click(function() {
-		min = $('#set_timer').text().slice(0,2).split("")
-		sec = $('#set_timer').text().slice(5,7)
-		if (min[1] > 0) {
-			restTime -= 60
-			min[1] = (parseInt(min[1])-1).toString()
-			min = min.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime < 60 ? restTime : restTime - 60
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#sec_down_first').click(function() {
-		min = $('#set_timer').text().slice(0,2)
-		sec = $('#set_timer').text().slice(5,7).split("")
-		if (sec[0] > 0) {
-			restTime -= 10
-			sec[0] = (parseInt(sec[0])-1).toString()
-			sec = sec.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime < 10 ? restTime : restTime - 10
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 
 	$('#sec_down_second').click(function() {
-		min = $('#set_timer').text().slice(0,2)
-		sec = $('#set_timer').text().slice(5,7).split("")
-		if (sec[1] > 0) {
-			restTime -= 1
-			sec[1] = (parseInt(sec[1])-1).toString()
-			sec = sec.join("")
-			$('#set_timer').text(min + " : " + sec)
-		}
+		restTime = restTime < 1 ? restTime : restTime - 1
+		var min = Math.floor(restTime / 60)
+		min = min < 10 ? "0" + min : min + ""
+		var sec = restTime % 60
+		sec = sec < 10 ? "0" + sec : sec + ""
+		$('#set_timer').text(min+" : "+sec)
 	})
 }
 
