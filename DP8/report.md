@@ -38,7 +38,7 @@ Also, if the remaining time is not enough, for example 5 seconds before the rest
 
 From User testing, there was one critical feedback on loading feature. Our initial implementation of loading was to overwrite existing workouts of current date by the workout lists from the selected date. This was under assumption that people might use loading before starting exercise. There was obvious and definite usability issues of this way of implementation, and we decide to change this.
 
-![image_load1](img/load1.PNG)
+![image_load1](img/load1.png)
 
 The implementation is changed in the way of appending, not overwriting. Hence, users can now freely use loading feature before adding workouts, in between adding workouts, or even after done some workouts.
 Furthermore, there was minor bug fixed in this iteration. Throughout the whole implementation phases from DP5 to DP7, we didn’t notice the fact that all loaded workouts should be reset to incomplete when we loaded certain workouts. That was finally fixed in the last step of DP. This is also illustrated in the picture above.
