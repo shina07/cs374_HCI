@@ -38,7 +38,7 @@ Also, if the remaining time is not enough, for example 5 seconds before the rest
 
 From User testing, there was one critical feedback on loading feature. Our initial implementation of loading was to overwrite existing workouts of current date by the workout lists from the selected date. This was under assumption that people might use loading before starting exercise. There was obvious and definite usability issues of this way of implementation, and we decide to change this.
 
-![image_load1](img/load1.png)
+![image_load1](img/load1.PNG)
 
 The implementation is changed in the way of appending, not overwriting. Hence, users can now freely use loading feature before adding workouts, in between adding workouts, or even after done some workouts.
 Furthermore, there was minor bug fixed in this iteration. Throughout the whole implementation phases from DP5 to DP7, we didn’t notice the fact that all loaded workouts should be reset to incomplete when we loaded certain workouts. That was finally fixed in the last step of DP. This is also illustrated in the picture above.
@@ -85,15 +85,28 @@ Personally, I was not a man be fond of doing workout before. But I have gone to 
 
 ###### What part of the UI implementation did you contribute to?
 
-> (...)
+> I personally think our team successfully delivered whole project with appropriate roles and responsibilities. We modularized the implementation sections as three parts based on the tasks we designed for our application, and each member was in charge of implementing one section. One member got the role of designer, not designing UI but real meaning of design such as drawing icons or making basic css theme.
+>
+> My section for implementation was to display workout records from previous date and let user to load the workouts of selected date. All related implementation was taken place in the third tab of the application. Calendar display is provided for user to help tracking past workout records, and only the date with records are displayed with blue color. The number of total sets of workouts for the each date is indicated on the top right corner of date, and all workout records are listed below the calendar when a certain date is chosen. Only the date with workout records can be loaded.
+
 
 ###### What worked well and not in your team? How did you overcome any hurdle in teamwork? What lesson about teamwork did you learn that you might apply to your next team project?
 
-> (...)
+> As a group of four CS major senior students, all of our members could easily contribute to implementation of web front-end UI. This is somewhat obvious for KAIST CS students, and our TA never worried about the implementation part for whole semester. It was, in fact, unexpected that our team has outstanding (considering CS student…) designer resource. MinYoung served the role of literally art designer and his role perfectly fits in the way of distributing tasks of the team. It was the moment of feeling the importance of designer for software development. Even if professor stated in the subject introduction that non CS students are also welcome, majority of the students in this course is CS department. This turned out the concentration of students of the same ability aptitude for delivering the design projects. Even though HCI course should focus on UI design, aesthetic appearance is an important part of UI. Our team fortunately didn’t suffer from appearance design.
+>
+>What our team couldn’t expect about our teamwork was that each member has rather different propensity in the way of thinking. This had been a bottleneck for carrying out tasks from this course from the beginning. Our team changed topic for about three times, and re-did DP1 for the as many as we changed the topic. Any time we discuss about new topic, all four members think different and we spent plenty of time without producing satisfactory results. Those consumptive hours of time is remembered as the most difficult moment throughout the course. Diversity of team members can be a strength of the team, but it is only when it comes together and make some synergy effect. Unless there is someone who can bring all diversity together into specific goal, diversity just stays as difference. Thus, I feel that we should have project manager who can cohere all member and show some leadership. Maybe out team just illustrated the ideal world of design projects, where all member propose productive suggestions and run toward specific goal.
+>
+>Project manager was also needed in implementation part. As it is mentioned above, our team divided the implementation tasks and ask each member to take the responsibility of what they have implemented. This turned out well for individual implementation. It was the point of difficulty, however, when it comes to the implementation of all shared elements and related elements, such as firebase data structure. Honestly, since no one firmly designed our data structure in firebase, so all members doesn’t exactly know all the component of our current data structure as a result. Therefore, if I have opportunity to be a part of project in later time, I would propose the necessity of project manager who can make difference as diversity.
+
 
 ###### Throughout the team-based design project experience, what did you learn about the user-centered design process and web-based GUI implementation?
 
-> (...)
+>User-centered design process seemed easy, since developer just gathered all users’ feedbacks and just pick some frequent ones. Maybe we just take the survey and just make what people think of the needs. And that was actually our team did at the first trial (yeah… we did three times…) of DP1. The first comment was that the result from user interview and user survey should be deeply analyzed. Our team superficially did plenty of interview, but we actually did nothing in terms of DP1 requirements. However, this was not the most difficult part.
+>
+>All product design involve user-centered design in some extent, but user-centered design was not the most important part. We first set up the experience we want to redesign, and then take the user interview to analyze further about the target user. This is inevitable since there is no target user if there is no theme or topic. Our team was frustrating for finding the experience we want to re-design. It was possible to realize that this is not the matter of user-centered design but the matter of initial topic. Based on our experience, firm and concise topic leads to the valuable user interview and this is the source of good user-centered design. It is perhaps the trap of user-centered design that we should think of our initial topic before thinking about target user for that topic.
+>
+>It was not my first experience of implementing web-based GUI. In fact, it is the first experience of none of our team member. Therefore, there was no difficulties in implementation. However, this is definitely the first experience of developing web without hosting and routing. In theory, we can do everything only with firebase, without any implementation of back-end. Nevertheless, there are some type of prototype that require the aids of back-end such as session. Our team implemented login feature with the damnedest way: we passed userId by url mocking HTTP get method. I personally think the course just let students to freely implement back-end, but just not grade any back-end component. 
+
 
 <br/>
 
