@@ -24,21 +24,21 @@ Last but not least, design for the grid in selecting body part and selecting exe
 
 There are several feedback for rest mode screen from user testing. The issue mostly said from user is the function that automatically go to next set of exercise without clicking ‘NEXT’ button. The previous timer is count-up timer. User just looks the time and if he or she thinks to go pass the set, user has to click ‘NEXT’ button. The reason why we planed the timer function in this way was that for some novice users it is hard to know the adequate time to rest for each exercise so even if they don’t know exact rest time they have right to know the time when they went to next. But for the professional user, this is not problem anymore. They know the proper rest time and are able to set all the rest time. Another feedback which gave inspiration is the existence of ‘BACK’ button. Back button had occupied big region without any reason so we deleted the ‘BACK’ button and replaced it just ‘X’ button at upper right in modal. The following capture is the previous one.
 
-![image_do1](img/)
+![image_do1](img/do1.png)
 
 The others picture are what we implemented newly. As you can see, we added the ON/OFF button in order to let users choose the mode automatically or manually going to next. The default mode is auto-next mode and default rest time is 1 minute. You can toggle on/off auto-next mode. When you off the auto next mode, ‘NEXT’ button appears. You should manually click ‘NEXT’ button to go to next set. If you on the auto next mode again, you should set the rest time as you want.
 
-![image_do2](img/)
+![image_do2](img/do2.png)
 
 Also, if the remaining time is not enough, for example 5 seconds before the rest time, the color of time will be changed to orange. And if the time is over, the color becomes red. Of course the red color is only shown in not auto  next mode because time can’t be over in auto next mode.
 
-![image_do3](img/)
+![image_do3](img/do3.png)
 
 ##### Under “Loading Workouts” task
 
 From User testing, there was one critical feedback on loading feature. Our initial implementation of loading was to overwrite existing workouts of current date by the workout lists from the selected date. This was under assumption that people might use loading before starting exercise. There was obvious and definite usability issues of this way of implementation, and we decide to change this.
 
-![image_load1](img/)
+![image_load1](img/load1.png)
 
 The implementation is changed in the way of appending, not overwriting. Hence, users can now freely use loading feature before adding workouts, in between adding workouts, or even after done some workouts.
 Furthermore, there was minor bug fixed in this iteration. Throughout the whole implementation phases from DP5 to DP7, we didn’t notice the fact that all loaded workouts should be reset to incomplete when we loaded certain workouts. That was finally fixed in the last step of DP. This is also illustrated in the picture above.
