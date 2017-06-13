@@ -69,6 +69,9 @@ By the way, since there are some limitations such as no server and no usual data
 
 <br/>
 
+### Demo Link:
+Demo video can be found [Here](https://www.youtube.com/watch?v=oUSrgBgzaJQ&feature=youtu.be)
+
 ### Seung hee
 
 Under the scope of our design project, I took the part which enables user to set up the plan, adding exercises for his/her workout including a number of different exercises, with a number of different attributes. Yet, they were still working, each page possessed more than one unsolved usability issue after conducting the user testing. Those remained issues and solutions made in Iteration for “adding workout” were described detailedly in the Iteration: Changes in UI section above. Explicitly, regarding works and changes for that task are made solely by me. To be specific, grids for choosing body part, choosing exercise, and classification (structure) for each exercise (body part -> tool -> exercise), breadcrumb, more than a few hundreds of animatable images, and sign in/up page with modal in the beginning are things I’ve contributed.
