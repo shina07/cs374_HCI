@@ -57,6 +57,9 @@ We believe that our team has successfully redesigned simple, but hard to be touc
 
 <br/>
 
+### Demo Link:
+Demo video can be found [Here](https://www.youtube.com/watch?v=oUSrgBgzaJQ&feature=youtu.be)
+
 ## Individual Reflection
 
 ### Hyeong cheol
@@ -68,9 +71,6 @@ The most difficult thing I'd encountered is to adjust what information should be
 By the way, since there are some limitations such as no server and no usual database, some functions I wanted to implement were not in our application. If thinking differently, I implemented awesome application even though there is no server. That is, if we would have enough time then we would make perfect application I think. If there will be any opportunities I can do new UI/UX project, I think I would be able to do better than now from what I've experienced in our project.
 
 <br/>
-
-### Demo Link:
-Demo video can be found [Here](https://www.youtube.com/watch?v=oUSrgBgzaJQ&feature=youtu.be)
 
 ### Seung hee
 
